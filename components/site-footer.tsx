@@ -1,3 +1,3 @@
 export default function SiteFooter() {
-  return <div>SiteFooter</div>;
+  return <div></div>;
 }
