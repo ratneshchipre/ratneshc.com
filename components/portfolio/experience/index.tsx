@@ -1,0 +1,26 @@
+import { EXPERIENCES } from "@/features/portfolio/experiences";
+import ExperienceCard from "./experience-card";
+import { Separator } from "@/components/ui/separator";
+
+export default function Experience() {
+  return (
+    <section className="mt-15 space-y-7" aria-labelledby="experience-heading">
+      <header>
+        <h2
+          id="experience-heading"
+          className="font-geist-pixel-square text-muted-foreground"
+        >
+          Experience
+        </h2>
+      </header>
+      <div className="space-y-6">
+        {EXPERIENCES.map((experience, index) => (
+          <div key={experience.id}>
+            <ExperienceCard experience={experience} />
+            {index < EXPERIENCES.length - 1 && <Separator className="my-5" />}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

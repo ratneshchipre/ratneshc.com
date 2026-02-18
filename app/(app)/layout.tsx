@@ -9,7 +9,7 @@ export default async function AppLayout({
   return (
     <>
       <SiteHeader />
-      <main className="overflow-hidden max-md:px-5">{children}</main>
+      <main className="overflow-hidden pb-15 max-md:px-5">{children}</main>
       <SiteFooter />
     </>
   );
