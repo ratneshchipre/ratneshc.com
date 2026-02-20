@@ -20,6 +20,7 @@ type ThemeOption = "system" | "light" | "dark";
 
 export default function ThemeToggle({ className }: { className?: string }) {
   const { theme, resolvedTheme, setTheme } = useTheme();
+  const [open, setOpen] = React.useState(false);
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => setMounted(true), []);
@@ -42,7 +43,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
         : Sun01Icon;
 
   return (
-    <DropdownMenu>
+    <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
       <DropdownMenuTrigger
         render={
           <Button
@@ -55,11 +56,17 @@ export default function ThemeToggle({ className }: { className?: string }) {
         <HugeiconsIcon icon={Icon} strokeWidth={2} />
         <span className="sr-only">Toggle theme</span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-35 font-geist-sans">
+      <DropdownMenuContent
+        align="end"
+        className="w-35 font-geist-sans data-open:animate-none data-closed:animate-none"
+      >
         <DropdownMenuGroup>
           <DropdownMenuRadioGroup
             value={currentTheme}
-            onValueChange={(value) => setTheme(value as ThemeOption)}
+            onValueChange={(value) => {
+              setOpen(false);
+              setTheme(value as ThemeOption);
+            }}
           >
             <DropdownMenuRadioItem value="system" className="cursor-pointer">
               <HugeiconsIcon icon={ComputerIcon} strokeWidth={2} />

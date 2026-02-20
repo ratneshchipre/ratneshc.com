@@ -12,10 +12,10 @@ export default function ThemeProvider({ children, ...props }: ThemeProviderProps
       defaultTheme="system"
       enableSystem
       enableColorScheme
+      disableTransitionOnChange
       {...props}
     >
       {children}
     </NextThemesProvider>
   );
 }
-
