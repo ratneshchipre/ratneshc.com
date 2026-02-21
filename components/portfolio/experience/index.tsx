@@ -1,4 +1,4 @@
-import { EXPERIENCES } from "@/features/portfolio/experiences";
+import { EXPERIENCES } from "@/features/portfolio/data/experiences";
 import ExperienceCard from "./experience-card";
 import { Separator } from "@/components/ui/separator";
 
@@ -13,7 +13,7 @@ export default function Experience() {
           Experience
         </h2>
       </header>
-      <div className="space-y-6">
+      <div>
         {EXPERIENCES.map((experience, index) => (
           <div key={experience.id}>
             <ExperienceCard experience={experience} />

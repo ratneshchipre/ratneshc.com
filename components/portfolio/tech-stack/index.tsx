@@ -1,4 +1,4 @@
-import { TECH_STACK } from "@/features/portfolio/tech-stack";
+import { TECH_STACK } from "@/features/portfolio/data/tech-stack";
 import Image from "next/image";
 
 export default function TechStack() {

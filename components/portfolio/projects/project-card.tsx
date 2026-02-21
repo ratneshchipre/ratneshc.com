@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/tooltip";
 import { LinkCircle02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import type { Project } from "@/types/projects";
+import type { Project } from "@/features/portfolio/types/projects";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {

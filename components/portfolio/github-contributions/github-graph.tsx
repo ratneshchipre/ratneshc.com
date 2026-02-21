@@ -16,7 +16,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { GITHUB_USERNAME } from "@/features/portfolio/github-contributions";
+import { GITHUB_USERNAME } from "@/features/portfolio/data/github-contributions";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Loading03Icon } from "@hugeicons/core-free-icons";
 

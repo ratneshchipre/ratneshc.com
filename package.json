@@ -28,6 +28,7 @@
     "rehype-pretty-code": "^0.14.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
+    "schema-dts": "^1.1.5",
     "shadcn": "^3.8.5",
     "shiki": "^3.22.0",
     "tailwind-merge": "^3.4.1",
@@ -35,15 +36,19 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/unist": "^3.0.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "unist-builder": "^4.0.0",
+    "unist-util-visit": "^5.1.0"
   },
   "ignoreScripts": [
     "sharp",
