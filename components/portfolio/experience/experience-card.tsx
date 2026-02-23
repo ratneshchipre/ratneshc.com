@@ -44,8 +44,8 @@ function buildDateTimeAttr(start: string, end?: string): string {
 
 function TimelineIconCell() {
   return (
-    <div className="flex justify-center pt-1.5" aria-hidden>
-      <span className="size-2.5 rounded-full bg-muted-foreground" />
+    <div className="flex justify-center pt-2" aria-hidden>
+      <span className="size-2 rounded-full bg-muted-foreground" />
     </div>
   );
 }
@@ -57,8 +57,8 @@ function CurrentEmployerBadge() {
       role="img"
       aria-label="Current employer"
     >
-      <span className="absolute inline-flex size-3 animate-ping rounded-full bg-foreground/30" />
-      <span className="relative inline-flex size-2 rounded-full bg-foreground" />
+      <span className="absolute inline-flex size-3 animate-ping rounded-full bg-sky-500/30" />
+      <span className="relative inline-flex size-2 rounded-full bg-sky-500" />
     </span>
   );
 }
@@ -241,7 +241,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
       >
         <span
           aria-hidden
-          className="col-start-1 flex justify-center pt-1.5"
+          className="col-start-1 flex justify-center pt-2"
           style={{ gridRow: "1 / -1" }}
         >
           <span className="min-h-full w-px bg-border" />

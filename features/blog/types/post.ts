@@ -5,6 +5,7 @@ export type PostMetadata = {
   category?: string;
   icon?: string;
   new?: boolean;
+  readingTime?: string;
   createdAt: string;
   updatedAt: string;
 };

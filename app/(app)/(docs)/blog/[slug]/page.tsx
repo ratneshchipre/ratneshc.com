@@ -18,6 +18,7 @@ import {
   ArrowRight02Icon,
 } from "@hugeicons/core-free-icons";
 import PostShareMenu from "@/components/blog/post-share-menu";
+import { Separator } from "@/components/ui/separator";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -156,10 +157,25 @@ export default async function BlogPostPage({
           </div>
         </div>
         <Prose className="font-geist-sans">
-          <h1 className="text-3xl font-semibold tracking-tight">
+          <h1 className="mb-1 text-3xl font-semibold tracking-tight">
             {post.metadata.title}
           </h1>
-          <p className="text-muted-foreground">{post.metadata.description}</p>
+          <div className="flex items-center gap-6 text-muted-foreground">
+            <p>
+              {post.metadata.createdAt
+                ? new Date(post.metadata.createdAt)
+                    .toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })
+                    .toLowerCase()
+                : ""}
+            </p>
+            <span>|</span>
+            <p>{post.metadata.readingTime}</p>
+          </div>
+          <Separator className="mt-5 -mb-2" />
           <div>
             <MDX code={post.content} />
           </div>

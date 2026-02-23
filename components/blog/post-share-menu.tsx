@@ -42,7 +42,7 @@ export default function PostShareMenu({ url }: { url: string }) {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40 font-geist-sans" align="center">
         <DropdownMenuItem
-          className="cursor-pointer"
+          className="cursor-pointer hover:bg-muted!"
           onClick={() => {
             copyText(absoluteUrl);
             toast.success("Link copied");
@@ -52,7 +52,7 @@ export default function PostShareMenu({ url }: { url: string }) {
           Copy link
         </DropdownMenuItem>
         <DropdownMenuItem
-          className="cursor-pointer"
+          className="cursor-pointer hover:bg-muted!"
           render={
             <Link
               href={`https://x.com/intent/tweet?url=${urlEncoded}`}
@@ -69,7 +69,7 @@ export default function PostShareMenu({ url }: { url: string }) {
           Share on X
         </DropdownMenuItem>
         <DropdownMenuItem
-          className="cursor-pointer"
+          className="cursor-pointer hover:bg-muted!"
           render={
             <Link
               href={`https://www.linkedin.com/sharing/share-offsite?url=${urlEncoded}`}

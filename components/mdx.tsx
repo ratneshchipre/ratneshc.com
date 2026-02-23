@@ -1,6 +1,7 @@
 import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { Heading } from "./ui/typography";
+import Link from "next/link";
+import { Code, Heading } from "./ui/typography";
 import {
   Table,
   TableBody,
@@ -11,18 +12,47 @@ import {
 } from "./ui/table";
 
 const components: MDXRemoteProps["components"] = {
-  h1: (props: React.ComponentProps<"h1">) => <Heading as="h1" {...props} />,
-  h2: (props: React.ComponentProps<"h2">) => <Heading as="h2" {...props} />,
-  h3: (props: React.ComponentProps<"h3">) => <Heading as="h3" {...props} />,
-  h4: (props: React.ComponentProps<"h4">) => <Heading as="h4" {...props} />,
-  h5: (props: React.ComponentProps<"h5">) => <Heading as="h5" {...props} />,
-  h6: (props: React.ComponentProps<"h6">) => <Heading as="h6" {...props} />,
+  h1: (props: React.ComponentProps<"h1">) => (
+    <Heading as="h1" className="font-semibold" {...props} />
+  ),
+  h2: (props: React.ComponentProps<"h2">) => (
+    <Heading as="h2" className="font-semibold" {...props} />
+  ),
+  h3: (props: React.ComponentProps<"h3">) => (
+    <Heading as="h3" className="font-semibold" {...props} />
+  ),
+  h4: (props: React.ComponentProps<"h4">) => (
+    <Heading as="h4" className="font-semibold" {...props} />
+  ),
+  h5: (props: React.ComponentProps<"h5">) => (
+    <Heading as="h5" className="font-semibold" {...props} />
+  ),
+  h6: (props: React.ComponentProps<"h6">) => (
+    <Heading as="h6" className="font-semibold" {...props} />
+  ),
   table: Table,
   thead: TableHeader,
   tbody: TableBody,
   tr: TableRow,
   th: TableHead,
   td: TableCell,
+  code: Code,
+  a: ({ href, ...props }: React.ComponentProps<"a">) => {
+    const isInternalLink =
+      href && (href.startsWith("/") || href.startsWith("#"));
+
+    if (isInternalLink) {
+      return (
+        <Link href={href} {...props}>
+          {props.children}
+        </Link>
+      );
+    }
+
+    return (
+      <a target="_blank" rel="noopener noreferrer" href={href} {...props} />
+    );
+  },
 };
 
 // const options: MDXRemoteProps["options"] = {
