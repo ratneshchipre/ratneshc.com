@@ -35,19 +35,16 @@ export default function TechStack() {
       </header>
       <div>
         <ul
-          className="flex flex-wrap gap-3 font-geist-sans select-none"
+          className="flex flex-wrap gap-3 select-none"
           aria-describedby="tech-stack-description"
         >
           {TECH_STACK.map((tech) => (
-            <li
-              key={tech.id}
-              className="inline-flex items-center rounded-md border bg-muted px-2.5 py-1 font-geist-mono text-muted-foreground transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
-            >
+            <li key={tech.id}>
               <a
                 href={tech.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                className="flex items-center gap-2 rounded-md border bg-muted px-2.5 py-1 font-geist-mono text-muted-foreground transition-colors duration-300 hover:bg-muted/80 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 {tech.theme ? (
                   <>

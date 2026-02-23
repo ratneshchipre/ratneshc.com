@@ -6,6 +6,7 @@ import {
   Mail01Icon,
   NewTwitterIcon,
 } from "@hugeicons/core-free-icons";
+import CopyButton from "@/components/copy-button";
 
 export default function Overview() {
   return (
@@ -67,13 +68,9 @@ export default function Overview() {
             className="font-medium text-foreground underline-offset-4 hover:underline"
             aria-label="Mail to ratneshchipre"
           >
-            <HugeiconsIcon
-              icon={Mail01Icon}
-              strokeWidth={2}
-              className="mr-1 mb-0.5 ml-0.5 inline-flex h-4 w-4"
-            />
-            email.
+            email
           </Link>
+          <CopyButton value="ratneshchipre@gmail.com" className="ml-0.5" />
         </p>
       </div>
     </section>

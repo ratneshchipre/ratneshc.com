@@ -1,3 +1,4 @@
+import Connect from "@/components/portfolio/connect";
 import Experience from "@/components/portfolio/experience";
 import GitHubContributions from "@/components/portfolio/github-contributions";
 import Overview from "@/components/portfolio/overview";
@@ -14,6 +15,7 @@ export default function Page() {
       <Experience />
       <TechStack />
       <GitHubContributions />
+      <Connect />
     </div>
   );
 }
