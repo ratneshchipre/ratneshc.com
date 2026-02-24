@@ -85,11 +85,11 @@ export const generateWebsiteMetadata = ({
   const finalDescription = description || websiteMetadata.description!;
 
   const defaultOgImage = `${process.env.NEXT_PUBLIC_APP_URL}/images/opengraph-image.png`;
-  const finalImage =
-    `${process.env.NEXT_PUBLIC_APP_URL}/images/${image}` ||
-    (Array.isArray(websiteMetadata.openGraph?.images)
+  const finalImage = image
+    ? `${process.env.NEXT_PUBLIC_APP_URL}/images/blog/${image}`
+    : Array.isArray(websiteMetadata.openGraph?.images)
       ? (websiteMetadata.openGraph.images[0] as any).url
-      : defaultOgImage);
+      : defaultOgImage;
 
   return {
     ...websiteMetadata,
