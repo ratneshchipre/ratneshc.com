@@ -32,14 +32,14 @@ export default function BlogPage() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="flex w-full cursor-pointer items-center justify-between gap-4 text-foreground group-hover:text-ring hover:text-foreground [&_span]:text-muted-foreground [&_span]:group-hover:text-ring hover:[&_span]:text-muted-foreground"
+            className="flex w-full cursor-pointer items-center justify-between gap-5 text-foreground group-hover:text-ring hover:text-foreground [&_span]:text-muted-foreground [&_span]:group-hover:text-ring hover:[&_span]:text-muted-foreground"
           >
-            <h3>
+            <h3 className="truncate">
               {post.metadata.title.includes("|")
                 ? post.metadata.title.split("|")[0].trim()
                 : post.metadata.title}
             </h3>
-            <span className="text-[0.9rem]">
+            <span className="shrink-0 text-[0.9rem]">
               {post.metadata.createdAt
                 ? new Date(post.metadata.createdAt)
                     .toLocaleDateString("en-US", {

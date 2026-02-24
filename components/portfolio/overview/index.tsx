@@ -17,9 +17,9 @@ export default function Overview() {
           >
             draftlogo
           </Link>{" "}
-          — a SaaS that helps founders generate professional, minimal logos in
-          seconds. I love crafting elegant web experiences, shipping fast, and
-          turning ideas into real products. <br />
+          &ndash; a SaaS that helps founders generate professional, minimal
+          logos in seconds. I love crafting elegant web experiences, shipping
+          fast, and turning ideas into real products. <br />
           <br />
           Previously, I&apos;ve worked with startups and shipped multiple
           projects. You can find more of my work on{" "}
