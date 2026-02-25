@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
+import { FramedImage } from "./embed";
 
 const components: MDXRemoteProps["components"] = {
   h1: (props: React.ComponentProps<"h1">) => (
@@ -53,6 +54,7 @@ const components: MDXRemoteProps["components"] = {
       <a target="_blank" rel="noopener noreferrer" href={href} {...props} />
     );
   },
+  FramedImage,
 };
 
 // const options: MDXRemoteProps["options"] = {
