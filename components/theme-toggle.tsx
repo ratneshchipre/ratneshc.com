@@ -59,6 +59,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
       <DropdownMenuContent
         align="end"
         className="w-35 font-geist-sans data-open:animate-none data-closed:animate-none"
+        sideOffset={8}
       >
         <DropdownMenuGroup>
           <DropdownMenuRadioGroup
