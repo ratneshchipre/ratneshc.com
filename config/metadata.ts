@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const defaultWebsiteMetadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-  title: "Ratnesh - Developer",
+  title: "Ratnesh \u2013 Developer",
   description:
     "I'm Ratnesh, a Full-Stack Web Developer. I love to build products.",
   keywords: [
@@ -39,7 +39,7 @@ export const websiteMetadata: Metadata = {
   openGraph: {
     type: "website",
     url: process.env.NEXT_PUBLIC_APP_URL!,
-    title: "Ratnesh - Developer",
+    title: "Ratnesh \u2013 Developer",
     description:
       "I'm Ratnesh, a Full-Stack Web Developer. I love to build products.",
     siteName: "Ratnesh",
@@ -48,13 +48,13 @@ export const websiteMetadata: Metadata = {
         url: `${process.env.NEXT_PUBLIC_APP_URL}/images/opengraph-image.png`,
         width: 1200,
         height: 630,
-        alt: "Ratnesh - Developer",
+        alt: "Ratnesh \u2013 Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ratnesh - Developer",
+    title: "Ratnesh \u2013 Developer",
     description:
       "I'm Ratnesh, a Full-Stack Web Developer. I love to build products.",
     images: [`${process.env.NEXT_PUBLIC_APP_URL}/images/opengraph-image.png`],
@@ -78,7 +78,7 @@ export const generateWebsiteMetadata = ({
   image,
   keywords,
 }: GenerateWebsiteMetadataParams): Metadata => {
-  const baseTitle = title || "Ratnesh - Developer";
+  const baseTitle = title || "Ratnesh \u2013 Developer";
   const finalTitle = baseTitle.includes("|")
     ? baseTitle
     : `${baseTitle} | Ratnesh`;
