@@ -140,7 +140,7 @@ function PositionContent({ position }: PositionContentProps) {
                     className={cn(
                       "inline-flex items-center rounded-md px-2 py-0.5 font-geist-mono text-xs",
                       "border bg-muted text-muted-foreground",
-                      "transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
+                      "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
                     )}
                     itemProp="skills"
                   >
