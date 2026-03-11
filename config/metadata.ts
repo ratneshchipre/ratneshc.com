@@ -32,7 +32,7 @@ export const websiteMetadata: Metadata = {
   authors: [
     {
       name: "Ratnesh",
-      url: "https://ratnesh-portfolio-v2.netlify.app",
+      url: "https://ratneshc.com",
     },
   ],
   creator: "Ratnesh",
