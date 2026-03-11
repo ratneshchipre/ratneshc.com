@@ -49,7 +49,10 @@ export default function PostShareMenu({ url }: { url: string }) {
         <HugeiconsIcon icon={Share03Icon} strokeWidth={2} className="size-4" />
         Share
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-40 font-geist-sans" align="end">
+      <DropdownMenuContent
+        className="post-share-menu-content w-40 font-geist-sans"
+        align="end"
+      >
         <DropdownMenuItem className="cursor-pointer" onClick={handleCopy}>
           <HugeiconsIcon icon={Link04Icon} strokeWidth={2} className="size-4" />
           Copy link
