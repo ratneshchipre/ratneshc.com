@@ -72,6 +72,13 @@
   }
 }
 
+/* Fix for flickering exit animations in Headless UI / Base UI */
+[data-state="closed"],
+[data-closed] {
+  animation-fill-mode: forwards !important;
+  transition-behavior: allow-discrete !important;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.173 0 0);

@@ -1,12 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
@@ -16,43 +16,46 @@ import {
   Share03Icon,
 } from "@hugeicons/core-free-icons";
 import { copyText } from "@/utils/copy";
-import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function PostShareMenu({ url }: { url: string }) {
-  const absoluteUrl = url.startsWith("http")
-    ? url
-    : typeof window !== "undefined"
-      ? new URL(url, window.location.origin).toString()
-      : url;
+  const getAbsoluteUrl = () => {
+    if (url.startsWith("http")) return url;
+    if (typeof window === "undefined") return url;
+    try {
+      return new URL(url, window.location.origin).toString();
+    } catch {
+      return url;
+    }
+  };
 
+  const handleCopy = () => {
+    copyText(getAbsoluteUrl());
+    toast.success("Link copied");
+  };
+
+  const absoluteUrl = typeof window !== "undefined" ? getAbsoluteUrl() : url;
   const urlEncoded = encodeURIComponent(absoluteUrl);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        render={
-          <Button
-            variant="secondary"
-            className="cursor-pointer font-geist-sans"
-          />
-        }
+        className={cn(
+          buttonVariants({ variant: "secondary" }),
+          "cursor-pointer font-geist-sans"
+        )}
       >
         <HugeiconsIcon icon={Share03Icon} strokeWidth={2} className="size-4" />
         Share
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mr-2 w-40 font-geist-sans" align="center">
-        <DropdownMenuItem
-          className="cursor-pointer hover:bg-muted!"
-          onClick={() => {
-            copyText(absoluteUrl);
-            toast.success("Link copied");
-          }}
-        >
+      <DropdownMenuContent className="w-40 font-geist-sans" align="end">
+        <DropdownMenuItem className="cursor-pointer" onClick={handleCopy}>
           <HugeiconsIcon icon={Link04Icon} strokeWidth={2} className="size-4" />
           Copy link
         </DropdownMenuItem>
         <DropdownMenuItem
-          className="cursor-pointer hover:bg-muted!"
+          className="cursor-pointer"
           render={
             <Link
               href={`https://x.com/intent/tweet?url=${urlEncoded}`}
@@ -69,7 +72,7 @@ export default function PostShareMenu({ url }: { url: string }) {
           Share on X
         </DropdownMenuItem>
         <DropdownMenuItem
-          className="cursor-pointer hover:bg-muted!"
+          className="cursor-pointer"
           render={
             <Link
               href={`https://www.linkedin.com/sharing/share-offsite?url=${urlEncoded}`}
