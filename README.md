@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [ratneshc.com](https://ratneshc.com) &middot; ![GitHub Repo Views](https://gitviews.com/repo/ratneshchipre/ratneshc.com.svg?style=flat&label-color=%231e293b&color=%23475569)
 
-## Getting Started
+A clean, professional showcase for my projects, work history, and personal blog as a Full Stack Developer.
 
-First, run the development server:
+→ Check out the live site: [ratneshc.com](https://ratneshc.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[![screenshot-dark](./public/images/screenshot-dark.webp#gh-dark-mode-only)](https://ratneshc.com)
+[![screenshot-light](./public/images/screenshot-light.webp#gh-light-mode-only)](https://ratneshc.com)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js 16
+- TailwindCSS 4
+- TypeScript
+- shadcn/ui
+- MDX
 
-## Learn More
+### Features
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 16 & TailwindCSS 4 — Cutting-edge architecture & Next-gen utility styling for peak performance.
+- Command Menu (⌘K) — Global search and navigation palette.
+- Full TypeScript — Type-safe codebase for robust development.
+- MDX Integration — Markdown-powered blog with interactive components.
+- Seamless Dark Mode — Fluid Light/Dark/System theme switching.
+- GitHub Contribution Map — Live visualization of coding activity.
+- Responsive shadcn/ui — Professional, accessible component library.
+- Optimized Images — Fast-loading media with medium-style zoom.
+- Automated SEO — Smart metadata, sitemaps, and robots.txt.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Star History
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[![RepoStars-dark](https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=dark#gh-dark-mode-only)](https://repostars.dev/?repos=ratneshchipre%2Fratneshc.com&theme=dark)
+[![RepoStars-light](https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=light#gh-light-mode-only)](https://repostars.dev/?repos=ratneshchipre%2Fratneshc.com&theme=light)
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the [MIT license](./LICENSE).
