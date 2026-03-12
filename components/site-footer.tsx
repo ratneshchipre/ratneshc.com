@@ -105,7 +105,7 @@ export default function SiteFooter() {
             . The source code is available on{" "}
             <a
               className="text-foreground underline-offset-4 hover:underline"
-              href="https://github.com/ratneshchipre"
+              href="https://github.com/ratneshchipre/ratneshc.com"
               target="_blank"
               rel="noopener"
             >
