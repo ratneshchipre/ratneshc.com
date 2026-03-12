@@ -4,8 +4,13 @@ A clean, professional showcase for my projects, work history, and personal blog 
 
 → Check out the live site: [ratneshc.com](https://ratneshc.com)
 
-[![screenshot-dark](./public/images/screenshot-dark.webp#gh-dark-mode-only)](https://ratneshc.com)
-[![screenshot-light](./public/images/screenshot-light.webp#gh-light-mode-only)](https://ratneshc.com)
+<a href="https://ratneshc.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./public/images/screenshot-dark.webp">
+    <source media="(prefers-color-scheme: light)" srcset="./public/images/screenshot-light.webp">
+    <img alt="ratneshc.com" src="./public/images/screenshot-light.webp">
+  </picture>
+</a>
 
 ## Overview
 
@@ -31,8 +36,11 @@ A clean, professional showcase for my projects, work history, and personal blog 
 
 ## Star History
 
-[![RepoStars-dark](https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=dark#gh-dark-mode-only)](https://repostars.dev/?repos=ratneshchipre%2Fratneshc.com&theme=dark)
-[![RepoStars-light](https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=light#gh-light-mode-only)](https://repostars.dev/?repos=ratneshchipre%2Fratneshc.com&theme=light)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=light">
+  <img alt="Star History Chart" src="https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=light">
+</picture>
 
 ## License
 
