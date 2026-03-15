@@ -1,5 +1,5 @@
 ---
-title: "The Hidden Mechanics of Smooth Component Unmounting | Ratnesh"
+title: "The hidden mechanics of smooth component unmounting | Ratnesh"
 description: "Uncovering the subtle browser behaviors that separate glitchy UI from premium experiences. A technical exploration of state management, animation lifecycles, and modern CSS solutions."
 image: "/images/blog/the-hidden-mechanics-of-smooth-component-unmounting.png"
 readingTime: "5 min read"
@@ -17,11 +17,11 @@ in this blog, we'll dive deep into the technical reasons behind this flicker and
 
 <UnmountingDemo />
 
-## The Root Cause: Lifecycle Conflict
+## The root cause: Lifecycle conflict
 
 To build a robust solution, we must first understand the synchronization failure between two distinct systems.
 
-### 1. Synchronous State Management
+### 1. Synchronous state management
 
 In frameworks like [React](https://react.dev/), unmounting is typically handled by a boolean state:
 
@@ -39,7 +39,7 @@ React then instructs the browser to remove the corresponding DOM node.
 
 this happens **synchronously** and **instantly**.
 
-### 2. The CSS Animation Timeline
+### 2. The CSS animation timeline
 
 Unlike JavaScript, CSS animations and transitions are **asynchronous**.
 
@@ -55,7 +55,7 @@ even if you use `animation-fill-mode: forwards`, the element is deleted from the
 
 ---
 
-## Technical Solution 1: Delayed Unmounting (Manual)
+## Solution 1: Delayed unmounting (manual)
 
 The most basic fix is to decouple the "logical" close from the "physical" unmount.
 
@@ -74,7 +74,7 @@ while functional, this approach is prone to "magic number" errors where the JS t
 
 ---
 
-## Technical Solution 2: Framer Motion (Orchestration)
+## Solution 2: Framer Motion (orchestration)
 
 For React applications, [AnimatePresence](https://motion.dev/docs/react-animate-presence) is the industry standard for handling this complexity.
 
@@ -99,7 +99,7 @@ it effectively "pauses" the unmounting process, allowing the component to remain
 
 ---
 
-## Technical Solution 3: Modern CSS (Discrete Transitions)
+## Solution 3: Modern CSS (discrete transitions)
 
 Historically, you couldn't transition the `display` property.
 
@@ -132,9 +132,9 @@ this is a massive win for performance as it requires zero JavaScript for unmount
 
 ---
 
-## Cheat Sheet: Choosing the Right Method
+## Cheat sheet: Choosing the right method
 
-| Method            | Best For                          | Complexity        | Performance |
+| Method            | Best for                          | Complexity        | Performance |
 | :---------------- | :-------------------------------- | :---------------- | :---------- |
 | **Manual JS**     | Simple projects with no libraries | Low (but brittle) | Good        |
 | **Framer Motion** | Complex UI, nested animations     | Medium            | Moderate    |
@@ -142,7 +142,7 @@ this is a massive win for performance as it requires zero JavaScript for unmount
 
 ---
 
-## Why Smooth Unmounting Matters for SEO & UX
+## Why smooth unmounting matters for SEO & UX
 
 You might wonder, does a flicker really matter for SEO? Indirectly, yes.
 
@@ -154,12 +154,12 @@ premium micro-interactions, like the ones I implemented for [draftlogo](/blog/th
 
 ---
 
-## Final Thoughts
+## Final thoughts
 
 Achieving smooth unmounting requires a shift from thinking about "hiding" elements to "orchestrating" their exit.
 
-- **For Performance**: Leverage modern CSS (`allow-discrete`) to minimize JavaScript overhead.
-- **For Complex Interactions**: Use lifecycle-aware libraries like Framer Motion to handle nested exit animations.
-- **For Consistency**: Ensure your animation durations are defined as central tokens to avoid synchronization issues between CSS and JavaScript.
+- **For performance**: Leverage modern CSS (`allow-discrete`) to minimize JavaScript overhead.
+- **For complex interactions**: Use lifecycle-aware libraries like Framer Motion to handle nested exit animations.
+- **For consistency**: Ensure your animation durations are defined as central tokens to avoid synchronization issues between CSS and JavaScript.
 
 refining these exit mechanics transforms a functional interface into a polished, premium product that feels responsive and intent-driven.

@@ -65,8 +65,10 @@ export async function highlightCode(code: string, language: string = "tsx") {
     ],
   });
 
-  // Cache the result.
-  highlightCache.set(cacheKey, html);
+  // Cache the result only when not in development mode.
+  if (!isDev) {
+    highlightCache.set(cacheKey, html);
+  }
 
   return html;
 }
