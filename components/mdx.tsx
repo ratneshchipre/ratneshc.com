@@ -24,6 +24,7 @@ import { remarkCodeImport } from "@/lib/remark-code-import";
 import { FramedImage } from "./embed";
 import { mdxCodeBlockComponents } from "./mdx-code-block";
 import UnmountingDemo from "./blog/unmounting-demo";
+import Callout from "./callout";
 
 const components: MDXRemoteProps["components"] = {
   h1: (props: React.ComponentProps<"h1">) => (
@@ -52,6 +53,7 @@ const components: MDXRemoteProps["components"] = {
   td: TableCell,
   ...mdxCodeBlockComponents,
   code: Code,
+  Callout,
   a: ({ href, ...props }: React.ComponentProps<"a">) => {
     const isInternalLink =
       href && (href.startsWith("/") || href.startsWith("#"));

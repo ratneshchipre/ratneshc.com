@@ -140,7 +140,19 @@ this is a massive win for performance as it requires zero JavaScript for unmount
 | **Framer Motion** | Complex UI, nested animations     | Medium            | Moderate    |
 | **Modern CSS**    | Native performance, minimal JS    | Medium            | Excellent   |
 
----
+<Callout type="info" title="Note on cross-device behavior">
+
+You might notice that the unmounting flicker is highly visible on a desktop browser but seems "perfectly smooth" when viewed on a mobile device.
+
+this is a common trap! mobile browser engines often use more aggressive compositing and frame-skipping optimizations to save battery.
+
+while this might hide the glitch on your phone, the underlying logical error (the race condition) still exists.
+
+a premium experience means ensuring consistency.
+
+a user on a high-refresh-rate desktop monitor or an older laptop should see the same polished transition as a mobile user.
+
+</Callout>
 
 ## Why smooth unmounting matters for SEO & UX
 
