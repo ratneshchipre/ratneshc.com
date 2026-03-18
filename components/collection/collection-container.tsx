@@ -42,7 +42,7 @@ export default function CollectionContainer() {
       <CollectionSection
         title="Books"
         items={COLLECTION.books}
-        emptyMsg="Building the shelf, slowly but surely."
+        emptyMsg="Building the shelf, slowly but surely :)"
       />
     </div>
   );
