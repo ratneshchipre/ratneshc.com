@@ -74,7 +74,7 @@ export default function UnmountingDemo() {
               align="center"
               sideOffset={8}
               className={cn(
-                "post-share-menu-content w-auto font-geist-sans shadow-sm",
+                "discrete-menu-content w-auto font-geist-sans shadow-sm",
                 isSlowed && "duration-2000!"
               )}
             >

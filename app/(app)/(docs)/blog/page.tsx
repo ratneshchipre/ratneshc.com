@@ -6,9 +6,9 @@ import { generateWebsiteMetadata } from "@/config/metadata";
 export const metadata: Metadata = generateWebsiteMetadata({
   title: "Blog | Ratnesh",
   description:
-    "Raw thoughts and real insights on the intersection of tech, life, and the entrepreneurial journey. Building in public, one lesson at a time.",
+    "Raw thoughts and real insights on tech, life, and the entrepreneurial journey.",
   keywords: ["blogs", "Ratnesh blog", "Ratnesh blog posts"],
-  image: "blog.png",
+  image: "blog/blog.png",
 });
 
 export default function BlogPage() {
@@ -16,16 +16,17 @@ export default function BlogPage() {
 
   return (
     <section
-      className="h-[calc(100svh-16rem)] space-y-10 pt-8"
+      className="h-[calc(100svh-16rem)] space-y-12 pt-8"
       aria-labelledby="blog-heading"
     >
-      <header>
-        <h2
-          id="blog-heading"
-          className="font-geist-pixel-square text-lg text-muted-foreground"
-        >
+      <header className="flex flex-col gap-3">
+        <h2 id="blog-heading" className="font-geist-pixel-square text-xl">
           Blog
         </h2>
+        <p className="font-geist-sans text-muted-foreground">
+          Raw thoughts and real insights on tech, life, and the entrepreneurial
+          journey.
+        </p>
       </header>
       <div className="group divide-y divide-border font-geist-sans *:py-3 first:*:pt-0">
         {allPosts.map((post) => (

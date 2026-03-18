@@ -79,8 +79,8 @@
 }
 
 /* Fix for flickering exit animations in Headless UI / Base UI */
-.post-share-menu-content[data-state="closed"],
-.post-share-menu-content[data-closed] {
+.discrete-menu-content[data-state="closed"],
+.discrete-menu-content[data-closed] {
   animation-fill-mode: forwards !important;
   transition-behavior: allow-discrete !important;
 }
@@ -214,7 +214,7 @@
     }
 
     [data-line] {
-      @apply flex min-h-[1.5rem] items-center border-l-4 border-l-transparent px-4 py-0.5;
+      @apply flex min-h-6 items-center border-l-4 border-l-transparent px-4 py-0.5;
     }
 
     [data-line] span {

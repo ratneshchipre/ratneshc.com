@@ -50,7 +50,7 @@ export default function PostShareMenu({ url }: { url: string }) {
         Share
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="post-share-menu-content w-40 font-geist-sans"
+        className="discrete-menu-content w-40 font-geist-sans"
         align="end"
       >
         <DropdownMenuItem className="cursor-pointer" onClick={handleCopy}>

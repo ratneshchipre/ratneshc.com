@@ -113,13 +113,13 @@ by combining `allow-discrete` with `animation-fill-mode`, we can ensure the elem
 
 ```css
 /* Real-world example from my portfolio */
-.menu-content[data-state="closed"] {
+.discrete-menu-content[data-state="closed"] {
   animation-fill-mode: forwards;
   transition-behavior: allow-discrete;
 }
 
 @starting-style {
-  .menu-content[data-state="open"] {
+  .discrete-menu-content[data-state="open"] {
     opacity: 0;
     transform: translateY(10px);
   }
