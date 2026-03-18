@@ -9,4 +9,8 @@ export const NAV_ITEMS: NavItem[] = [
     title: "Blog",
     href: "/blog",
   },
+  {
+    title: "Collection",
+    href: "/collection",
+  },
 ];

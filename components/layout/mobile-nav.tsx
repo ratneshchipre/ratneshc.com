@@ -34,7 +34,7 @@ export default function MobileNav({ items }: { items: NavItem[] }) {
           className="absolute size-4.5 rotate-90 opacity-0 transition-all duration-300 ease-in-out group-data-popup-open:opacity-100 group-data-popup-open:blur-none"
         />
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="discrete-menu-content">
         <DropdownMenuGroup>
           {items.map((item) => (
             <DropdownMenuItem key={item.href} onSelect={() => setOpen(false)}>

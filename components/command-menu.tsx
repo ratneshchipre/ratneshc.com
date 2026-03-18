@@ -10,6 +10,7 @@ import {
   ArrowUpDownIcon,
   Briefcase06Icon,
   Cancel01Icon,
+  CollectionsBookmarkIcon,
   ComputerIcon,
   Folder01Icon,
   GitCommitIcon,
@@ -59,6 +60,11 @@ const MENU_LINKS: CommandLinkItem[] = [
     title: "Blog",
     href: "/blog",
     icon: LicenseIcon,
+  },
+  {
+    title: "Collection",
+    href: "/collection",
+    icon: CollectionsBookmarkIcon,
   },
 ];
 
