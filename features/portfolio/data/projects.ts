@@ -47,7 +47,7 @@ export const PROJECTS: Project[] = [
       "JavaScript",
       "TailwindCSS",
       "Vite",
-      "Framer Motion",
+      "Motion",
       "Context API",
     ],
     isExpanded: false,
