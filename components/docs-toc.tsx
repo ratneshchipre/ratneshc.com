@@ -28,16 +28,16 @@ export default function DocsTOC({
     <nav
       className={cn(
         "not-prose font-geist-sans",
-        "no-scrollbar 2xl:fixed 2xl:top-25 2xl:left-[calc(50%+25rem)] 2xl:max-h-100 2xl:w-68 2xl:overflow-y-auto",
+        "no-scrollbar max-2xl:pr-5 xl:fixed xl:top-25 xl:left-[calc(50%+24rem)] xl:max-h-100 xl:overflow-y-auto 2xl:w-68",
         className
       )}
       aria-label="Table of Contents"
     >
-      <p className="mb-4 flex items-center gap-2 font-medium text-foreground 2xl:text-sm">
+      <p className="mb-4 flex items-center gap-2 font-medium text-foreground xl:text-sm">
         <HugeiconsIcon
           icon={TextAlignLeftIcon}
           strokeWidth={2}
-          className="size-3.5 2xl:size-3"
+          className="size-3.5 xl:size-3"
         />
         {children ?? "On this page"}
       </p>
@@ -55,7 +55,7 @@ export default function DocsTOC({
               }}
             >
               {depthOffset === 0 && (
-                <span className="relative top-2 mr-3 flex h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50 2xl:hidden" />
+                <span className="relative top-2 mr-3 flex h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50 xl:hidden" />
               )}
               {depthOffset > 0 && <span className="mr-3 flex w-1.5 shrink-0" />}
               <a

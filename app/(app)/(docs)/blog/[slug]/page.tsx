@@ -169,9 +169,9 @@ export default async function BlogPostPage({
             <span>|</span>
             <p>{post.metadata.readingTime}</p>
           </div>
-          <Separator className="mt-5 mb-10 2xl:-mb-2" />
+          <Separator className="mt-5 mb-10 xl:-mb-2" />
           <DocsTOC items={toc} />
-          <Separator className="mt-10 -mb-2 2xl:hidden" />
+          <Separator className="mt-10 -mb-2 xl:hidden" />
           <div>
             <MDX code={post.content} />
           </div>
