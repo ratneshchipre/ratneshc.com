@@ -1,89 +1,62 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+import { useHotkeys } from "react-hotkeys-hook";
+import { cn } from "@/lib/utils";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { ComputerIcon, MoonIcon, Sun01Icon } from "@hugeicons/core-free-icons";
-import { Button } from "@/components/ui/button";
+import { MoonIcon, Sun01Icon } from "@hugeicons/core-free-icons";
+import { buttonVariants } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Skeleton } from "./ui/skeleton";
-
-type ThemeOption = "system" | "light" | "dark";
+import { Kbd } from "./ui/kbd";
 
 export default function ThemeToggle({ className }: { className?: string }) {
-  const { theme, resolvedTheme, setTheme } = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
+
+  const handleToggle = React.useCallback(() => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  }, [resolvedTheme, setTheme]);
+
+  useHotkeys("d", handleToggle);
 
   React.useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return <Skeleton className="h-7 w-7" />;
+    return <Skeleton className="size-8.5 rounded-md" />;
   }
 
-  const currentTheme = (theme ?? "system") as ThemeOption;
-  const effectiveTheme = (resolvedTheme ?? "light") as Exclude<
-    ThemeOption,
-    "system"
-  >;
-
-  const Icon =
-    currentTheme === "system"
-      ? ComputerIcon
-      : effectiveTheme === "dark"
-        ? MoonIcon
-        : Sun01Icon;
+  const Icon = resolvedTheme === "dark" ? MoonIcon : Sun01Icon;
 
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
-      <DropdownMenuTrigger
-        render={
-          <Button
-            variant="ghost"
-            size="icon-sm"
-            className={cn(className, "cursor-pointer")}
-          />
-        }
+    <Tooltip>
+      <TooltipTrigger
+        className={cn(
+          buttonVariants({ variant: "ghost", size: "icon" }),
+          "size-8.5 cursor-pointer rounded-md hover:bg-accent",
+          className
+        )}
+        onClick={handleToggle}
+        aria-label="Toggle Mode"
       >
-        <HugeiconsIcon icon={Icon} strokeWidth={2} />
-        <span className="sr-only">Toggle theme</span>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent
-        align="end"
-        className="w-35 font-geist-sans data-open:animate-none data-closed:animate-none"
-        sideOffset={8}
+        <HugeiconsIcon icon={Icon} strokeWidth={2} className="size-4" />
+        <span className="sr-only">Toggle Theme</span>
+      </TooltipTrigger>
+      <TooltipContent
+        side="bottom"
+        sideOffset={6}
+        className="rounded-lg py-2 pr-2 pl-3 font-geist-pixel-square text-[0.85rem]"
       >
-        <DropdownMenuGroup>
-          <DropdownMenuRadioGroup
-            value={currentTheme}
-            onValueChange={(value) => {
-              setOpen(false);
-              setTheme(value as ThemeOption);
-            }}
-          >
-            <DropdownMenuRadioItem value="system" className="cursor-pointer">
-              <HugeiconsIcon icon={ComputerIcon} strokeWidth={2} />
-              System
-            </DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="light" className="cursor-pointer">
-              <HugeiconsIcon icon={Sun01Icon} strokeWidth={2} />
-              Light
-            </DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="dark" className="cursor-pointer">
-              <HugeiconsIcon icon={MoonIcon} strokeWidth={2} />
-              Dark
-            </DropdownMenuRadioItem>
-          </DropdownMenuRadioGroup>
-        </DropdownMenuGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+        <div className="flex items-center gap-2.5">
+          Toggle Mode
+          <Kbd>D</Kbd>
+        </div>
+      </TooltipContent>
+    </Tooltip>
   );
 }
