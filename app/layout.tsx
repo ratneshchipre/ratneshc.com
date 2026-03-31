@@ -37,6 +37,11 @@ export default function RootLayout({
             token: process.env.NEXT_PUBLIC_CF_BEACON_TOKEN,
           })}
         />
+        <script
+          src="https://page-views-api.ratneshc.com/script"
+          data-site="ratneshc.com"
+          defer
+        />
       </body>
     </html>
   );
