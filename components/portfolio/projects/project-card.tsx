@@ -74,7 +74,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     </a>
                   }
                 />
-                <TooltipContent className="font-geist-sans">
+                <TooltipContent>
                   <p>Open Project Link</p>
                 </TooltipContent>
               </Tooltip>

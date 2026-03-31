@@ -50,7 +50,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
       <TooltipContent
         side="bottom"
         sideOffset={6}
-        className="rounded-lg py-2 pr-2 pl-3 font-geist-pixel-square text-[0.85rem]"
+        className="rounded-lg py-2 pr-2 pl-3 text-[0.85rem]"
       >
         <div className="flex items-center gap-2.5">
           Toggle Mode

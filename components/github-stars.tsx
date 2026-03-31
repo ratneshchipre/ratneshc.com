@@ -48,7 +48,7 @@ export default function GithubStars({
       <TooltipContent
         side="bottom"
         sideOffset={6}
-        className="rounded-lg py-2 font-geist-pixel-square text-[0.85rem]"
+        className="rounded-lg py-2 text-[0.85rem]"
       >
         {new Intl.NumberFormat("en-US").format(stargazersCount)} stars
       </TooltipContent>

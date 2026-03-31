@@ -52,7 +52,7 @@ export default function GitHubGraph({
                 </g>
               }
             />
-            <TooltipContent className="font-geist-sans">
+            <TooltipContent>
               <p>
                 {activity.count} contribution{activity.count > 1 ? "s" : null}{" "}
                 on {format(new Date(activity.date), "dd.MM.yyyy")}

@@ -216,7 +216,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
                 </a>
               }
             />
-            <TooltipContent className="font-geist-sans">
+            <TooltipContent>
               <p>Open company website</p>
             </TooltipContent>
           </Tooltip>
