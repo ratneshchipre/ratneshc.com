@@ -17,7 +17,7 @@ export default function CTA() {
           className="pointer-events-none absolute inset-0 h-full"
           svgOptions={{ duration: 2 }}
         />
-        <div className="relative z-10 flex h-60 flex-col items-center justify-center gap-6 p-6 text-center">
+        <div className="relative z-10 flex h-60 flex-col items-center justify-center gap-5 p-6 text-center">
           <div className="flex flex-col gap-3">
             <h2 className="font-geist-pixel-square text-3xl tracking-tight">
               Let&apos;s talk
