@@ -1,4 +1,5 @@
 import { NavItem } from "@/types/nav";
+
 import Nav from "./nav";
 
 export default function DesktopNav({ items }: { items: NavItem[] }) {

@@ -1,6 +1,7 @@
 "use client";
 
 import type { TOCItemType } from "fumadocs-core/toc";
+
 import { TextAlignLeftIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useTOCObserver } from "@/hooks/use-toc-observer";
@@ -27,7 +28,7 @@ export default function DocsTOC({
   return (
     <nav
       className={cn(
-        "not-prose font-geist-sans",
+        "not-prose font-geist-sans max-xl:mt-7",
         "no-scrollbar max-2xl:pr-5 xl:fixed xl:top-25 xl:left-[calc(50%+24rem)] xl:max-h-100 xl:overflow-y-auto 2xl:w-68",
         className
       )}

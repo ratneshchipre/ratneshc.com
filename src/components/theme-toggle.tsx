@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useTheme } from "next-themes";
 import { useHotkeys } from "react-hotkeys-hook";
+
 import { cn } from "@/lib/utils";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { MoonIcon, Sun01Icon } from "@hugeicons/core-free-icons";
@@ -12,6 +13,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
 import { Skeleton } from "./ui/skeleton";
 import { Kbd } from "./ui/kbd";
 
@@ -50,7 +52,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
       <TooltipContent
         side="bottom"
         sideOffset={6}
-        className="rounded-lg py-2 pr-2 pl-3 text-[0.85rem]"
+        className="py-2 pr-2 pl-3 text-[0.85rem]"
       >
         <div className="flex items-center gap-2.5">
           Toggle Mode

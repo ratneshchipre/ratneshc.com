@@ -1,5 +1,6 @@
-import { TECH_STACK } from "@/features/portfolio/data/tech-stack";
 import Image from "next/image";
+
+import { TECH_STACK } from "@/features/portfolio/data/tech-stack";
 
 export default function TechStack() {
   if (!TECH_STACK || TECH_STACK.length === 0) {

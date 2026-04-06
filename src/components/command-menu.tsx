@@ -1,11 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from "@bprogress/next/app";
-import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import { useCommandState } from "cmdk";
 import { useHotkeys } from "react-hotkeys-hook";
+import { useRouter } from "@bprogress/next/app";
+
+import { cn } from "@/lib/utils";
+import { Doc } from "@/features/doc/types/document";
 import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
 import {
   ArrowMoveDownLeftIcon,
@@ -28,6 +31,7 @@ import {
   Sun01Icon,
   TextAlignLeft01Icon,
 } from "@hugeicons/core-free-icons";
+
 import {
   Command,
   CommandDialog,
@@ -40,8 +44,6 @@ import {
 } from "./ui/command";
 import { Button } from "./ui/button";
 import { Kbd, KbdGroup } from "./ui/kbd";
-import { cn } from "@/lib/utils";
-import { Doc } from "@/features/doc/types/document";
 import { Separator } from "./ui/separator";
 import { InputGroupButton } from "./ui/input-group";
 

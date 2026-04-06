@@ -1,11 +1,12 @@
 import { NAV_ITEMS } from "@/config/site";
+import { getAllDocs } from "@/features/doc/data/documents";
+
 import DesktopNav from "./layout/desktop-nav";
 import SiteHeaderWrapper from "./site-header-wrapper";
 import ThemeToggle from "./theme-toggle";
 import { Separator } from "./ui/separator";
 import MobileNav from "./layout/mobile-nav";
 import { CommandMenu } from "./command-menu";
-import { getAllDocs } from "@/features/doc/data/documents";
 import NavItemGitHub from "./nav-item-github";
 
 export default function SiteHeader() {

@@ -1,6 +1,7 @@
 import { EXPERIENCES } from "@/features/portfolio/data/experiences";
-import ExperienceCard from "./experience-card";
 import { Separator } from "@/components/ui/separator";
+
+import ExperienceCard from "./experience-card";
 
 export default function Experience() {
   return (

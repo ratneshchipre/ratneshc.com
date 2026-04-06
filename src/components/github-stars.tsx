@@ -1,15 +1,16 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { addQueryParams } from "@/utils/url";
+import { UTM_PARAMS } from "@/config/site";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
 import { Icons } from "./icons";
-import { addQueryParams } from "@/utils/url";
-import { UTM_PARAMS } from "@/config/site";
 
 type GitHubStarsProps = {
   repo: string;
@@ -48,7 +49,7 @@ export default function GithubStars({
       <TooltipContent
         side="bottom"
         sideOffset={6}
-        className="rounded-lg py-2 text-[0.85rem]"
+        className="py-2 text-[0.85rem]"
       >
         {new Intl.NumberFormat("en-US").format(stargazersCount)} stars
       </TooltipContent>

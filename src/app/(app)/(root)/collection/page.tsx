@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+
 import { generateWebsiteMetadata } from "@/config/metadata";
 import CollectionContainer from "@/components/collection/collection-container";
 

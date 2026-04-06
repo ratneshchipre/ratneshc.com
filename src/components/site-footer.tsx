@@ -2,10 +2,12 @@
 
 import * as React from "react";
 import useSWR from "swr";
+
+import { getPageViews } from "@/features/portfolio/data/page-views";
+
 import { Separator } from "./ui/separator";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Skeleton } from "./ui/skeleton";
-import { getPageViews } from "@/features/portfolio/data/page-views";
 
 function FooterDateTime() {
   const [now, setNow] = React.useState<Date | null>(null);

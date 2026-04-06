@@ -1,10 +1,22 @@
 import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Link from "next/link";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
-import Link from "next/link";
+import {
+  rehypeCodeRawString,
+  rehypeHighlightCode,
+  rehypeHighlightCodeRawString,
+} from "@/lib/rehype-code-block";
+import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
+import { rehypeComponent } from "@/lib/rehype-component";
+import { remarkCodeImport } from "@/lib/remark-code-import";
+import { cn } from "@/lib/utils";
+import { rehypeAddQueryParams } from "@/lib/rehype-add-query-params";
+import { UTM_PARAMS } from "@/config/site";
+
 import { Code, Heading } from "./ui/typography";
 import {
   Table,
@@ -15,16 +27,20 @@ import {
   TableRow,
 } from "./ui/table";
 import {
-  rehypeCodeRawString,
-  rehypeHighlightCode,
-  rehypeHighlightCodeRawString,
-} from "@/lib/rehype-code-block";
-import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
-import { remarkCodeImport } from "@/lib/remark-code-import";
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  TabsIndicator,
+} from "./ui/tabs";
 import { FramedImage } from "./embed";
 import { mdxCodeBlockComponents } from "./mdx-code-block";
 import UnmountingDemo from "./blog/unmounting-demo";
 import Callout from "./callout";
+import ComponentPreview from "./component-preview";
+import ComponentSource from "./component-source";
+import CodeCollapsibleWrapper from "./code-collapsible-wrapper";
+import { CodeTabs } from "./code-tabs";
 
 const components: MDXRemoteProps["components"] = {
   h1: (props: React.ComponentProps<"h1">) => (
@@ -53,7 +69,20 @@ const components: MDXRemoteProps["components"] = {
   td: TableCell,
   ...mdxCodeBlockComponents,
   code: Code,
+  ComponentPreview,
+  ComponentSource,
+  CodeCollapsibleWrapper,
+  CodeTabs,
   Callout,
+  Steps: (props) => (
+    <div
+      className="md:ml-3.5 md:border-l md:pl-7.5 prose-h3:text-lg prose-h3:text-wrap"
+      {...props}
+    />
+  ),
+  Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
+    <h3 className={cn("step font-medium", className)} {...props} />
+  ),
   a: ({ href, ...props }: React.ComponentProps<"a">) => {
     const isInternalLink =
       href && (href.startsWith("/") || href.startsWith("#"));
@@ -70,6 +99,18 @@ const components: MDXRemoteProps["components"] = {
       <a target="_blank" rel="noopener noreferrer" href={href} {...props} />
     );
   },
+  Tabs,
+  TabsList,
+  TabsIndicator,
+  TabsTrigger,
+  TabsContent,
+  TabsListInstallType: () => (
+    <TabsList>
+      <TabsTrigger value="cli">Command</TabsTrigger>
+      <TabsTrigger value="manual">Manual</TabsTrigger>
+      <TabsIndicator />
+    </TabsList>
+  ),
   FramedImage,
   UnmountingDemo,
 };
@@ -83,12 +124,12 @@ const options: MDXRemoteProps["options"] = {
         { target: "_blank", rel: "nofollow noopener noreferrer" },
       ],
       rehypeSlug,
-      // rehypeComponent,
+      rehypeComponent,
       rehypeCodeRawString,
       rehypeHighlightCode,
       rehypeHighlightCodeRawString,
       rehypeNpmCommand,
-      // [rehypeAddQueryParams, UTM_PARAMS],
+      [rehypeAddQueryParams, UTM_PARAMS],
     ],
   },
 };

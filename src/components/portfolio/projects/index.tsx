@@ -1,6 +1,7 @@
-import ProjectCard from "./project-card";
 import { PROJECTS } from "@/features/portfolio/data/projects";
 import { Separator } from "@/components/ui/separator";
+
+import ProjectCard from "./project-card";
 
 export default function Projects() {
   if (!PROJECTS || PROJECTS.length === 0) {
