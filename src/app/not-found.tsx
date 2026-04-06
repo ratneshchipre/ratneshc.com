@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+
 import NotFound from "@/components/not-found";
 import { generateWebsiteMetadata } from "@/config/metadata";
 

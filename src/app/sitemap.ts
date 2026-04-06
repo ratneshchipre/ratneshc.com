@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { getAllDocs, getDocsByCategory } from "@/features/doc/data/documents";
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { getAllDocs } from "@/features/doc/data/documents";
+
 import { generateWebsiteMetadata } from "@/config/metadata";
+import { getAllDocs } from "@/features/doc/data/documents";
 import { Doc } from "@/features/doc/types/document";
 
 export const metadata: Metadata = generateWebsiteMetadata({
