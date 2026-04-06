@@ -12,7 +12,7 @@ export default function CTA() {
       className="mt-20 mb-5 scroll-mt-20"
       aria-labelledby="cta-heading"
     >
-      <div className="relative overflow-hidden rounded-2xl border transition-colors">
+      <div className="relative overflow-hidden rounded-2xl border">
         <BackgroundStars
           className="pointer-events-none absolute inset-0 h-full"
           svgOptions={{ duration: 2 }}
