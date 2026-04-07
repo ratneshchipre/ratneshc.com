@@ -21,7 +21,7 @@ export default function CodeCollapsibleWrapper({
       )}
       {...props}
     >
-      <div className="absolute top-1.5 right-9 z-10 flex items-center">
+      <div className="absolute top-2 right-9 z-10 flex items-center max-sm:hidden">
         <Button
           variant="ghost"
           size="sm"

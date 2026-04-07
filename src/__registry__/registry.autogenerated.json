@@ -22,7 +22,7 @@
     {
       "name": "stars-travel",
       "title": "Stars Travel",
-      "description": "Stars Travel",
+      "description": "A motion-driven SVG background with an animated 'infinite travel' effect.",
       "dependencies": [
         "motion"
       ],

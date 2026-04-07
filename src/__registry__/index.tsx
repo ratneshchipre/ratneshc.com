@@ -18,7 +18,7 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/lib/utils.ts")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "utils"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
@@ -26,7 +26,7 @@ export const Index: Record<string, any> = {
   },
   "stars-travel": {
     name: "stars-travel",
-    description: "Stars Travel",
+    description: "A motion-driven SVG background with an animated 'infinite travel' effect.",
     type: "registry:component",
     files: [{
       path: "src/registry/components/stars-travel/stars-travel.tsx",
@@ -35,7 +35,7 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/components/stars-travel/stars-travel.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stars-travel"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
@@ -52,7 +52,7 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/examples/stars-travel-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stars-travel-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

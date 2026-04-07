@@ -7,7 +7,8 @@ export const components: Registry["items"] = [
     name: "stars-travel",
     type: "registry:component",
     title: "Stars Travel",
-    description: "Stars Travel",
+    description:
+      "A motion-driven SVG background with an animated 'infinite travel' effect.",
     dependencies: ["motion"],
     files: [
       {

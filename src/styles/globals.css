@@ -28,6 +28,7 @@
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
+  --color-info: var(--info);
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
@@ -105,6 +106,7 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
+  --info: oklch(0.67 0.17 244.98);
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
   --chart-3: oklch(0.546 0.245 262.881);
@@ -233,7 +235,7 @@
   }
 
   [data-rehype-pretty-code-title] {
-    @apply flex items-center gap-3 border-b border-border/50 bg-muted/5 px-4 py-2.5 text-xs font-medium text-muted-foreground;
+    @apply flex items-center gap-3 border-b border-border/50 bg-muted/5 px-4 py-2.5 pr-14 text-xs font-medium text-muted-foreground;
 
     & svg {
       @apply size-4 shrink-0 opacity-70;

@@ -53,7 +53,7 @@ export default function ComponentPreview({
     }
 
     return <Component />;
-  }, [name]);
+  }, [name, replay, remountOnThemeChange, resolvedTheme]);
 
   return (
     <div

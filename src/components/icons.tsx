@@ -1,10 +1,15 @@
 import {
   ComputerTerminal01Icon,
+  FallingStarIcon,
   FileEmpty02Icon,
 } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { HugeiconsIcon, type HugeiconsIconProps } from "@hugeicons/react";
 
 type IconProps = React.HTMLAttributes<SVGElement>;
+
+type ComponentIconProps = Omit<HugeiconsIconProps, "icon"> & {
+  variant?: string;
+};
 
 export const Icons = {
   github: (props: IconProps) => (
@@ -134,5 +139,14 @@ export function getIconForPackageManager(manager: string) {
       return <Icons.bun />;
     default:
       return <HugeiconsIcon icon={ComputerTerminal01Icon} />;
+  }
+}
+
+export function ComponentIcon({ variant, ...props }: ComponentIconProps) {
+  switch (variant) {
+    case "stars-travel":
+      return <HugeiconsIcon icon={FallingStarIcon} {...props} />;
+    default:
+      return <HugeiconsIcon icon={FileEmpty02Icon} {...props} />;
   }
 }

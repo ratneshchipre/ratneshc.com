@@ -5,6 +5,7 @@ export type DocMetadata = {
   category?: string;
   icon?: string;
   new?: boolean;
+  updated?: boolean;
   readingTime?: string;
   createdAt: string;
   updatedAt: string;
