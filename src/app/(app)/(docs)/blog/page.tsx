@@ -10,7 +10,7 @@ export const metadata: Metadata = generateWebsiteMetadata({
   description:
     "Raw thoughts and real insights on tech, life, and the entrepreneurial journey.",
   keywords: ["blogs", "Ratnesh blog", "Ratnesh blog posts"],
-  image: "blog/blog.png",
+  image: "blogs/blogs.png",
 });
 
 export default function BlogPage() {
