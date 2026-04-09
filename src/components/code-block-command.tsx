@@ -5,13 +5,7 @@ import * as React from "react";
 import type { NpmCommands } from "@/types/unist";
 import type { PackageManager } from "@/hooks/use-package-manager";
 import { usePackageManager } from "@/hooks/use-package-manager";
-import {
-  Tabs,
-  TabsContent,
-  TabsIndicator,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import CopyButton from "./copy-button";
 import { getIconForPackageManager } from "./icons";
@@ -49,14 +43,13 @@ export function CodeBlockCommand({
               return (
                 <TabsTrigger
                   key={key}
-                  className="h-7 rounded-md p-0 px-2 font-geist-mono data-active:bg-muted/70!"
+                  className="h-7 rounded-md p-0 px-2 font-geist-mono data-active:border-muted-foreground/25! data-active:bg-background! data-active:shadow-none!"
                   value={key}
                 >
                   {key}
                 </TabsTrigger>
               );
             })}
-            {/* <TabsIndicator className="h-0.5 translate-y-0 rounded-none bg-foreground shadow-none dark:bg-foreground" /> */}
           </TabsList>
         </div>
         {Object.entries(tabs).map(([key, value]) => {

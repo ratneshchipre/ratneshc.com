@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { BackgroundStars } from "@/components/background-stars";
+import { StarsTravel } from "@/components/stars-travel";
 
 export default function CTA() {
   return (
@@ -14,9 +14,9 @@ export default function CTA() {
       aria-labelledby="cta-heading"
     >
       <div className="relative overflow-hidden rounded-2xl border">
-        <BackgroundStars
+        <StarsTravel
           className="pointer-events-none absolute inset-0 h-full"
-          svgOptions={{ duration: 2 }}
+          svgOptions={{ duration: 1.5 }}
         />
         <div className="relative z-10 flex h-60 flex-col items-center justify-center gap-5 p-6 text-center">
           <div className="flex flex-col gap-3">
