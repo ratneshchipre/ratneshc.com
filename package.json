@@ -1,6 +1,7 @@
 {
   "name": "ratneshc.com",
   "version": "0.1.0",
+  "private": true,
   "description": "A clean, professional showcase for my projects, work history, and personal blog as a Full Stack Developer.",
   "homepage": "https://ratneshc.com",
   "license": "MIT",
@@ -16,11 +17,23 @@
       "url": "https://github.com/ratneshchipre"
     }
   ],
+  "funding": "https://github.com/sponsors/ratneshchipre",
+  "bugs": {
+    "url": "https://github.com/ratneshchipre/ratneshc.com/issues"
+  },
+  "keywords": [
+    "Ratnesh",
+    "Ratnesh Chipre",
+    "ratnesh portfolio",
+    "web developer",
+    "typescript",
+    "react",
+    "next.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ratneshchipre/ratneshc.com.git"
   },
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
