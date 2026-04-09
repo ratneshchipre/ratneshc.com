@@ -9,6 +9,7 @@ import {
   getAllDocs,
   getDocBySlug,
   getDocsByCategory,
+  getDocUrl,
 } from "@/features/doc/data/documents";
 import { MDX } from "@/components/mdx";
 import { Doc } from "@/features/doc/types/document";
@@ -25,6 +26,7 @@ import { Separator } from "@/components/ui/separator";
 import { SITE_CONFIG } from "@/config/site";
 import { generateWebsiteMetadata } from "@/config/metadata";
 import DocsTOC from "@/components/docs-toc";
+import { toIsoDate } from "@/utils/date";
 
 export async function generateStaticParams() {
   const docs = getAllDocs();
@@ -67,9 +69,9 @@ function getPageJsonLd(doc: Doc): WithContext<PageSchema> {
     "@type": "BlogPosting",
     headline: doc.metadata.title,
     description: doc.metadata.description,
-    image:
-      doc.metadata.image ||
-      `/og/simple?title=${encodeURIComponent(doc.metadata.title)}`,
+    image: doc.metadata.image
+      ? `${SITE_CONFIG.url}${doc.metadata.image}`
+      : SITE_CONFIG.ogImage,
     url: `${SITE_CONFIG.url}${getDocUrl(doc)}`,
     datePublished: toIsoDate(doc.metadata.createdAt),
     dateModified: toIsoDate(doc.metadata.updatedAt),
@@ -181,22 +183,4 @@ export default async function BlogPostPage({
       </div>
     </>
   );
-}
-
-function getDocUrl(doc: Doc) {
-  const isComponent = doc.metadata.category === "components";
-  return isComponent ? `/components/${doc.slug}` : `/blog/${doc.slug}`;
-}
-
-function toIsoDate(value?: string) {
-  if (!value) {
-    return undefined;
-  }
-
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) {
-    return undefined;
-  }
-
-  return date.toISOString();
 }

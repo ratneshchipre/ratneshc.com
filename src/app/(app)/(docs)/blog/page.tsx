@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { generateWebsiteMetadata } from "@/config/metadata";
-import { getAllDocs } from "@/features/doc/data/documents";
+import { getDocsByCategory } from "@/features/doc/data/documents";
 import { Doc } from "@/features/doc/types/document";
 
 export const metadata: Metadata = generateWebsiteMetadata({
@@ -14,7 +14,7 @@ export const metadata: Metadata = generateWebsiteMetadata({
 });
 
 export default function BlogPage() {
-  const blogs = getAllDocs().filter((doc) => doc.metadata.category === "blogs");
+  const docs = getDocsByCategory("blogs");
 
   return (
     <section
@@ -31,7 +31,7 @@ export default function BlogPage() {
         </p>
       </header>
       <div className="group divide-y divide-border font-geist-sans *:py-3 first:*:pt-0">
-        {blogs.map((doc: Doc) => (
+        {docs.map((doc: Doc) => (
           <Link
             key={doc.slug}
             href={`/blog/${doc.slug}`}

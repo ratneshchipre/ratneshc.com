@@ -1,7 +1,8 @@
 "use client";
 
-import ThemeProvider from "@/components/theme-provider";
 import { AppProgressProvider } from "@bprogress/next";
+
+import ThemeProvider from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
