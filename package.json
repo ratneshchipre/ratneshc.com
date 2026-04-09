@@ -1,6 +1,25 @@
 {
-  "name": "portfolio-v2",
+  "name": "ratneshc.com",
   "version": "0.1.0",
+  "description": "A clean, professional showcase for my projects, work history, and personal blog as a Full Stack Developer.",
+  "homepage": "https://ratneshc.com",
+  "license": "MIT",
+  "author": {
+    "name": "Ratnesh Chipre",
+    "email": "ratneshchipre@gmail.com",
+    "url": "https://github.com/ratneshchipre"
+  },
+  "contributors": [
+    {
+      "name": "Ratnesh Chipre",
+      "email": "ratneshchipre@gmail.com",
+      "url": "https://github.com/ratneshchipre"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratneshchipre/ratneshc.com.git"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
