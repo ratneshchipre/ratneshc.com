@@ -37,6 +37,10 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/",
   },
   {
+    title: "Components",
+    href: "/components",
+  },
+  {
     title: "Blog",
     href: "/blog",
   },
