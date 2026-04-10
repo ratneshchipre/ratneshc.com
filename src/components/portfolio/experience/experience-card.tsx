@@ -58,8 +58,8 @@ function CurrentEmployerBadge() {
       role="img"
       aria-label="Current employer"
     >
-      <span className="absolute inline-flex size-3 animate-ping rounded-full bg-sky-500/30" />
-      <span className="relative inline-flex size-2 rounded-full bg-sky-500" />
+      <span className="absolute inline-flex size-3 animate-ping rounded-full bg-info/30" />
+      <span className="relative inline-flex size-2 rounded-full bg-info" />
     </span>
   );
 }

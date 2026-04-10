@@ -4,7 +4,6 @@ import Link from "next/link";
 import { getDocsByCategory } from "@/features/doc/data/documents";
 import { generateWebsiteMetadata } from "@/config/metadata";
 import { cn } from "@/lib/utils";
-import { ComponentIcon } from "@/components/icons";
 
 export const metadata: Metadata = generateWebsiteMetadata({
   title: "Components",
@@ -49,17 +48,14 @@ export default function ComponentsPage() {
           )
           .map((doc) => (
             <ComponentItem key={doc.slug} href={`/components/${doc.slug}`}>
-              <ComponentItemIcon>
-                <ComponentIcon variant={doc.slug} />
-                {(doc.metadata.new || doc.metadata.updated) && (
-                  <ComponentItemDot
-                    aria-label={doc.metadata.new ? "New" : "Updated"}
-                  />
-                )}
-              </ComponentItemIcon>
               <ComponentItemTitle as="h3">
-                {doc.metadata.title} &ndash; {doc.metadata.description}
+                {doc.metadata.title}
               </ComponentItemTitle>
+              {(doc.metadata.new || doc.metadata.updated) && (
+                <ComponentItemDot
+                  aria-label={doc.metadata.new ? "New" : "Updated"}
+                />
+              )}
             </ComponentItem>
           ))}
       </div>
@@ -74,22 +70,7 @@ export function ComponentItem({
   return (
     <Link
       className={cn(
-        "flex w-full cursor-pointer items-center justify-between gap-5 text-foreground group-hover:text-ring hover:text-foreground [&_span]:text-muted-foreground [&_span]:group-hover:text-ring hover:[&_span]:text-muted-foreground",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-export function ComponentItemIcon({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
-  return (
-    <div
-      className={cn(
-        "relative flex size-6.5 shrink-0 items-center justify-center rounded-md border border-muted-foreground/15 bg-muted [&_svg]:pointer-events-none [&_svg]:text-muted-foreground [&_svg:not([class*='size-'])]:size-4",
+        "flex w-fit cursor-pointer items-center justify-between gap-3 text-foreground",
         className
       )}
       {...props}
@@ -103,10 +84,7 @@ export function ComponentItemDot({
 }: Omit<React.ComponentProps<"span">, "children">) {
   return (
     <span
-      className={cn(
-        "absolute -top-1 -right-1 flex items-center justify-center",
-        className
-      )}
+      className={cn("flex items-center justify-center", className)}
       {...props}
     >
       <span className="flex size-2 rounded-sm bg-info ring-1 ring-background" />
