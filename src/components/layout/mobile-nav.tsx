@@ -1,8 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
+import { cn } from "@/lib/utils";
 import { NavItem } from "@/types/nav";
 import {
   DropdownMenu,
@@ -16,6 +18,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 
 export default function MobileNav({ items }: { items: NavItem[] }) {
   const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
 
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
@@ -36,16 +39,31 @@ export default function MobileNav({ items }: { items: NavItem[] }) {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="discrete-menu-content">
         <DropdownMenuGroup>
-          {items.map((item) => (
-            <DropdownMenuItem key={item.href} onSelect={() => setOpen(false)}>
-              <Link
-                href={item.href ?? "#"}
-                className="w-full font-geist-pixel-square text-sm font-medium text-muted-foreground transition-colors group-data-highlighted:text-foreground"
+          {items.map((item) => {
+            const isActive =
+              pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(item.href));
+
+            return (
+              <DropdownMenuItem
+                key={item.href}
+                onSelect={() => setOpen(false)}
+                className="bg-transparent! hover:bg-transparent!"
               >
-                {item.title}
-              </Link>
-            </DropdownMenuItem>
-          ))}
+                <Link
+                  href={item.href}
+                  className={cn(
+                    "w-full font-geist-pixel-square text-sm font-medium transition-colors",
+                    isActive
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {item.title}
+                </Link>
+              </DropdownMenuItem>
+            );
+          })}
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
