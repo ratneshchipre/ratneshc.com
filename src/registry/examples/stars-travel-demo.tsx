@@ -4,7 +4,7 @@ export default function StarsTravelDemo() {
   return (
     <div className="relative flex min-h-72 w-full flex-col items-center justify-center overflow-hidden">
       <StarsTravel className="pointer-events-none absolute inset-0" />
-      <h1 className="relative z-10 max-w-70 text-center text-3xl max-sm:text-2xl">
+      <h1 className="relative z-10 max-w-70 text-center text-3xl max-sm:max-w-60 max-sm:text-2xl">
         Space travel looks better in code
       </h1>
     </div>
