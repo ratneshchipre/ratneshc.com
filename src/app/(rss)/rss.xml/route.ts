@@ -30,13 +30,13 @@ export function GET() {
   const items = allItems
     .map(
       (item) =>
-        `<item>
-          <title><![CDATA[${item.title}]]></title>
-          <link>${item.link}</link>
-          <guid isPermaLink="true">${item.link}</guid>
-          <description><![CDATA[${item.description}]]></description>
-          <pubDate>${item.date.toUTCString()}</pubDate>
-        </item>`
+        `    <item>
+      <title><![CDATA[${item.title}]]></title>
+      <link>${item.link}</link>
+      <guid isPermaLink="true">${item.link}</guid>
+      <description><![CDATA[${item.description}]]></description>
+      <pubDate>${item.date.toUTCString()}</pubDate>
+    </item>`
     )
     .join("\n");
 
@@ -49,7 +49,7 @@ export function GET() {
     <description><![CDATA[${SITE_CONFIG.description}]]></description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    ${items}
+${items}
   </channel>
 </rss>`;
 

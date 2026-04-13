@@ -12,13 +12,13 @@ export function GET() {
   const items = blogs
     .map(
       (doc) =>
-        `<item>
-          <title><![CDATA[${doc.metadata.title}]]></title>
-          <link>${SITE_CONFIG.url}/blog/${doc.slug}</link>
-          <guid isPermaLink="true">${SITE_CONFIG.url}/blog/${doc.slug}</guid>
-          <description><![CDATA[${doc.metadata.description || ""}]]></description>
-          <pubDate>${new Date(doc.metadata.createdAt).toUTCString()}</pubDate>
-        </item>`
+        `    <item>
+      <title><![CDATA[${doc.metadata.title}]]></title>
+      <link>${SITE_CONFIG.url}/blog/${doc.slug}</link>
+      <guid isPermaLink="true">${SITE_CONFIG.url}/blog/${doc.slug}</guid>
+      <description><![CDATA[${doc.metadata.description || ""}]]></description>
+      <pubDate>${new Date(doc.metadata.createdAt).toUTCString()}</pubDate>
+    </item>`
     )
     .join("\n");
 
@@ -31,7 +31,7 @@ export function GET() {
     <description><![CDATA[${SITE_CONFIG.description}]]></description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    ${items}
+${items}
   </channel>
 </rss>`;
 
