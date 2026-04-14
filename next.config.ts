@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
+        source: "/:section(blog|components)/:slug.mdx",
+        destination: "/doc.mdx/:slug",
+      },
+      {
         source: "/rss",
         destination: "/rss.xml",
       },
