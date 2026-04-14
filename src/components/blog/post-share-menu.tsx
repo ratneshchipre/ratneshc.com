@@ -43,12 +43,11 @@ export default function PostShareMenu({ url }: { url: string }) {
     <DropdownMenu>
       <DropdownMenuTrigger
         className={cn(
-          buttonVariants({ variant: "secondary" }),
+          buttonVariants({ variant: "secondary", size: "icon" }),
           "cursor-pointer font-geist-sans"
         )}
       >
         <HugeiconsIcon icon={Share03Icon} strokeWidth={2} className="size-4" />
-        Share
       </DropdownMenuTrigger>
       <DropdownMenuContent
         className="discrete-menu-content w-40 font-geist-sans"
