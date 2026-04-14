@@ -36,7 +36,7 @@ import {
 } from "./ui/tabs";
 import { FramedImage } from "./embed";
 import { mdxCodeBlockComponents } from "./mdx-code-block";
-import UnmountingDemo from "./blog/unmounting-demo";
+import UnmountingDemo from "./docs/unmounting-demo";
 import Callout from "./callout";
 import ComponentPreview from "./component-preview";
 import ComponentSource from "./component-source";

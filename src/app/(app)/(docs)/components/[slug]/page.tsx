@@ -12,15 +12,17 @@ import {
 } from "@/features/doc/data/documents";
 import { MDX } from "@/components/mdx";
 import { Doc } from "@/features/doc/types/document";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Prose } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   ArrowLeft02Icon,
   ArrowMoveUpLeftIcon,
   ArrowRight02Icon,
 } from "@hugeicons/core-free-icons";
-import PostShareMenu from "@/components/blog/post-share-menu";
+import { LLMCopyButtonWithViewOptions } from "@/components/docs/page-actions";
+import PostShareMenu from "@/components/docs/post-share-menu";
 import { SITE_CONFIG } from "@/config/site";
 import { generateWebsiteMetadata } from "@/config/metadata";
 import DocsTOC from "@/components/docs-toc";
@@ -127,29 +129,41 @@ export default async function ComponentSlugPage({
             Components
           </Link>
           <div className="flex items-center gap-2">
+            <LLMCopyButtonWithViewOptions
+              markdownUrl={`/components/${doc.slug}.mdx`}
+              isComponent
+            />
             <PostShareMenu url={getDocUrl(doc)} />
             {previous && (
-              <Link href={`/components/${previous.slug}`}>
-                <Button variant="secondary" className="cursor-pointer px-2">
-                  <HugeiconsIcon
-                    icon={ArrowLeft02Icon}
-                    strokeWidth={2}
-                    className="size-4"
-                  />
-                  <span className="sr-only">Previous</span>
-                </Button>
+              <Link
+                href={`/components/${previous.slug}`}
+                className={cn(
+                  buttonVariants({ variant: "secondary" }),
+                  "cursor-pointer px-2"
+                )}
+              >
+                <HugeiconsIcon
+                  icon={ArrowLeft02Icon}
+                  strokeWidth={2}
+                  className="size-4"
+                />
+                <span className="sr-only">Previous</span>
               </Link>
             )}
             {next && (
-              <Link href={`/components/${next.slug}`}>
-                <Button variant="secondary" className="cursor-pointer px-2">
-                  <span className="sr-only">Next</span>
-                  <HugeiconsIcon
-                    icon={ArrowRight02Icon}
-                    strokeWidth={2}
-                    className="size-4"
-                  />
-                </Button>
+              <Link
+                href={`/components/${next.slug}`}
+                className={cn(
+                  buttonVariants({ variant: "secondary" }),
+                  "cursor-pointer px-2"
+                )}
+              >
+                <span className="sr-only">Next</span>
+                <HugeiconsIcon
+                  icon={ArrowRight02Icon}
+                  strokeWidth={2}
+                  className="size-4"
+                />
               </Link>
             )}
           </div>
