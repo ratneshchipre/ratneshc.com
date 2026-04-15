@@ -17,6 +17,7 @@ import {
   Cancel01Icon,
   CollectionsBookmarkIcon,
   ComputerIcon,
+  File02Icon,
   Folder01Icon,
   GitCommitIcon,
   GithubIcon,
@@ -131,6 +132,23 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = [
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/ratneshchipre",
     icon: Linkedin01Icon,
+    openInNewTab: true,
+  },
+];
+
+const OTHER_LINK_ITEMS: CommandLinkItem[] = [
+  {
+    title: "llms.txt",
+    href: "/llms.txt",
+    icon: File02Icon,
+    openInNewTab: true,
+  },
+  {
+    title: "RSS Feed",
+    href: "/rss.xml",
+    icon: (
+      <Icons.rss className="text-muted-foreground group-data-selected/command-item:text-muted-foreground!" />
+    ),
     openInNewTab: true,
   },
 ];
@@ -295,6 +313,11 @@ export function CommandMenu({ docs }: { docs: Doc[] }) {
                 System
               </CommandItem>
             </CommandGroup>
+            <CommandLinkGroup
+              heading="Other"
+              links={OTHER_LINK_ITEMS}
+              onLinkSelect={handleOpenLink}
+            />
           </CommandList>
           <CommandMenuFooter />
         </Command>
