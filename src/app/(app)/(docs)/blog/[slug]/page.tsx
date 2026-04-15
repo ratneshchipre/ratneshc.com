@@ -14,6 +14,11 @@ import {
 import { MDX } from "@/components/mdx";
 import { Doc } from "@/features/doc/types/document";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Prose } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -29,6 +34,8 @@ import { SITE_CONFIG } from "@/config/site";
 import { generateWebsiteMetadata } from "@/config/metadata";
 import DocsTOC from "@/components/docs-toc";
 import { toIsoDate } from "@/utils/date";
+import { Kbd } from "@/components/ui/kbd";
+import DocsKeyboardShortcuts from "@/components/docs/docs-keyboard-shortcuts";
 
 export async function generateStaticParams() {
   const docs = getAllDocs();
@@ -113,6 +120,10 @@ export default async function BlogPostPage({
           __html: JSON.stringify(getPageJsonLd(doc)).replace(/</g, "\\u003c"),
         }}
       />
+      <DocsKeyboardShortcuts
+        previous={previous ? `/blog/${previous.slug}` : null}
+        next={next ? `/blog/${next.slug}` : null}
+      />
       <div className="flex flex-col space-y-12 pt-10">
         <div className="flex items-center justify-between">
           <Link
@@ -132,36 +143,62 @@ export default async function BlogPostPage({
             />
             <PostShareMenu url={getDocUrl(doc)} />
             {previous && (
-              <Link
-                href={`/blog/${previous.slug}`}
-                className={cn(
-                  buttonVariants({ variant: "secondary", size: "icon" }),
-                  "cursor-pointer border-none"
-                )}
-              >
-                <HugeiconsIcon
-                  icon={ArrowLeft02Icon}
-                  strokeWidth={2}
-                  className="size-4"
-                />
-                <span className="sr-only">Previous</span>
-              </Link>
+              <Tooltip>
+                <TooltipTrigger
+                  render={<Link href={`/blog/${previous.slug}`} />}
+                  className={cn(
+                    buttonVariants({ variant: "secondary", size: "icon" }),
+                    "cursor-pointer border-none"
+                  )}
+                >
+                  <HugeiconsIcon
+                    icon={ArrowLeft02Icon}
+                    strokeWidth={2}
+                    className="size-4"
+                  />
+                  <span className="sr-only">Previous</span>
+                </TooltipTrigger>
+                <TooltipContent
+                  className="py-2 pr-2 pl-3 text-[0.85rem]"
+                  sideOffset={10}
+                >
+                  <div className="flex items-center gap-2">
+                    Previous Post
+                    <Kbd>
+                      <HugeiconsIcon icon={ArrowLeft02Icon} />
+                    </Kbd>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
             )}
             {next && (
-              <Link
-                href={`/blog/${next.slug}`}
-                className={cn(
-                  buttonVariants({ variant: "secondary", size: "icon" }),
-                  "cursor-pointer border-none"
-                )}
-              >
-                <span className="sr-only">Next</span>
-                <HugeiconsIcon
-                  icon={ArrowRight02Icon}
-                  strokeWidth={2}
-                  className="size-4"
-                />
-              </Link>
+              <Tooltip>
+                <TooltipTrigger
+                  render={<Link href={`/blog/${next.slug}`} />}
+                  className={cn(
+                    buttonVariants({ variant: "secondary", size: "icon" }),
+                    "cursor-pointer border-none"
+                  )}
+                >
+                  <span className="sr-only">Next</span>
+                  <HugeiconsIcon
+                    icon={ArrowRight02Icon}
+                    strokeWidth={2}
+                    className="size-4"
+                  />
+                </TooltipTrigger>
+                <TooltipContent
+                  className="py-2 pr-2 pl-3 text-[0.85rem]"
+                  sideOffset={10}
+                >
+                  <div className="flex items-center gap-2">
+                    Next Post
+                    <Kbd>
+                      <HugeiconsIcon icon={ArrowRight02Icon} />
+                    </Kbd>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
             )}
           </div>
         </div>
