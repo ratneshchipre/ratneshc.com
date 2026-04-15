@@ -135,8 +135,8 @@ export default async function BlogPostPage({
               <Link
                 href={`/blog/${previous.slug}`}
                 className={cn(
-                  buttonVariants({ variant: "secondary" }),
-                  "cursor-pointer px-2"
+                  buttonVariants({ variant: "secondary", size: "icon" }),
+                  "cursor-pointer border-none"
                 )}
               >
                 <HugeiconsIcon
@@ -151,8 +151,8 @@ export default async function BlogPostPage({
               <Link
                 href={`/blog/${next.slug}`}
                 className={cn(
-                  buttonVariants({ variant: "secondary" }),
-                  "cursor-pointer px-2"
+                  buttonVariants({ variant: "secondary", size: "icon" }),
+                  "cursor-pointer border-none"
                 )}
               >
                 <span className="sr-only">Next</span>

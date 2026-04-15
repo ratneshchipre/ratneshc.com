@@ -75,7 +75,6 @@ export function LLMCopyButton({ markdownUrl }: { markdownUrl: string }) {
     <Button
       className="h-8 cursor-pointer gap-2 border-none pr-2 pl-2.5 font-geist-sans text-[0.8125rem] [&_svg:not([class*='size-'])]:size-3.5"
       variant="secondary"
-      size="sm"
       aria-busy={isCopying}
       disabled={isCopying}
       onClick={handleCopy}
@@ -186,8 +185,8 @@ export function ViewOptions({
         className={cn(
           buttonVariants({
             variant: "secondary",
-            size: "sm",
-            className: "size-8 cursor-pointer border-none",
+            size: "icon",
+            className: "cursor-pointer border-none font-geist-sans",
           })
         )}
         aria-label="View Options"
@@ -195,7 +194,7 @@ export function ViewOptions({
         <HugeiconsIcon
           icon={ArrowDown01Icon}
           strokeWidth={2}
-          className="mt-0.5 size-4"
+          className="size-4"
         />
         <span className="sr-only">View Options</span>
       </DropdownMenuTrigger>
