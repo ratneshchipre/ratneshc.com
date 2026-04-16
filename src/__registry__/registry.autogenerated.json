@@ -35,6 +35,23 @@
       "docs": "https://ratneshc.com/components/stars-travel",
       "type": "registry:component",
       "author": "ratneshc <ratneshchipre@gmail.com>"
+    },
+    {
+      "name": "perspective-tilt",
+      "title": "Perspective Tilt",
+      "description": "A 3D card with perspective-driven tilt and cinematic focus-blur transitions for smooth card entry and exit animations.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/perspective-tilt/perspective-tilt.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "docs": "https://ratneshc.com/components/perspective-tilt",
+      "type": "registry:component",
+      "author": "ratneshc <ratneshchipre@gmail.com>"
     }
   ]
 }

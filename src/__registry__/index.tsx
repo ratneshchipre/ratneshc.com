@@ -41,6 +41,23 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "perspective-tilt": {
+    name: "perspective-tilt",
+    description: "A 3D card with perspective-driven tilt and cinematic focus-blur transitions for smooth card entry and exit animations.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/perspective-tilt/perspective-tilt.tsx",
+      type: "registry:component",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/perspective-tilt/perspective-tilt.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "perspective-tilt"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "stars-travel-demo": {
     name: "stars-travel-demo",
     description: "",
@@ -70,6 +87,23 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import("@/registry/examples/stars-travel-duration-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stars-travel-duration-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "perspective-tilt-demo": {
+    name: "perspective-tilt-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/perspective-tilt-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/perspective-tilt-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "perspective-tilt-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
