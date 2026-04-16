@@ -25,4 +25,15 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "perspective-tilt-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("perspective-tilt")],
+    files: [
+      {
+        path: "examples/perspective-tilt-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

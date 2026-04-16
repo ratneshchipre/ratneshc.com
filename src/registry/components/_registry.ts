@@ -18,4 +18,19 @@ export const components: Registry["items"] = [
     ],
     docs: "https://ratneshc.com/components/stars-travel",
   },
+  {
+    name: "perspective-tilt",
+    type: "registry:component",
+    title: "Perspective Tilt",
+    description:
+      "A 3D card with perspective-driven tilt and cinematic focus-blur transitions for smooth card entry and exit animations.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "components/perspective-tilt/perspective-tilt.tsx",
+        type: "registry:component",
+      },
+    ],
+    docs: "https://ratneshc.com/components/perspective-tilt",
+  },
 ];
