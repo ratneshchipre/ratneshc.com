@@ -35,13 +35,22 @@ npx shadcn@latest add "https://ratneshc.com/r/stars-travel.json"
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install motion
+npm install motion clsx tailwind-merge
 ```
+
+<Step>Add a cn helper.</Step>
+
+<ComponentSource
+  src="src/lib/utils.ts"
+  title="lib/utils.ts"
+  showLineNumbers
+  collapsible="false"
+/>
 
 <Step>Copy and paste the following code into your project.</Step>
 
 <ComponentSource
-  name="stars-travel"
+  src="src/registry/components/stars-travel/stars-travel.tsx"
   title="components/stars-travel.tsx"
   showLineNumbers
 />
@@ -61,7 +70,11 @@ import { StarsTravel } from "@/components/stars-travel";
 ```
 
 ```tsx
-<StarsTravel />
+<StarsTravel>
+  <div className="relative z-10 flex h-full items-center justify-center text-white">
+    Your content goes here
+  </div>
+</StarsTravel>
 ```
 
 ## Examples
