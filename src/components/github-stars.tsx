@@ -36,7 +36,7 @@ export default function GithubStars({
           className="flex items-center justify-center gap-2"
         >
           <Icons.github className="size-4" />
-          <span className="text-[0.85rem] text-muted-foreground tabular-nums">
+          <span className="font-geist-sans text-[0.85rem] text-muted-foreground tabular-nums">
             {new Intl.NumberFormat("en-US", {
               notation: "compact",
               compactDisplay: "short",
