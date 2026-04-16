@@ -7,7 +7,7 @@ export default function StarsTravelDurationDemo() {
         className="pointer-events-none absolute inset-0"
         svgOptions={{ duration: 1 }}
       />
-      <h1 className="relative z-10 max-w-70 text-center text-3xl max-sm:max-w-60 max-sm:text-2xl">
+      <h1 className="relative z-10 max-w-70 text-center text-3xl text-foreground max-sm:max-w-60 max-sm:text-2xl">
         Space travel looks better in code
       </h1>
     </div>
