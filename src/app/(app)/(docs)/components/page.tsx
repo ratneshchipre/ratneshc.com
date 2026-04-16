@@ -38,7 +38,7 @@ export default function ComponentsPage() {
           A curated component registry built on shadcn/ui. More coming soon.
         </p>
       </header>
-      <div className="group font-geist-sans *:py-3 first:*:pt-0">
+      <div className="group grid grid-cols-1 gap-2 font-geist-sans sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
         {docs
           .slice()
           .sort((a, b) =>
@@ -70,7 +70,7 @@ export function ComponentItem({
   return (
     <Link
       className={cn(
-        "flex w-fit cursor-pointer items-center justify-between gap-3 text-foreground",
+        "flex w-full cursor-pointer items-center gap-3 py-3 text-foreground",
         className
       )}
       {...props}

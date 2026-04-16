@@ -2,6 +2,7 @@ import {
   ComputerTerminal01Icon,
   FallingStarIcon,
   FileEmpty02Icon,
+  PerspectiveIcon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon, type HugeiconsIconProps } from "@hugeicons/react";
 
@@ -223,6 +224,8 @@ export function ComponentIcon({ variant, ...props }: ComponentIconProps) {
   switch (variant) {
     case "stars-travel":
       return <HugeiconsIcon icon={FallingStarIcon} {...props} />;
+    case "perspective-tilt":
+      return <HugeiconsIcon icon={PerspectiveIcon} {...props} />;
     default:
       return <HugeiconsIcon icon={FileEmpty02Icon} {...props} />;
   }
