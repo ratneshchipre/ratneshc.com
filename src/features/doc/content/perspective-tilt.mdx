@@ -1,0 +1,123 @@
+---
+title: Perspective Tilt
+description: A 3D card with perspective-driven tilt and cinematic focus-blur transitions for smooth card entry and exit animations.
+image: /images/components/perspective-tilt.png
+category: components
+updated: true
+createdAt: 2026-04-15
+updatedAt: 2026-04-15
+---
+
+<ComponentPreview
+  name="perspective-tilt-demo"
+  openInV0Url="https://ratneshc.com/r/perspective-tilt.json"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsListInstallType />
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://ratneshc.com/r/perspective-tilt.json"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion clsx tailwind-merge
+```
+
+<Step>Add a cn helper.</Step>
+
+<ComponentSource
+  src="src/lib/utils.ts"
+  title="lib/utils.ts"
+  showLineNumbers
+  collapsible="false"
+/>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  src="src/registry/components/perspective-tilt/perspective-tilt.tsx"
+  title="components/perspective-tilt.tsx"
+  showLineNumbers
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  PerspectiveTilt,
+  PerspectiveTiltTrigger,
+  PerspectiveTiltContent,
+} from "@/components/perspective-tilt";
+```
+
+```tsx
+<PerspectiveTilt>
+  <PerspectiveTiltTrigger>Open</PerspectiveTiltTrigger>
+  <PerspectiveTiltContent>
+    {/* Your content here */}
+  </PerspectiveTiltContent>
+</PerspectiveTilt>
+```
+
+## Composition
+
+Use the following composition to build a `PerspectiveTilt`:
+
+```text
+PerspectiveTilt
+├── PerspectiveTiltTrigger
+└── PerspectiveTiltContent
+```
+
+## API Reference
+
+### PerspectiveTilt
+
+The root component that manages the open/close state.
+
+| Prop           | Type                      | Default | Description                                       |
+| :------------- | :------------------------ | :------ | :------------------------------------------------ |
+| `open`         | `boolean`                 | -       | The controlled open state of the dialog.          |
+| `onOpenChange` | `(open: boolean) => void` | -       | Event handler called when the open state changes. |
+| `children`     | `ReactNode`               | -       | The components to be wrapped by the context.      |
+
+### PerspectiveTiltTrigger
+
+The component that toggles the open state.
+
+| Prop        | Type        | Default | Description                                           |
+| :---------- | :---------- | :------ | :---------------------------------------------------- |
+| `asChild`   | `boolean`   | `false` | When true, merges its props onto its immediate child. |
+| `className` | `string`    | -       | Custom styling for the trigger element.               |
+| `children`  | `ReactNode` | -       | The element that triggers the dialog on click.        |
+
+### PerspectiveTiltContent
+
+The component that renders the animated card content.
+
+| Prop        | Type        | Default | Description                                 |
+| :---------- | :---------- | :------ | :------------------------------------------ |
+| `className` | `string`    | -       | Custom styling for the modal content card.  |
+| `children`  | `ReactNode` | -       | The content to be rendered within the card. |
