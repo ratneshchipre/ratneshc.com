@@ -11,6 +11,9 @@ export function rehypeCodeRawString() {
         const codeEl = node.children?.[0];
         if (codeEl?.tagName !== "code") return;
 
+        // Capture metadata from the code element
+        node.__meta__ = codeEl.data?.meta;
+
         const raw = codeEl.children?.[0]?.value;
         if (!raw) return;
 
@@ -60,11 +63,16 @@ export function rehypeHighlightCodeRawString() {
         const rawString =
           preElement.properties?.["__rawString__"] || node.__rawString__;
 
+        const meta = (node.__meta__ as string) || "";
+        const hideLineNumbers =
+          meta.includes("hideLineNumbers") ||
+          preElement.properties?.["data-language"] === "text";
+
         preElement.properties = {
-          ...preElement.properties,
+          ...(preElement.properties || {}),
           __withMeta__: node.children?.[0]?.tagName === "figcaption",
           __rawString__: rawString,
-          "data-line-numbers": "",
+          ...(hideLineNumbers ? {} : { "data-line-numbers": "" }),
         };
       }
     });

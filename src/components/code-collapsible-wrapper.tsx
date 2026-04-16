@@ -46,7 +46,7 @@ export default function CodeCollapsibleWrapper({
       </div>
       <div
         className={cn(
-          "absolute inset-x-0 bottom-0 flex h-32 items-end justify-center bg-linear-to-t from-code from-50% to-transparent pb-4",
+          "absolute inset-x-0 bottom-0 z-20 flex h-32 items-end justify-center bg-linear-to-t from-code from-50% to-transparent pb-4",
           expanded && "hidden"
         )}
       >
