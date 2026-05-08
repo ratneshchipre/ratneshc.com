@@ -36,4 +36,15 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "copy-button-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("copy-button")],
+    files: [
+      {
+        path: "examples/copy-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

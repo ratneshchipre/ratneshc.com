@@ -33,4 +33,19 @@ export const components: Registry["items"] = [
     ],
     docs: "https://ratneshc.com/components/perspective-tilt",
   },
+  {
+    name: "copy-button",
+    type: "registry:component",
+    title: "Copy Button",
+    description: "A copy button with direction-aware icon transitions.",
+    dependencies: ["motion"],
+    registryDependencies: [getRegistryItemUrl("use-copy-to-clipboard")],
+    files: [
+      {
+        path: "components/copy-button/copy-button.tsx",
+        type: "registry:component",
+      },
+    ],
+    docs: "https://ratneshc.com/components/copy-button",
+  },
 ];
