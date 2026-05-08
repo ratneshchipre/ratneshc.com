@@ -20,6 +20,19 @@
       "author": "ratneshc <ratneshchipre@gmail.com>"
     },
     {
+      "name": "use-copy-to-clipboard",
+      "title": "useCopyToClipboard",
+      "files": [
+        {
+          "path": "src/registry/hooks/use-copy-to-clipboard/use-copy-to-clipboard.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-copy-to-clipboard.ts"
+        }
+      ],
+      "type": "registry:hook",
+      "author": "ratneshc <ratneshchipre@gmail.com>"
+    },
+    {
       "name": "stars-travel",
       "title": "Stars Travel",
       "description": "A motion-driven SVG background with an animated 'infinite travel' effect.",
@@ -50,6 +63,26 @@
         }
       ],
       "docs": "https://ratneshc.com/components/perspective-tilt",
+      "type": "registry:component",
+      "author": "ratneshc <ratneshchipre@gmail.com>"
+    },
+    {
+      "name": "copy-button",
+      "title": "Copy Button",
+      "description": "A copy button with direction-aware icon transitions.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ratneshc.com/r/use-copy-to-clipboard.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/copy-button/copy-button.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "docs": "https://ratneshc.com/components/copy-button",
       "type": "registry:component",
       "author": "ratneshc <ratneshchipre@gmail.com>"
     }

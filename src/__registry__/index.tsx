@@ -24,6 +24,23 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "use-copy-to-clipboard": {
+    name: "use-copy-to-clipboard",
+    description: "",
+    type: "registry:hook",
+    files: [{
+      path: "src/registry/hooks/use-copy-to-clipboard/use-copy-to-clipboard.ts",
+      type: "registry:hook",
+      target: "@hooks/use-copy-to-clipboard.ts",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/hooks/use-copy-to-clipboard/use-copy-to-clipboard.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "use-copy-to-clipboard"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "stars-travel": {
     name: "stars-travel",
     description: "A motion-driven SVG background with an animated 'infinite travel' effect.",
@@ -53,6 +70,23 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import("@/registry/components/perspective-tilt/perspective-tilt.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "perspective-tilt"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "copy-button": {
+    name: "copy-button",
+    description: "A copy button with direction-aware icon transitions.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/copy-button/copy-button.tsx",
+      type: "registry:component",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/copy-button/copy-button.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "copy-button"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
@@ -104,6 +138,23 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import("@/registry/examples/perspective-tilt-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "perspective-tilt-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "copy-button-demo": {
+    name: "copy-button-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/copy-button-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/copy-button-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "copy-button-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

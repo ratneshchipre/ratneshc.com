@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-copy-to-clipboard",
+  "title": "useCopyToClipboard",
+  "author": "ratneshc <ratneshchipre@gmail.com>",
+  "files": [
+    {
+      "path": "src/registry/hooks/use-copy-to-clipboard/use-copy-to-clipboard.ts",
+      "content": "// Thanks @ncdai\r\n\r\n\"use client\";\r\n\r\nimport * as React from \"react\";\r\n\r\nexport type CopyState = \"idle\" | \"done\" | \"error\";\r\n\r\nexport type UseCopyToClipboardOptions = {\r\n  /** Called when the text is successfully copied. */\r\n  onCopySuccess?: (text: string) => void;\r\n  /** Called when the copy operation fails. */\r\n  onCopyError?: (error: Error) => void;\r\n  /** The delay in milliseconds before resetting the state to \"idle\". Defaults to 1500. */\r\n  resetDelay?: number;\r\n};\r\n\r\nexport function useCopyToClipboard({\r\n  onCopySuccess,\r\n  onCopyError,\r\n  resetDelay = 1500,\r\n}: UseCopyToClipboardOptions = {}) {\r\n  const [state, setState] = React.useState<CopyState>(\"idle\");\r\n  const resetTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(\r\n    null\r\n  );\r\n\r\n  const copy = React.useCallback(\r\n    async (text: string | (() => string)) => {\r\n      // Clear any pending reset\r\n      if (resetTimeoutRef.current) {\r\n        clearTimeout(resetTimeoutRef.current);\r\n      }\r\n\r\n      try {\r\n        const finalText = typeof text === \"function\" ? text() : text;\r\n        await navigator.clipboard.writeText(finalText);\r\n\r\n        setState(\"done\");\r\n\r\n        onCopySuccess?.(finalText);\r\n      } catch (error) {\r\n        setState(\"error\");\r\n\r\n        onCopyError?.(\r\n          error instanceof Error ? error : new Error(\"Copy failed\")\r\n        );\r\n      } finally {\r\n        // Schedule reset to idle\r\n        resetTimeoutRef.current = setTimeout(() => {\r\n          setState(\"idle\");\r\n        }, resetDelay);\r\n      }\r\n    },\r\n    [onCopySuccess, onCopyError, resetDelay]\r\n  );\r\n\r\n  return { state, copy } as const;\r\n}\r\n",
+      "type": "registry:hook",
+      "target": "@hooks/use-copy-to-clipboard.ts"
+    }
+  ],
+  "type": "registry:hook"
+}
