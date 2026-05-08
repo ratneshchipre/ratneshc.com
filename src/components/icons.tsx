@@ -1,5 +1,6 @@
 import {
   ComputerTerminal01Icon,
+  CopyIcon,
   FallingStarIcon,
   FileEmpty02Icon,
   PerspectiveIcon,
@@ -226,6 +227,8 @@ export function ComponentIcon({ variant, ...props }: ComponentIconProps) {
       return <HugeiconsIcon icon={FallingStarIcon} {...props} />;
     case "perspective-tilt":
       return <HugeiconsIcon icon={PerspectiveIcon} {...props} />;
+    case "copy-button":
+      return <HugeiconsIcon icon={CopyIcon} {...props} />;
     default:
       return <HugeiconsIcon icon={FileEmpty02Icon} {...props} />;
   }
