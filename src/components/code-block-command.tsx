@@ -7,7 +7,7 @@ import type { PackageManager } from "@/hooks/use-package-manager";
 import { usePackageManager } from "@/hooks/use-package-manager";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import CopyButton from "./copy-button";
+import { CopyButton } from "./copy-button";
 import { getIconForPackageManager } from "./icons";
 
 export function CodeBlockCommand({
@@ -69,10 +69,10 @@ export function CodeBlockCommand({
         })}
       </Tabs>
       <CopyButton
-        className="absolute top-2 right-2 z-10 h-7 w-7 rounded-md border bg-muted/70 backdrop-blur-xs hover:bg-muted!"
-        size="icon-xs"
-        value={tabs[packageManager] || ""}
-        event="copy_npm_command"
+        size="icon-sm"
+        variant="ghost"
+        text={tabs[packageManager] || ""}
+        className="absolute top-2 right-2 z-10 rounded-md bg-code text-muted-foreground"
       />
     </div>
   );

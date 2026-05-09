@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import CopyButton from "@/components/copy-button";
+import { CopyButton } from "@/components/copy-button";
 
 export default function Overview() {
   return (
@@ -53,7 +53,12 @@ export default function Overview() {
           >
             email
           </Link>
-          <CopyButton value="ratneshchipre@gmail.com" className="ml-0.5" />
+          <CopyButton
+            size="icon-sm"
+            variant="ghost"
+            text="ratneshchipre@gmail.com"
+            className="ml-1.5 size-5 translate-y-[2px] hover:bg-transparent!"
+          />
         </p>
       </div>
     </section>

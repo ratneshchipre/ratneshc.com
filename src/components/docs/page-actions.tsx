@@ -24,6 +24,7 @@ import {
   Copy01Icon,
   Tick02Icon,
 } from "@hugeicons/core-free-icons";
+import { CopyStateIcon } from "@/components/copy-button";
 
 const cache = new Map<string, string>();
 
@@ -79,13 +80,12 @@ export function LLMCopyButton({ markdownUrl }: { markdownUrl: string }) {
       disabled={isCopying}
       onClick={handleCopy}
     >
-      {state === "idle" ? (
-        <HugeiconsIcon icon={Copy01Icon} strokeWidth={2} />
-      ) : state === "done" ? (
-        <HugeiconsIcon icon={Tick02Icon} strokeWidth={2} />
-      ) : (
-        <HugeiconsIcon icon={Cancel01Icon} strokeWidth={2} />
-      )}
+      <CopyStateIcon
+        state={state}
+        idleIcon={<HugeiconsIcon icon={Copy01Icon} strokeWidth={2} />}
+        doneIcon={<HugeiconsIcon icon={Tick02Icon} strokeWidth={2} />}
+        errorIcon={<HugeiconsIcon icon={Cancel01Icon} strokeWidth={2} />}
+      />
       <span className="max-[28rem]:hidden">Copy Page</span>
     </Button>
   );
