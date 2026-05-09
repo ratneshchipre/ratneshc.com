@@ -1,9 +1,10 @@
-import { SocialLink } from "@/features/portfolio/types/social-links";
 import {
   GithubIcon,
   Linkedin01Icon,
   NewTwitterIcon,
 } from "@hugeicons/core-free-icons";
+
+import { SocialLink } from "@/features/portfolio/types/social-links";
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {

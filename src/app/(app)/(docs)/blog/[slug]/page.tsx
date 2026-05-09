@@ -3,6 +3,12 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTableOfContents } from "fumadocs-core/content/toc";
 import type { BlogPosting as PageSchema, WithContext } from "schema-dts";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowLeft02Icon,
+  ArrowMoveUpLeftIcon,
+  ArrowRight02Icon,
+} from "@hugeicons/core-free-icons";
 
 import {
   findNeighbour,
@@ -21,12 +27,6 @@ import {
 } from "@/components/ui/tooltip";
 import { Prose } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
-import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  ArrowLeft02Icon,
-  ArrowMoveUpLeftIcon,
-  ArrowRight02Icon,
-} from "@hugeicons/core-free-icons";
 import { LLMCopyButtonWithViewOptions } from "@/components/docs/page-actions";
 import PostShareMenu from "@/components/docs/post-share-menu";
 import { Separator } from "@/components/ui/separator";

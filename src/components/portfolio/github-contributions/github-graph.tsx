@@ -2,6 +2,8 @@
 
 import * as React from "react";
 import { format } from "date-fns";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Loading03Icon } from "@hugeicons/core-free-icons";
 
 import {
   Activity,
@@ -18,8 +20,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { GITHUB_USERNAME } from "@/config/site";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { Loading03Icon } from "@hugeicons/core-free-icons";
 
 export default function GitHubGraph({
   contributions,

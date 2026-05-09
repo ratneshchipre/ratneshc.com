@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { LinkCircle02Icon } from "@hugeicons/core-free-icons";
 
 import {
   Collapsible,
@@ -12,8 +14,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { LinkCircle02Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
 import type { Project } from "@/features/portfolio/types/projects";
 import { cn } from "@/lib/utils";
 

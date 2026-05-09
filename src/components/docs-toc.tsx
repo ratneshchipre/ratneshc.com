@@ -1,9 +1,9 @@
 "use client";
 
 import type { TOCItemType } from "fumadocs-core/toc";
-
-import { TextAlignLeftIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { TextAlignLeftIcon } from "@hugeicons/core-free-icons";
+
 import { useTOCObserver } from "@/hooks/use-toc-observer";
 import { cn } from "@/lib/utils";
 

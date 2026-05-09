@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Cancel01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
 
 import {
   DropdownMenu,
@@ -9,8 +11,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { Cancel01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
 import { cn } from "@/lib/utils";
 
 export default function UnmountingDemo() {

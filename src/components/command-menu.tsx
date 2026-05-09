@@ -6,9 +6,6 @@ import { usePathname } from "next/navigation";
 import { useCommandState } from "cmdk";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useRouter } from "@bprogress/next/app";
-
-import { cn } from "@/lib/utils";
-import { Doc } from "@/features/doc/types/document";
 import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
 import {
   ArrowMoveDownLeftIcon,
@@ -32,6 +29,9 @@ import {
   Sun01Icon,
   TextAlignLeft01Icon,
 } from "@hugeicons/core-free-icons";
+
+import { cn } from "@/lib/utils";
+import { Doc } from "@/features/doc/types/document";
 
 import {
   Command,

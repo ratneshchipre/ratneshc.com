@@ -1,10 +1,10 @@
+import { HugeiconsIcon } from "@hugeicons/react";
 import {
   GithubIcon,
   Linkedin01Icon,
   Mail01Icon,
   NewTwitterIcon,
 } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
 
 export default function Connect() {
   const CONNECT_LINKS = [

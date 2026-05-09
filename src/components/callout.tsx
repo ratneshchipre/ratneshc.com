@@ -1,11 +1,12 @@
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   InformationCircleIcon,
   Alert02Icon,
   Idea01Icon,
 } from "@hugeicons/core-free-icons";
+
 import { cn } from "@/lib/utils";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const typeMap = {
   info: {

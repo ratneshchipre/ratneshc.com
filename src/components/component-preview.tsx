@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { RepeatIcon } from "@hugeicons/core-free-icons";
 
 import { Index } from "@/__registry__/index";
 import { cn } from "@/lib/utils";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { RepeatIcon } from "@hugeicons/core-free-icons";
 import {
   Tooltip,
   TooltipContent,

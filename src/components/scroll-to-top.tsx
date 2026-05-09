@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
-
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowUp02Icon } from "@hugeicons/core-free-icons";
+
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function ScrollToTop({
   className,

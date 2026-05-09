@@ -3,6 +3,8 @@
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Cancel01Icon, Menu09Icon } from "@hugeicons/core-free-icons";
 
 import { cn } from "@/lib/utils";
 import { NavItem } from "@/types/nav";
@@ -13,8 +15,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Cancel01Icon, Menu09Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
 
 export default function MobileNav({ items }: { items: NavItem[] }) {
   const [open, setOpen] = React.useState(false);

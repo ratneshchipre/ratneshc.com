@@ -2,6 +2,12 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowDown01Icon,
+  ArrowUp01Icon,
+  LinkCircle02Icon,
+} from "@hugeicons/core-free-icons";
 
 import {
   Collapsible,
@@ -14,12 +20,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Separator } from "@/components/ui/separator";
-import {
-  ArrowDown01Icon,
-  ArrowUp01Icon,
-  LinkCircle02Icon,
-} from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "@/lib/utils";
 import {
   Experience,
