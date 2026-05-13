@@ -1,7 +1,7 @@
 import { HugeiconsIcon, type HugeiconsIconProps } from "@hugeicons/react";
 import {
   ComputerTerminal01Icon,
-  CopyIcon,
+  Copy01Icon,
   FallingStarIcon,
   FileEmpty02Icon,
   PerspectiveIcon,
@@ -228,7 +228,7 @@ export function ComponentIcon({ variant, ...props }: ComponentIconProps) {
     case "perspective-tilt":
       return <HugeiconsIcon icon={PerspectiveIcon} {...props} />;
     case "copy-button":
-      return <HugeiconsIcon icon={CopyIcon} {...props} />;
+      return <HugeiconsIcon icon={Copy01Icon} {...props} />;
     default:
       return <HugeiconsIcon icon={FileEmpty02Icon} {...props} />;
   }
