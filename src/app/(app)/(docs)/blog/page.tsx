@@ -35,7 +35,7 @@ export default function BlogPage() {
           <Link
             key={doc.slug}
             href={`/blog/${doc.slug}`}
-            className="flex w-full cursor-pointer items-center justify-between gap-5 text-foreground group-hover:text-ring hover:text-foreground [&_span]:text-muted-foreground [&_span]:group-hover:text-ring hover:[&_span]:text-muted-foreground"
+            className="flex w-full items-center justify-between gap-5 text-foreground group-hover:text-ring hover:text-foreground [&_span]:text-muted-foreground [&_span]:group-hover:text-ring hover:[&_span]:text-muted-foreground"
           >
             <h3 className="truncate">
               {doc.metadata.title.includes("|")

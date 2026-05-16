@@ -34,7 +34,7 @@ export default function CTA() {
               target="_blank"
               className={cn(
                 buttonVariants({ variant: "default" }),
-                "mx-auto w-fit cursor-pointer bg-foreground font-geist-sans transition-colors hover:bg-foreground/90! active:scale-98"
+                "mx-auto w-fit bg-foreground font-geist-sans transition-colors hover:bg-foreground/90! active:scale-98"
               )}
             >
               Book a call

@@ -70,7 +70,7 @@ export function ComponentItem({
   return (
     <Link
       className={cn(
-        "flex w-full cursor-pointer items-center gap-3 py-4 text-foreground group-hover:text-ring hover:text-foreground sm:py-3 [&_span]:bg-info [&_span]:group-hover:bg-info/25 hover:[&_span]:bg-info",
+        "flex w-full items-center gap-3 py-4 text-foreground group-hover:text-ring hover:text-foreground sm:py-3 [&_span]:bg-info [&_span]:group-hover:bg-info/25 hover:[&_span]:bg-info",
         className
       )}
       {...props}

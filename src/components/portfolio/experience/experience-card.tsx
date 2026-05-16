@@ -79,7 +79,7 @@ function PositionContent({ position }: PositionContentProps) {
       <div className="relative">
         <CollapsibleTrigger
           className={cn(
-            "relative block w-full cursor-pointer text-left outline-none select-none focus-visible:outline-none",
+            "relative block w-full text-left outline-none select-none focus-visible:outline-none",
             "data-disabled:before:content-none"
           )}
         >

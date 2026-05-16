@@ -218,7 +218,7 @@ export function CommandMenu({ docs }: { docs: Doc[] }) {
         variant="secondary"
         className={cn(
           "ml-2 h-8 gap-1.5 rounded-full border border-input bg-background px-2.5 text-muted-foreground shadow-xs select-none hover:bg-background dark:bg-input/30 dark:hover:bg-input/30",
-          "relative cursor-pointer before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]"
+          "relative before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]"
         )}
         onClick={() => {
           setOpen(true);
@@ -333,7 +333,6 @@ function CommandMenuInput({ setOpen }: { setOpen: (open: boolean) => void }) {
         size="icon-xs"
         variant="ghost"
         onClick={() => setOpen(false)}
-        className="cursor-pointer"
       >
         <HugeiconsIcon icon={Cancel01Icon} strokeWidth={2} />
         <span className="sr-only">Close</span>

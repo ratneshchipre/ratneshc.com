@@ -20,7 +20,7 @@ export default function PerspectiveTiltDemo() {
     <div className="flex items-center justify-center p-5">
       <PerspectiveTilt>
         <PerspectiveTiltTrigger asChild>
-          <Button className="cursor-pointer bg-foreground px-3 transition-colors hover:bg-foreground/85">
+          <Button className="bg-foreground px-3 transition-colors hover:bg-foreground/85">
             Manage Members
           </Button>
         </PerspectiveTiltTrigger>
@@ -67,7 +67,7 @@ export default function PerspectiveTiltDemo() {
                     Invite your team to collaborate on this project.
                   </p>
                 </div>
-                <Button className="mx-auto w-fit cursor-pointer bg-foreground px-3 transition-colors hover:bg-foreground/85">
+                <Button className="mx-auto w-fit bg-foreground px-3 transition-colors hover:bg-foreground/85">
                   <HugeiconsIcon icon={PlusSignIcon} strokeWidth={2} />
                   Invite Members
                 </Button>

@@ -151,7 +151,7 @@ export default async function ComponentSlugPage({
                   render={<Link href={`/components/${previous.slug}`} />}
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "icon" }),
-                    "cursor-pointer border-none"
+                    "border-none"
                   )}
                 >
                   <HugeiconsIcon
@@ -180,7 +180,7 @@ export default async function ComponentSlugPage({
                   render={<Link href={`/components/${next.slug}`} />}
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "icon" }),
-                    "cursor-pointer border-none"
+                    "border-none"
                   )}
                 >
                   <span className="sr-only">Next</span>

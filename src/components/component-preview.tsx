@@ -68,7 +68,7 @@ export default function ComponentPreview({
                 <TooltipTrigger
                   render={
                     <Button
-                      className="cursor-pointer border-none"
+                      className="border-none"
                       variant="ghost"
                       size="icon-lg"
                       onClick={() => setReplay((v) => v + 1)}

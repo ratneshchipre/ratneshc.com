@@ -31,10 +31,7 @@ export default function UnmountingDemo() {
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger
-              className={cn(
-                buttonVariants({ variant: "secondary" }),
-                "cursor-pointer px-4"
-              )}
+              className={cn(buttonVariants({ variant: "secondary" }), "px-4")}
             >
               Menu
             </DropdownMenuTrigger>
@@ -64,10 +61,7 @@ export default function UnmountingDemo() {
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger
-              className={cn(
-                buttonVariants({ variant: "secondary" }),
-                "cursor-pointer px-4"
-              )}
+              className={cn(buttonVariants({ variant: "secondary" }), "px-4")}
             >
               Menu
             </DropdownMenuTrigger>
@@ -89,7 +83,7 @@ export default function UnmountingDemo() {
       <div className="flex items-center justify-center bg-card p-4">
         <Button
           onClick={() => setIsSlowed(!isSlowed)}
-          className="cursor-pointer border border-border bg-background px-3 py-4 font-geist-mono font-medium text-foreground"
+          className="border border-border bg-background px-3 py-4 font-geist-mono font-medium text-foreground"
         >
           Animation: {isSlowed ? "Slow" : "Fast"}
         </Button>

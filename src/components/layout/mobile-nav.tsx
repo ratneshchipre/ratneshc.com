@@ -23,7 +23,7 @@ export default function MobileNav({ items }: { items: NavItem[] }) {
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger
-        className="group relative inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-foreground hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none sm:hidden"
+        className="group relative inline-flex h-8 w-8 items-center justify-center rounded-md text-foreground hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none sm:hidden"
         aria-label={open ? "Close navigation menu" : "Open navigation menu"}
       >
         <HugeiconsIcon

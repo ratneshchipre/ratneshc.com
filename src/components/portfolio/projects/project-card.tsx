@@ -31,7 +31,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       itemType="https://schema.org/SoftwareApplication"
     >
       <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
-        <CollapsibleTrigger className="w-full cursor-pointer text-left">
+        <CollapsibleTrigger className="w-full text-left">
           <header className="flex w-full items-center justify-between gap-3">
             <div className="flex min-w-0 flex-1 items-center gap-3">
               {project.logo && (

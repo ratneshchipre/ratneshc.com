@@ -44,7 +44,7 @@ export default function PostShareMenu({ url }: { url: string }) {
       <DropdownMenuTrigger
         className={cn(
           buttonVariants({ variant: "secondary", size: "icon" }),
-          "cursor-pointer border-none font-geist-sans"
+          "border-none font-geist-sans"
         )}
       >
         <HugeiconsIcon icon={Share03Icon} strokeWidth={2} className="size-4" />
@@ -53,12 +53,11 @@ export default function PostShareMenu({ url }: { url: string }) {
         className="discrete-menu-content w-40 font-geist-sans"
         align="end"
       >
-        <DropdownMenuItem className="cursor-pointer" onClick={handleCopy}>
+        <DropdownMenuItem onClick={handleCopy}>
           <HugeiconsIcon icon={Link04Icon} strokeWidth={2} className="size-4" />
           Copy link
         </DropdownMenuItem>
         <DropdownMenuItem
-          className="cursor-pointer"
           render={
             <Link
               href={`https://x.com/intent/tweet?url=${urlEncoded}`}
@@ -75,7 +74,6 @@ export default function PostShareMenu({ url }: { url: string }) {
           Share on X
         </DropdownMenuItem>
         <DropdownMenuItem
-          className="cursor-pointer"
           render={
             <Link
               href={`https://www.linkedin.com/sharing/share-offsite?url=${urlEncoded}`}
