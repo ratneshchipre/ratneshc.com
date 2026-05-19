@@ -8,14 +8,14 @@ export default function ProfileHeader() {
           <Image
             src="/images/avatar.png"
             alt="Avatar"
-            width={45}
-            height={45}
+            width={55}
+            height={55}
             quality={90}
             priority
-            className="rounded-full object-cover"
+            className="rounded-full object-cover ring-1 ring-accent dark:ring-0"
           />
         </div>
-        <div className="leading-tight">
+        <div>
           <h2 className="font-geist-sans text-lg font-medium">
             Ratnesh Chipre
           </h2>
