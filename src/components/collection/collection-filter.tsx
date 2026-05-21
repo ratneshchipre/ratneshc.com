@@ -24,7 +24,11 @@ export default function CollectionFilter({
       spacing={2}
       className="flex-wrap justify-start font-geist-sans"
     >
-      <ToggleGroupItem value="all" aria-label="Toggle All" className="px-2">
+      <ToggleGroupItem
+        value="all"
+        aria-label="Toggle All"
+        className="rounded-lg px-2"
+      >
         All
       </ToggleGroupItem>
       {genres.map((genre) => (
@@ -32,7 +36,7 @@ export default function CollectionFilter({
           key={genre}
           value={genre}
           aria-label={`Toggle ${genre}`}
-          className="px-2"
+          className="rounded-lg px-2"
         >
           {genre}
         </ToggleGroupItem>

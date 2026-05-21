@@ -82,8 +82,9 @@ export default function UnmountingDemo() {
       </div>
       <div className="flex items-center justify-center bg-card p-4">
         <Button
+          variant="secondary"
           onClick={() => setIsSlowed(!isSlowed)}
-          className="border border-border bg-background px-3 py-4 font-geist-mono font-medium text-foreground"
+          className="border border-border bg-background px-3 py-2 font-geist-mono font-medium text-foreground"
         >
           Animation: {isSlowed ? "Slow" : "Fast"}
         </Button>

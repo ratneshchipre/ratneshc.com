@@ -121,8 +121,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     <li
                       key={skill}
                       className={cn(
-                        "inline-flex items-center rounded-md px-2 py-0.5 font-geist-mono text-xs",
-                        "border bg-muted text-muted-foreground",
+                        "inline-flex items-center rounded-lg px-2 py-0.5 font-geist-mono text-xs",
+                        "bg-muted text-muted-foreground ring-1 ring-border/80",
                         "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
                       )}
                       itemProp="applicationCategory"
