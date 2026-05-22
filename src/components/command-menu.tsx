@@ -244,7 +244,7 @@ export function CommandMenu({ docs }: { docs: Doc[] }) {
       >
         <Command>
           <CommandMenuInput setOpen={setOpen} />
-          <CommandList className="min-h-80 supports-timeline-scroll:scroll-fade-effect-y">
+          <CommandMenuList className="min-h-80">
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandLinkGroup
               heading="Menu"
@@ -318,11 +318,32 @@ export function CommandMenu({ docs }: { docs: Doc[] }) {
               links={OTHER_LINK_ITEMS}
               onLinkSelect={handleOpenLink}
             />
-          </CommandList>
+          </CommandMenuList>
           <CommandMenuFooter />
         </Command>
       </CommandDialog>
     </>
+  );
+}
+
+function CommandMenuList({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof CommandList>) {
+  const search = useCommandState((state) => state.search);
+  const hasSearch = !!search;
+
+  return (
+    <CommandList
+      className={cn(
+        className,
+        !hasSearch && "supports-timeline-scroll:scroll-fade-effect-y"
+      )}
+      {...props}
+    >
+      {children}
+    </CommandList>
   );
 }
 
