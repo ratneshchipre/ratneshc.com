@@ -24,10 +24,10 @@ export default function ProfileHeader() {
           <BlurShimmerText
             texts={[
               "Full-Stack Developer",
-              "Design Sense matters",
+              "Design sense matters",
               "Open Source with good taste",
             ]}
-            blur={3}
+            blur={4}
             interval={2}
             className="font-geist-pixel-square text-muted-foreground"
           />
