@@ -1,5 +1,6 @@
 import { HugeiconsIcon, type HugeiconsIconProps } from "@hugeicons/react";
 import {
+  BlurIcon,
   ComputerTerminal01Icon,
   Copy01Icon,
   FallingStarIcon,
@@ -229,6 +230,8 @@ export function ComponentIcon({ variant, ...props }: ComponentIconProps) {
       return <HugeiconsIcon icon={PerspectiveIcon} {...props} />;
     case "copy-button":
       return <HugeiconsIcon icon={Copy01Icon} {...props} />;
+    case "blur-shimmer-text":
+      return <HugeiconsIcon icon={BlurIcon} {...props} />;
     default:
       return <HugeiconsIcon icon={FileEmpty02Icon} {...props} />;
   }
