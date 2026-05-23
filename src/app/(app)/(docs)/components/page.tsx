@@ -38,7 +38,7 @@ export default function ComponentsPage() {
           A curated component registry built on shadcn/ui. More coming soon.
         </p>
       </header>
-      <div className="group grid grid-cols-1 font-geist-sans sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid grid-cols-1 font-geist-sans sm:grid-cols-2 md:grid-cols-3 [&:has(a:hover)_a:not(:hover)]:text-ring [&:has(a:hover)_a:not(:hover)_span]:bg-info/25">
         {docs
           .slice()
           .sort((a, b) =>
@@ -70,7 +70,7 @@ export function ComponentItem({
   return (
     <Link
       className={cn(
-        "flex w-full items-center gap-3 py-4 text-foreground group-hover:text-ring hover:text-foreground sm:py-3 [&_span]:bg-info [&_span]:group-hover:bg-info/25 hover:[&_span]:bg-info",
+        "flex w-full items-center gap-3 py-4 text-foreground sm:py-5",
         className
       )}
       {...props}
@@ -84,11 +84,12 @@ export function ComponentItemDot({
 }: Omit<React.ComponentProps<"span">, "children">) {
   return (
     <span
-      className={cn("flex items-center justify-center", className)}
+      className={cn(
+        "size-2 shrink-0 rounded-full bg-info ring-1 ring-background",
+        className
+      )}
       {...props}
-    >
-      <span className="flex size-2 rounded-sm bg-info ring-1 ring-background" />
-    </span>
+    />
   );
 }
 
