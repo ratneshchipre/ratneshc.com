@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { BlurShimmerText } from "@/components/blur-shimmer-text";
+
 export default function ProfileHeader() {
   return (
     <div className="flex flex-col py-8">
@@ -19,9 +21,15 @@ export default function ProfileHeader() {
           <h2 className="font-geist-sans text-lg font-medium">
             Ratnesh Chipre
           </h2>
-          <p className="font-geist-pixel-square text-muted-foreground">
-            Full-Stack Web Developer
-          </p>
+          <BlurShimmerText
+            texts={[
+              "Full-Stack Developer",
+              "Design Sense matters",
+              "Open Source with good taste",
+            ]}
+            blur={3}
+            className="font-geist-pixel-square text-muted-foreground"
+          />
         </div>
       </div>
     </div>
