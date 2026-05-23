@@ -92,6 +92,23 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "blur-shimmer-text": {
+    name: "blur-shimmer-text",
+    description: "A text component that loops phrases with a horizontal blur shimmer.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/blur-shimmer-text/blur-shimmer-text.tsx",
+      type: "registry:component",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/blur-shimmer-text/blur-shimmer-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blur-shimmer-text"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "stars-travel-demo": {
     name: "stars-travel-demo",
     description: "",
@@ -155,6 +172,23 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import("@/registry/examples/copy-button-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "copy-button-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "blur-shimmer-text-demo": {
+    name: "blur-shimmer-text-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/blur-shimmer-text-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/blur-shimmer-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blur-shimmer-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

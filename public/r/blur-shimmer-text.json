@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blur-shimmer-text",
+  "title": "Blur Shimmer Text",
+  "author": "ratneshc <ratneshchipre@gmail.com>",
+  "description": "A text component that loops phrases with a horizontal blur shimmer.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/blur-shimmer-text/blur-shimmer-text.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport type { Transition, Variants } from \"motion/react\";\nimport { AnimatePresence, motion } from \"motion/react\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype MotionElement =\n  | typeof motion.p\n  | typeof motion.span\n  | typeof motion.code\n  | typeof motion.h1\n  | typeof motion.h2\n  | typeof motion.h3;\n\nexport type BlurShimmerTextProps = {\n  /** Element to render as.\n   * @defaultValue motion.p */\n  as?: MotionElement;\n  /** Additional class names. */\n  className?: string;\n  /** Seconds each text is visible before switching.\n   * @defaultValue 3 */\n  interval?: number;\n  /** Blur radius in pixels at the peak of the shimmer effect.\n   * @defaultValue 8 */\n  blur?: number;\n  /** Motion transition for the blur sweep. */\n  transition?: Transition;\n  /** Motion variants for each character. Overrides the blur prop. */\n  variants?: Variants;\n  /** List of phrases to loop through. */\n  texts: string[];\n};\n\nexport function BlurShimmerText({\n  as = motion.p,\n  className,\n  interval = 3,\n  blur = 8,\n  transition = { duration: 0.5 },\n  variants,\n  texts,\n}: BlurShimmerTextProps) {\n  const [currentIndex, setCurrentIndex] = React.useState(0);\n  const Component = as as typeof motion.p;\n\n  const resolvedVariants: Variants = variants ?? {\n    initial: { filter: `blur(${blur}px)`, opacity: 0 },\n    animate: { filter: \"blur(0px)\", opacity: 1 },\n    exit: { filter: `blur(${blur}px)`, opacity: 0 },\n  };\n\n  React.useEffect(() => {\n    if (!texts || texts.length === 0) return;\n\n    const timeout = setInterval(() => {\n      setCurrentIndex((prev) => (prev + 1) % texts.length);\n    }, interval * 1000);\n\n    return () => clearInterval(timeout);\n  }, [texts, interval]);\n\n  if (!texts || texts.length === 0) return null;\n\n  const duration = (transition.duration as number) || 0.6;\n\n  return (\n    <div className={cn(\"inline-grid\", className)}>\n      {texts.map((text, index) => (\n        <span\n          key={index}\n          className=\"invisible col-start-1 row-start-1 block whitespace-nowrap\"\n          aria-hidden=\"true\"\n        >\n          {text.split(\"\").map((char, i) => (\n            <span key={i} className=\"inline-block whitespace-pre\">\n              {char}\n            </span>\n          ))}\n        </span>\n      ))}\n      <AnimatePresence>\n        <Component\n          key={currentIndex}\n          className=\"col-start-1 row-start-1 block whitespace-nowrap\"\n          initial=\"initial\"\n          animate=\"animate\"\n          exit=\"exit\"\n        >\n          {texts[currentIndex].split(\"\").map((char, i) => {\n            const staggerDelay = (i * duration) / texts[currentIndex].length;\n\n            return (\n              <motion.span\n                key={i}\n                variants={resolvedVariants}\n                transition={{\n                  ...transition,\n                  delay: staggerDelay,\n                }}\n                className=\"inline-block whitespace-pre\"\n              >\n                {char}\n              </motion.span>\n            );\n          })}\n        </Component>\n      </AnimatePresence>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "docs": "https://ratneshc.com/components/blur-shimmer-text",
+  "type": "registry:component"
+}

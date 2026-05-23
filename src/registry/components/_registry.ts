@@ -48,4 +48,19 @@ export const components: Registry["items"] = [
     ],
     docs: "https://ratneshc.com/components/copy-button",
   },
+  {
+    name: "blur-shimmer-text",
+    type: "registry:component",
+    title: "Blur Shimmer Text",
+    description:
+      "A text component that loops phrases with a horizontal blur shimmer.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "components/blur-shimmer-text/blur-shimmer-text.tsx",
+        type: "registry:component",
+      },
+    ],
+    docs: "https://ratneshc.com/components/blur-shimmer-text",
+  },
 ];

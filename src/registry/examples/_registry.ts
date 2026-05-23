@@ -47,4 +47,15 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "blur-shimmer-text-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("blur-shimmer-text")],
+    files: [
+      {
+        path: "examples/blur-shimmer-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

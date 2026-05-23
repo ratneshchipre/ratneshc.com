@@ -85,6 +85,23 @@
       "docs": "https://ratneshc.com/components/copy-button",
       "type": "registry:component",
       "author": "ratneshc <ratneshchipre@gmail.com>"
+    },
+    {
+      "name": "blur-shimmer-text",
+      "title": "Blur Shimmer Text",
+      "description": "A text component that loops phrases with a horizontal blur shimmer.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/blur-shimmer-text/blur-shimmer-text.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "docs": "https://ratneshc.com/components/blur-shimmer-text",
+      "type": "registry:component",
+      "author": "ratneshc <ratneshchipre@gmail.com>"
     }
   ]
 }
