@@ -7,21 +7,29 @@ type GitHubContributionsResponse = {
   contributions: Activity[];
 };
 
-export const getGitHubContributions = unstable_cache(
-  async () => {
-    try {
-      const res = await fetch(
-        `${process.env.GITHUB_CONTRIBUTIONS_API_URL}/v4/${GITHUB_USERNAME}?y=2026`
-      );
+export function getGitHubContributions() {
+  const apiUrl = process.env.GITHUB_CONTRIBUTIONS_API_URL;
 
-      if (!res.ok) return [] as Activity[];
+  if (!apiUrl) {
+    console.error("GITHUB_CONTRIBUTIONS_API_URL is not set");
+    return Promise.resolve([] as Activity[]);
+  }
+
+  return unstable_cache(
+    async () => {
+      const res = await fetch(`${apiUrl}/v4/${GITHUB_USERNAME}?y=2026`, {
+        next: { revalidate: 86400 },
+      });
+
+      if (!res.ok) {
+        console.error(`API error: ${res.status} ${res.statusText}`);
+        return [] as Activity[];
+      }
 
       const data = (await res.json()) as GitHubContributionsResponse;
       return data.contributions ?? ([] as Activity[]);
-    } catch {
-      return [] as Activity[];
-    }
-  },
-  ["github-contributions"],
-  { revalidate: 86400 } // Cache for 1 day (86400 seconds)
-);
+    },
+    ["github-contributions", apiUrl, GITHUB_USERNAME, "2026"],
+    { revalidate: 86400 }
+  )();
+}

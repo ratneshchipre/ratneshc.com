@@ -28,6 +28,7 @@ export default function ProfileHeader() {
               "Open Source with good taste",
             ]}
             blur={3}
+            interval={2}
             className="font-geist-pixel-square text-muted-foreground"
           />
         </div>
