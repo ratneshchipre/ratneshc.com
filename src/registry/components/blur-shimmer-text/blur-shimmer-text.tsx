@@ -21,10 +21,10 @@ export type BlurShimmerTextProps = {
   /** Additional class names. */
   className?: string;
   /** Seconds each text is visible before switching.
-   * @defaultValue 3 */
+   * @defaultValue 2 */
   interval?: number;
   /** Blur radius in pixels at the peak of the shimmer effect.
-   * @defaultValue 8 */
+   * @defaultValue 6 */
   blur?: number;
   /** Motion transition for the blur sweep. */
   transition?: Transition;
@@ -37,8 +37,8 @@ export type BlurShimmerTextProps = {
 export function BlurShimmerText({
   as = motion.p,
   className,
-  interval = 3,
-  blur = 8,
+  interval = 2,
+  blur = 6,
   transition = { duration: 0.5 },
   variants,
   texts,
