@@ -22,8 +22,7 @@ export const components: Registry["items"] = [
     name: "perspective-tilt",
     type: "registry:component",
     title: "Perspective Tilt",
-    description:
-      "A 3D card with perspective-driven tilt and cinematic focus-blur transitions for smooth card entry and exit animations.",
+    description: "A 3D card with perspective tilt and blur transitions.",
     dependencies: ["motion"],
     files: [
       {

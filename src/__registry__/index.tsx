@@ -60,7 +60,7 @@ export const Index: Record<string, any> = {
   },
   "perspective-tilt": {
     name: "perspective-tilt",
-    description: "A 3D card with perspective-driven tilt and cinematic focus-blur transitions for smooth card entry and exit animations.",
+    description: "A 3D card with perspective tilt and blur transitions.",
     type: "registry:component",
     files: [{
       path: "src/registry/components/perspective-tilt/perspective-tilt.tsx",
