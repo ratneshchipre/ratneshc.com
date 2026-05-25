@@ -5,7 +5,7 @@ import { BlurShimmerText } from "@/components/blur-shimmer-text";
 export default function ProfileHeader() {
   return (
     <div className="flex flex-col py-8">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-4">
         <div className="select-none">
           <Image
             src="/images/avatar.png"
