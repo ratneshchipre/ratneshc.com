@@ -4,6 +4,7 @@ import * as React from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { LinkCircle02Icon } from "@hugeicons/core-free-icons";
 
+import { cn } from "@/lib/utils";
 import {
   Collapsible,
   CollapsibleContent,
@@ -15,14 +16,22 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import type { Project } from "@/features/portfolio/types/projects";
-import { cn } from "@/lib/utils";
+import { UTM_PARAMS } from "@/config/site";
+import { addQueryParams } from "@/utils/url";
+import { Icons } from "@/components/icons";
 
 interface ProjectCardProps {
   project: Project;
+  stargazersCount?: number;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({
+  project,
+  stargazersCount,
+}: ProjectCardProps) {
   const [isOpen, setIsOpen] = React.useState(project.isExpanded ?? false);
+  const hasMultipleActions =
+    Boolean(project.githubRepo) && stargazersCount !== undefined;
 
   return (
     <article
@@ -53,7 +62,47 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 </h3>
               </div>
             </div>
-            <div className="shrink-0">
+            <div
+              className={cn(
+                "flex shrink-0 items-center",
+                hasMultipleActions && "gap-4"
+              )}
+            >
+              {project.githubRepo && stargazersCount !== undefined && (
+                <Tooltip>
+                  <TooltipTrigger
+                    render={
+                      <a
+                        className="relative flex shrink-0 items-center justify-center gap-1.5 text-muted-foreground transition-colors after:absolute after:-inset-2 hover:text-foreground"
+                        href={addQueryParams(
+                          `https://github.com/${project.githubRepo}`,
+                          UTM_PARAMS
+                        )}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        aria-label={`${project.title} on GitHub, ${stargazersCount} stars`}
+                      >
+                        <Icons.github className="size-4" />
+                        <span className="font-geist-sans text-[0.85rem] tabular-nums">
+                          {new Intl.NumberFormat("en-US", {
+                            notation: "compact",
+                            compactDisplay: "short",
+                          })
+                            .format(stargazersCount)
+                            .toLowerCase()}
+                        </span>
+                        <span className="sr-only">
+                          {stargazersCount} stars on GitHub
+                        </span>
+                      </a>
+                    }
+                  />
+                  <TooltipContent sideOffset={10}>
+                    Open GitHub Repo
+                  </TooltipContent>
+                </Tooltip>
+              )}
               <Tooltip>
                 <TooltipTrigger
                   render={
@@ -75,7 +124,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     </a>
                   }
                 />
-                <TooltipContent>
+                <TooltipContent sideOffset={10}>
                   <p>Open Project Link</p>
                 </TooltipContent>
               </Tooltip>

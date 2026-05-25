@@ -1,9 +1,14 @@
 import { PROJECTS } from "@/features/portfolio/data/projects";
-import { Separator } from "@/components/ui/separator";
+import { getGitHubStargazerCountByRepo } from "@/features/portfolio/data/github-stargazers";
 
 import ProjectCard from "./project-card";
 
-export default function Projects() {
+export default async function Projects() {
+  const repos = PROJECTS.flatMap((project) =>
+    project.githubRepo ? [project.githubRepo] : []
+  );
+  const stargazerCounts = await getGitHubStargazerCountByRepo(repos);
+
   if (!PROJECTS || PROJECTS.length === 0) {
     return (
       <section
@@ -37,11 +42,17 @@ export default function Projects() {
           Projects
         </h2>
       </header>
-      <div className="space-y-5">
-        {PROJECTS.map((project, index) => (
-          <div key={project.id}>
-            <ProjectCard project={project} />
-            {index < PROJECTS.length - 1 && <Separator className="my-3" />}
+      <div className="divide-y divide-border">
+        {PROJECTS.map((project) => (
+          <div key={project.id} className="py-3.5 first:pt-0 last:pb-0">
+            <ProjectCard
+              project={project}
+              stargazersCount={
+                project.githubRepo
+                  ? stargazerCounts[project.githubRepo]
+                  : undefined
+              }
+            />
           </div>
         ))}
       </div>

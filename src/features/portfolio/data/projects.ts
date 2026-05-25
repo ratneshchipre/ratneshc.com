@@ -3,8 +3,7 @@ import { Project } from "@/features/portfolio/types/projects";
 export const PROJECTS: Project[] = [
   {
     id: "page-views-api",
-    title:
-      "Page Views API \u2013 An open-source API to count visitors on any page",
+    title: "Page Views API",
     logo: "/images/project-logos/page-views-api.svg",
     description:
       "Page Views API is an open-source, developer-first API that lets you track page views with a single script \u2013 no setup, no dashboard, and no complexity. Built for modern web apps, it automatically tracks visits across pages and SPAs with minimal overhead.",
@@ -18,6 +17,7 @@ export const PROJECTS: Project[] = [
       "Built on serverless architecture with Redis for reliable and scalable performance.",
     ],
     link: "https://page-views-api.ratneshc.com",
+    githubRepo: "ratneshchipre/page-views-api",
     skills: [
       "Next.js",
       "TypeScript",
@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "ratneshc.com",
-    title: "ratneshc.com \u2013 A clean, minimal portfolio and shadcn registry",
+    title: "ratneshc.com",
     logo: "/images/project-logos/ratneshc-com.svg",
     description:
       "A clean and minimal portfolio featuring my work, writing, and shadcn registry.",
@@ -45,6 +45,7 @@ export const PROJECTS: Project[] = [
       "Responsive, accessible UI built with shadcn/ui and modern best practices.",
     ],
     link: "https://ratneshc.com",
+    githubRepo: "ratneshchipre/ratneshc.com",
     skills: [
       "Next.js",
       "TypeScript",
@@ -58,7 +59,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "draftlogo",
-    title: "draftlogo \u2013 Generate professional logos in seconds",
+    title: "draftlogo",
     logo: "/images/project-logos/draftlogo.svg",
     description:
       "draftlogo is an AI-powered logo generator built for founders and startups to create professional, modern logos in seconds without designers, long revisions, or expensive tools.",
@@ -81,30 +82,6 @@ export const PROJECTS: Project[] = [
       "Prisma",
       "Better-Auth",
       "Bun",
-    ],
-    isExpanded: false,
-  },
-  {
-    id: "Fork & Fire",
-    title:
-      "Fork & Fire \u2013 Recipe discovery app with categories and favorites",
-    logo: "/images/project-logos/fork-fire.svg",
-    description:
-      "Fork & Fire is a recipe discovery app built for food lovers to instantly find, save, and share delicious recipes with smart search and step-by-step cooking guides.",
-    features: [
-      "Smart recipe search by ingredients, cuisine, or dietary preference for instant results.",
-      "Step-by-step cooking guides with images and videos for confident meal preparation.",
-      "Save favorite recipes and build a personalized digital cookbook.",
-      "Explore a wide range of categories including Beef, Chicken, Seafood, Pasta, Vegan, Vegetarian, Dessert, and more.",
-    ],
-    link: "https://fork-fire.vercel.app",
-    skills: [
-      "React.js",
-      "JavaScript",
-      "TailwindCSS",
-      "Vite",
-      "Motion",
-      "Context API",
     ],
     isExpanded: false,
   },

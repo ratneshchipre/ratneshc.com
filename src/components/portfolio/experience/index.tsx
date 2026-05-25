@@ -1,5 +1,4 @@
 import { EXPERIENCES } from "@/features/portfolio/data/experiences";
-import { Separator } from "@/components/ui/separator";
 
 import ExperienceCard from "./experience-card";
 
@@ -18,11 +17,10 @@ export default function Experience() {
           Experience
         </h2>
       </header>
-      <div>
-        {EXPERIENCES.map((experience, index) => (
-          <div key={experience.id}>
+      <div className="divide-y divide-border">
+        {EXPERIENCES.map((experience) => (
+          <div key={experience.id} className="py-3.5 first:pt-0 last:pb-0">
             <ExperienceCard experience={experience} />
-            {index < EXPERIENCES.length - 1 && <Separator className="my-5" />}
           </div>
         ))}
       </div>

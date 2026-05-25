@@ -4,6 +4,19 @@ type GitHubRepoResponse = {
   stargazers_count?: number;
 };
 
+export async function getGitHubStargazerCountByRepo(repos: string[]) {
+  const uniqueRepos = [...new Set(repos)];
+
+  const entries = await Promise.all(
+    uniqueRepos.map(async (repo) => {
+      const count = await getGitHubStargazerCount(repo);
+      return [repo, count] as const;
+    })
+  );
+
+  return Object.fromEntries(entries) as Record<string, number>;
+}
+
 export function getGitHubStargazerCount(repo: string) {
   return unstable_cache(
     async function fetchGitHubStargazerCount() {

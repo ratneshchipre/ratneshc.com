@@ -5,6 +5,7 @@ export type Project = {
   description?: string;
   features?: string[];
   link: string;
+  githubRepo?: string;
   skills: string[];
   isExpanded?: boolean;
 };
