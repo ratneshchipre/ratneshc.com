@@ -54,8 +54,6 @@ the "flicker" occurs because React removes the DOM node before the CSS timeline 
 
 even if you use `animation-fill-mode: forwards`, the element is deleted from the tree while the browser is still processing the visual exit.
 
----
-
 ## Solution 1: Delayed unmounting (manual)
 
 The most basic fix is to decouple the "logical" close from the "physical" unmount.
@@ -72,8 +70,6 @@ const handleClose = () => {
 ```
 
 while functional, this approach is prone to "magic number" errors where the JS timeout and CSS duration fall out of sync.
-
----
 
 ## Solution 2: Framer Motion (orchestration)
 
@@ -97,8 +93,6 @@ it effectively "pauses" the unmounting process, allowing the component to remain
 
 **Pros**: Handles nested animations, robust, and highly customizable.<br/>
 **Cons**: Adds to your JS bundle size.
-
----
 
 ## Solution 3: Modern CSS (discrete transitions)
 
@@ -131,8 +125,6 @@ by using `allow-discrete`, the browser keeps the element in the layout for the d
 
 this is a massive win for performance as it requires zero JavaScript for unmounting orchestration.
 
----
-
 ## Cheat sheet: Choosing the right method
 
 | Method            | Best for                          | Complexity        | Performance |
@@ -164,8 +156,6 @@ search engines like Google use **Core Web Vitals** and **User Experience signals
 a glitchy UI increases bounce rates and reduces dwell time.
 
 premium micro-interactions, like the ones I implemented for [draftlogo](/blog/the-story-behind-draftlogo), tell your users (and Google) that your site is high-quality and trustworthy.
-
----
 
 ## Final thoughts
 
