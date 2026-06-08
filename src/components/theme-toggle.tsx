@@ -14,26 +14,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { Skeleton } from "./ui/skeleton";
 import { Kbd } from "./ui/kbd";
 
 export default function ThemeToggle({ className }: { className?: string }) {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+  const { setTheme, theme, resolvedTheme } = useTheme();
 
   const handleToggle = React.useCallback(() => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  }, [resolvedTheme, setTheme]);
+    const currentTheme = resolvedTheme || theme;
+    setTheme(currentTheme === "dark" ? "light" : "dark");
+  }, [resolvedTheme, theme, setTheme]);
 
   useHotkeys("d", handleToggle);
-
-  React.useEffect(() => setMounted(true), []);
-
-  if (!mounted) {
-    return <Skeleton className="size-8.5 rounded-md" />;
-  }
-
-  const Icon = resolvedTheme === "dark" ? MoonIcon : Sun01Icon;
 
   return (
     <Tooltip>
@@ -46,7 +37,16 @@ export default function ThemeToggle({ className }: { className?: string }) {
         onClick={handleToggle}
         aria-label="Toggle Mode"
       >
-        <HugeiconsIcon icon={Icon} strokeWidth={2} className="size-4" />
+        <HugeiconsIcon
+          icon={Sun01Icon}
+          strokeWidth={2}
+          className="block size-4 dark:hidden"
+        />
+        <HugeiconsIcon
+          icon={MoonIcon}
+          strokeWidth={2}
+          className="hidden size-4 dark:block"
+        />
         <span className="sr-only">Toggle Theme</span>
       </TooltipTrigger>
       <TooltipContent

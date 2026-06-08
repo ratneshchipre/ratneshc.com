@@ -10,29 +10,12 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Skeleton } from "./ui/skeleton";
 
 function FooterDateTime() {
-  const [now, setNow] = React.useState<Date | null>(null);
+  const [now, setNow] = React.useState(new Date());
 
   React.useEffect(() => {
-    const tick = () => setNow(new Date());
-    tick();
-    const intervalId = setInterval(tick, 1000);
-
+    const intervalId = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(intervalId);
   }, []);
-
-  if (!now) {
-    return (
-      <div className="flex items-center justify-center gap-3">
-        <Skeleton className="h-3.5 w-32 rounded-sm" />
-        <Separator
-          orientation="vertical"
-          className="h-4 self-center"
-          aria-hidden="true"
-        />
-        <Skeleton className="h-3.5 w-32 rounded-sm" />
-      </div>
-    );
-  }
 
   const timeZone = "Asia/Kolkata";
   const isoString = now.toISOString();
@@ -59,6 +42,7 @@ function FooterDateTime() {
   return (
     <div className="flex items-center justify-center gap-3 text-center font-geist-mono text-sm tracking-tight text-muted-foreground">
       <time
+        suppressHydrationWarning
         dateTime={isoString}
         aria-label={dateLabel}
         className="leading-none"
@@ -74,13 +58,14 @@ function FooterDateTime() {
         <TooltipTrigger
           render={
             <time
+              suppressHydrationWarning
               dateTime={isoString}
               className="cursor-default"
               aria-label={`${timeLabel} ${timeZone}`}
             />
           }
         >
-          {timeLabel} GMT+5:30
+          <span suppressHydrationWarning>{timeLabel} GMT+5:30</span>
         </TooltipTrigger>
         <TooltipContent sideOffset={10}>{timeZone}</TooltipContent>
       </Tooltip>
@@ -99,7 +84,7 @@ function VisitorCount() {
   });
 
   if (isLoading || error || views === undefined) {
-    return <Skeleton className="inline-block h-6 w-7 align-middle" />;
+    return <Skeleton className="inline-block h-6 w-12 align-middle" />;
   }
 
   const getOrdinal = (n: number) => {
