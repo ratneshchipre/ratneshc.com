@@ -1,0 +1,256 @@
+---
+title: I wanted a page view tracker, so I built one
+description: How I built a fast, privacy-friendly and open-source page view tracker from scratch.
+image: /images/blogs/i-wanted-a-page-view-tracker-so-i-built-one.png
+category: blogs
+readingTime: 9 min read
+createdAt: 2026-06-05
+updatedAt: 2026-06-08
+---
+
+## The idea
+
+I was working on my portfolio website and looking for some new additions to include that could make it more memorable.
+
+so, I started browsing through dozens of portfolio websites on X for inspiration.
+
+while exploring, I noticed a common badge-like element on some portfolios - a small badge showing the number of visitors who had visited the website.
+
+<FramedImage src="/images/blogs/visitor-badges.png" alt="Visitor Badges" />
+
+that immediately made me excited.
+
+for a moment, I thought that adding a visitor count badge to display how many people had actually visited my website could be one of the coolest things I could add to my portfolio.
+
+## Going down the rabbit hole
+
+The next thing I did was immediately open ChatGPT and start asking questions:
+
+- how does this visitor tracking thing actually work?
+- how can I implement this on my portfolio?
+- what tech stack can be used here?
+- how can I prevent duplicate views from being counted?
+
+and yeah, that last question was the most important one.
+
+I wanted the visitor count badge to avoid counting duplicate views because what's the whole point if the counter increases on every page reload?
+
+after getting a brief understanding of how it all works, I had a thought:
+
+> “wait, this whole thing can be a bit complex and tricky for someone who just wants to add a visitor counter to their website”
+
+that's when the idea started forming.
+
+> “what if I built a tool that simplified the process of counting visitors on any page?”
+
+a tool that:
+
+- avoids counting duplicate views
+- is easy to set up without unnecessary complexity
+- feels simple to use
+
+and then another thought came to my mind:
+
+> “what if I made it open source?”
+
+I immediately got locked in.
+
+the next thing I did was start exploring how existing analytics and tracking tools worked under the hood.
+
+I spent some time going through products like Cloudflare Analytics, Vercel Analytics and Google Analytics to understand how they approached page view tracking.
+
+one thing I noticed was that most of them relied on a script-based tracking approach.
+
+the only exception was Vercel Analytics, which requires importing a package into your application.
+
+the script-based approach felt like the right choice for what I was trying to build.
+
+it was simple, lightweight and didn't require developers to install yet another package just to track page views.
+
+after spending some time researching and evaluating different approaches, I made a few decisions:
+
+- the tool would be script-based
+- the script would communicate with an API under the hood to track views
+- a simple GET endpoint would be used to retrieve view counts
+
+at this point, I had a rough blueprint of what I wanted to build.
+
+the next challenge was figuring out how page views should actually be counted.
+
+## How Page Views API works under the hood
+
+I'll keep things as simple as possible and break down every piece of the tracking mechanism step by step.
+
+take a look at the sequence diagram below.
+
+<Callout type="info" title="Note">
+
+we'll use this diagram as a reference while exploring each part of the system.
+
+</Callout>
+
+<FramedImage
+  src="/images/blogs/api-mermaid-sequence-diagram.png"
+  alt="Page Views API - Mermaid Sequence Diagram"
+/>
+
+okay, okay I know the diagram might feel a little overwhelming at first glance.
+
+you might be wondering:
+
+> “what exactly is going on here?”
+
+don't worry.
+
+let's break it down step by step.
+
+### 1. The initial connection
+
+It all starts when a visitor lands on a website that has the tracking script installed.
+
+the browser makes a quick request to the api (`GET /script`) to fetch the tracking javascript.
+
+once the script is returned, the browser runs it.
+
+[view the full script source code on GitHub ↗](https://github.com/ratneshchipre/page-views-api/blob/main/src/app/script/route.ts)
+
+### 2. Client-Side execution (the magic)
+
+This is where the "precision tracking" happens.
+
+the script searches the website to find its own `<script>` tag and reads the `data-site` and `data-path` attributes you configured.
+
+it then checks if the current browser url exactly matches the `data-path`.
+
+if it doesn't match, the script silently aborts.
+
+no unnecessary tracking.
+
+if it's a match, the script also sets up listeners to support single-page applications (like Next.js or React) so it works perfectly even when the page doesn't fully reload.
+
+### 3. The tracking request
+
+Once the path is verified, the browser fires an asynchronous `fetch` request to the api (`/api/v1/track`) with the site and path details.
+
+this request runs in the background without slowing down the website.
+
+### 4. Server-Side processing
+
+Now the api takes over.
+
+it first validates the incoming data to ensure everything is correct.
+
+then, it extracts the client's ip address and checks the rate limit to prevent abuse or spam.
+
+finally, it generates a privacy-safe, hashed "visitor id" so we can uniquely identify the session without using invasive cookies.
+
+### 5. The smart deduplication
+
+This is the most important part preventing duplicate views if someone just refreshes the page.
+
+the api asks the redis database to create a temporary 30-minute timer for this specific visitor on this specific page (`SET NX`).
+
+this leads to two possible outcomes:
+
+- **Scenario A: it's a new view**
+
+  if the database successfully starts the timer, it means the user hasn't visited this page in the last 30 minutes.
+
+  the api then increments the official page view counter (`INCR`) and saves the new count.
+
+- **Scenario B: it's a duplicate view**
+
+  if the database rejects the timer (because one is already ticking from a recent visit), the api knows it's a duplicate.
+
+  it completely skips the increment step, keeping the analytics accurate.
+
+### 6. Success
+
+Whether it was a new view or a duplicate, the api finally returns a `200 OK` success message back to the browser and the process is complete.
+
+<Callout type="info" title="Note">
+
+if you want to dive deeper, understand the exact structure or see the implementation steps, you can [visit the official documentation of Page Views API](https://page-views-api.ratneshc.com/docs/getting-started).
+
+</Callout>
+
+## Challenges I faced
+
+The biggest challenge, without a doubt, was implementing the script-based tracking mechanism and making it work reliably across different scenarios, especially in Single Page Applications (SPAs).
+
+I went through multiple iterations of the tracking script before it behaved exactly the way I wanted it to.
+
+and yes, I did use AI throughout the process.
+
+it helped me move faster, explore different approaches and debug issues along the way.
+
+but like most projects, getting the final implementation right still required a lot of testing, tweaking and experimentation.
+
+some of the specific challenges I ran into were:
+
+- the deduplication logic wasn't working correctly, which meant page refreshes were still being counted as new views.
+- the TTL-based deduplication window wasn't behaving as expected, causing some visitors to be counted again even within the configured 30-minute time window.
+- handling route changes in SPAs without accidentally tracking duplicate views or missing page transitions.
+
+a lot of my time was spent testing edge cases, refreshing pages, navigating between routes and verifying whether views were actually being counted the way they should.
+
+other than that, I didn't run into any other major roadblocks.
+
+## Why I chose Upstash Redis + Serverless
+
+Honestly, I didn't even know much about redis before building Page Views API.
+
+at the time, I just wanted something that felt:
+
+- simple
+- minimal
+- fast
+
+redis seemed like a great fit for all three.
+
+although there are several reasons why redis fits perfectly here - not only is it fast, but it solved several problems that Page Views API needed to handle.
+
+a few were:
+
+- atomic increments
+- auto-expiring keys
+- serverless-friendly
+
+since the api itself runs on serverless functions, upstash fit naturally into the architecture and removed a lot of operational overhead.
+
+and talking about serverless?
+
+the simple answer is that I never felt a strong reason to deploy and maintain a dedicated server for this project.
+
+Page Views API is relatively lightweight and a serverless architecture felt like the right balance between simplicity, scalability and maintenance.
+
+of course, that doesn't mean it will always stay that way.
+
+if there ever comes a point where a dedicated server or VPS makes more sense, I'd be open to making that transition.
+
+but the odds are pretty low, to be honest.
+
+## Final thoughts
+
+The journey of building Page Views API has been really really great.
+
+it taught me far more than any tutorial, course or clone project ever could.
+
+while this may not be the greatest project I've built so far, it's definitely one of the most special ones.
+
+why?
+
+because it marked the beginning of my open source journey.
+
+today, I can proudly say that:
+
+- Page Views API is being used in **25+ projects**
+- More than **4,200+ unique visitors** have been tracked
+
+and honestly, seeing other developers use something that started as a simple curiosity project is a pretty amazing feeling.
+
+if you enjoyed this journey or found this blog helpful, please consider giving Page Views API [a star on GitHub](https://github.com/ratneshchipre/page-views-api).
+
+it genuinely helps the project grow and motivates me to keep building useful tools and contributing to open source.
+
+and if you're looking for a simple way to track page views, don't forget to give [Page Views API](https://page-views-api.ratneshc.com) a try in your next project :)
