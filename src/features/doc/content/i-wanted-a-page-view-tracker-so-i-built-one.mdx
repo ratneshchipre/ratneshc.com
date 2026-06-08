@@ -174,28 +174,6 @@ if you want to dive deeper, understand the exact structure or see the implementa
 
 </Callout>
 
-## Challenges I faced
-
-The biggest challenge, without a doubt, was implementing the script-based tracking mechanism and making it work reliably across different scenarios, especially in Single Page Applications (SPAs).
-
-I went through multiple iterations of the tracking script before it behaved exactly the way I wanted it to.
-
-and yes, I did use AI throughout the process.
-
-it helped me move faster, explore different approaches and debug issues along the way.
-
-but like most projects, getting the final implementation right still required a lot of testing, tweaking and experimentation.
-
-some of the specific challenges I ran into were:
-
-- the deduplication logic wasn't working correctly, which meant page refreshes were still being counted as new views.
-- the TTL-based deduplication window wasn't behaving as expected, causing some visitors to be counted again even within the configured 30-minute time window.
-- handling route changes in SPAs without accidentally tracking duplicate views or missing page transitions.
-
-a lot of my time was spent testing edge cases, refreshing pages, navigating between routes and verifying whether views were actually being counted the way they should.
-
-other than that, I didn't run into any other major roadblocks.
-
 ## Why I chose Upstash Redis + Serverless
 
 Honestly, I didn't even know much about redis before building Page Views API.
@@ -229,6 +207,28 @@ of course, that doesn't mean it will always stay that way.
 if there ever comes a point where a dedicated server or VPS makes more sense, I'd be open to making that transition.
 
 but the odds are pretty low, to be honest.
+
+## Challenges I faced
+
+The biggest challenge, without a doubt, was implementing the script-based tracking mechanism and making it work reliably across different scenarios, especially in Single Page Applications (SPAs).
+
+I went through multiple iterations of the tracking script before it behaved exactly the way I wanted it to.
+
+and yes, I did use AI throughout the process.
+
+it helped me move faster, explore different approaches and debug issues along the way.
+
+but like most projects, getting the final implementation right still required a lot of testing, tweaking and experimentation.
+
+some of the specific challenges I ran into were:
+
+- the deduplication logic wasn't working correctly, which meant page refreshes were still being counted as new views.
+- the TTL-based deduplication window wasn't behaving as expected, causing some visitors to be counted again even within the configured 30-minute time window.
+- handling route changes in SPAs without accidentally tracking duplicate views or missing page transitions.
+
+a lot of my time was spent testing edge cases, refreshing pages, navigating between routes and verifying whether views were actually being counted the way they should.
+
+other than that, I didn't run into any other major roadblocks.
 
 ## Final thoughts
 
