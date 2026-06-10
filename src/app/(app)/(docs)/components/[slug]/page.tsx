@@ -31,7 +31,7 @@ import { LLMCopyButtonWithViewOptions } from "@/components/docs/page-actions";
 import PostShareMenu from "@/components/docs/post-share-menu";
 import { SITE_CONFIG } from "@/config/site";
 import { generateWebsiteMetadata } from "@/config/metadata";
-import DocsTOC from "@/components/docs-toc";
+import BottomNavToc from "@/components/bottom-nav-toc";
 import { toIsoDate } from "@/utils/date";
 import DocsKeyboardShortcuts from "@/components/docs/docs-keyboard-shortcuts";
 
@@ -214,10 +214,10 @@ export default async function ComponentSlugPage({
             </h1>
             <p className="text-muted-foreground">{doc.metadata.description}</p>
           </div>
-          <DocsTOC items={toc} />
           <div className="mt-10">
             <MDX code={doc.content} />
           </div>
+          <BottomNavToc items={toc} />
         </Prose>
       </div>
     </>

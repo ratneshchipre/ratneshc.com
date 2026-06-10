@@ -32,7 +32,7 @@ import PostShareMenu from "@/components/docs/post-share-menu";
 import { Separator } from "@/components/ui/separator";
 import { SITE_CONFIG } from "@/config/site";
 import { generateWebsiteMetadata } from "@/config/metadata";
-import DocsTOC from "@/components/docs-toc";
+import BottomNavToc from "@/components/bottom-nav-toc";
 import { toIsoDate } from "@/utils/date";
 import { Kbd } from "@/components/ui/kbd";
 import DocsKeyboardShortcuts from "@/components/docs/docs-keyboard-shortcuts";
@@ -223,12 +223,11 @@ export default async function BlogPostPage({
             <span>|</span>
             <p>{doc.metadata.readingTime}</p>
           </div>
-          <Separator className="mt-5 mb-10 xl:-mb-2" />
-          <DocsTOC items={toc} />
-          <Separator className="mt-10 -mb-2 xl:hidden" />
+          <Separator className="mt-5" />
           <div>
             <MDX code={doc.content} />
           </div>
+          <BottomNavToc items={toc} />
         </Prose>
       </div>
     </>
