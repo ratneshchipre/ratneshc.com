@@ -106,7 +106,7 @@ function VisitorCount() {
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-10 w-full px-5">
+    <footer className="mt-10 mb-15 w-full px-5">
       <div className="flex flex-col items-center gap-3 border-t py-8">
         <div className="flex items-center text-center text-sm">
           <span className="font-geist-mono tracking-tight text-muted-foreground">

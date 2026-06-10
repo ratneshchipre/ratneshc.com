@@ -126,6 +126,8 @@
   --code-foreground: oklch(0.173 0 0);
   --code-number: oklch(0.556 0 0);
   --code-highlight: oklch(0.205 0 0 / 5%);
+
+  --fade-bottom-height: --spacing(26);
 }
 
 .dark {
