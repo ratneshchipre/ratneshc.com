@@ -2,10 +2,10 @@
 
 import * as React from "react";
 
-import { COLLECTION } from "@/features/portfolio/data/collection";
-import CollectionSection from "@/components/collection/collection-section";
-import CollectionFilter from "@/components/collection/collection-filter";
 import { Separator } from "@/components/ui/separator";
+import CollectionFilter from "@/components/collection/collection-filter";
+import CollectionSection from "@/components/collection/collection-section";
+import { COLLECTION } from "@/features/portfolio/data/collection";
 
 export default function CollectionContainer() {
   const [selectedGenre, setSelectedGenre] = React.useState("all");

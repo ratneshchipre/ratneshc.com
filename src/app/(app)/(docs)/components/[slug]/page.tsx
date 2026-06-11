@@ -1,39 +1,39 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getTableOfContents } from "fumadocs-core/content/toc";
-import type { BlogPosting as PageSchema, WithContext } from "schema-dts";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { notFound } from "next/navigation";
+import { toIsoDate } from "@/utils/date";
 import {
   ArrowLeft02Icon,
   ArrowMoveUpLeftIcon,
   ArrowRight02Icon,
 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { getTableOfContents } from "fumadocs-core/content/toc";
+import type { BlogPosting as PageSchema, WithContext } from "schema-dts";
 
+import { generateWebsiteMetadata } from "@/config/metadata";
+import { SITE_CONFIG } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { Kbd } from "@/components/ui/kbd";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Prose } from "@/components/ui/typography";
+import BottomNavToc from "@/components/bottom-nav-toc";
+import DocsKeyboardShortcuts from "@/components/docs/docs-keyboard-shortcuts";
+import { LLMCopyButtonWithViewOptions } from "@/components/docs/page-actions";
+import PostShareMenu from "@/components/docs/post-share-menu";
+import { MDX } from "@/components/mdx";
 import {
   findNeighbour,
   getDocBySlug,
   getDocsByCategory,
   getDocUrl,
 } from "@/features/doc/data/documents";
-import { MDX } from "@/components/mdx";
 import { Doc } from "@/features/doc/types/document";
-import { buttonVariants } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Kbd } from "@/components/ui/kbd";
-import { Prose } from "@/components/ui/typography";
-import { cn } from "@/lib/utils";
-import { LLMCopyButtonWithViewOptions } from "@/components/docs/page-actions";
-import PostShareMenu from "@/components/docs/post-share-menu";
-import { SITE_CONFIG } from "@/config/site";
-import { generateWebsiteMetadata } from "@/config/metadata";
-import BottomNavToc from "@/components/bottom-nav-toc";
-import { toIsoDate } from "@/utils/date";
-import DocsKeyboardShortcuts from "@/components/docs/docs-keyboard-shortcuts";
 
 export async function generateMetadata({
   params,

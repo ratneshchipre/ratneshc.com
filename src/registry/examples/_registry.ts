@@ -1,6 +1,5 @@
-import type { Registry } from "shadcn/schema";
-
 import { getRegistryItemUrl } from "@/utils/registry";
+import type { Registry } from "shadcn/schema";
 
 export const examples: Registry["items"] = [
   {

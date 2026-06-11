@@ -1,9 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { addQueryParams } from "@/utils/url";
 import { LinkCircle02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
+import { UTM_PARAMS } from "@/config/site";
 import { cn } from "@/lib/utils";
 import {
   Collapsible,
@@ -15,10 +17,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import type { Project } from "@/features/portfolio/types/projects";
-import { UTM_PARAMS } from "@/config/site";
-import { addQueryParams } from "@/utils/url";
 import { Icons } from "@/components/icons";
+import type { Project } from "@/features/portfolio/types/projects";
 
 interface ProjectCardProps {
   project: Project;

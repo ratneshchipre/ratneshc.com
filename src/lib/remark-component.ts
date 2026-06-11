@@ -1,9 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
-
+import { Index } from "@/__registry__/index";
 import { visit } from "unist-util-visit";
 
-import { Index } from "@/__registry__/index";
 import type { UnistNode, UnistTree } from "@/types/unist";
 
 import { fixImport } from "./registry";

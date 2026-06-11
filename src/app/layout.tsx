@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { GeistPixelSquare } from "geist/font/pixel";
 
 import "@/styles/globals.css";
+
 import { defaultWebsiteMetadata } from "@/config/metadata";
 import { Providers } from "@/components/providers";
 

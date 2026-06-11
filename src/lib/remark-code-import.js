@@ -4,7 +4,6 @@
 import fs from "node:fs";
 import { EOL } from "node:os";
 import path from "node:path";
-
 import stripIndent from "strip-indent";
 import { visit } from "unist-util-visit";
 

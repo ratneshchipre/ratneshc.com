@@ -1,7 +1,7 @@
 "use client";
 
-import { useHotkeys } from "react-hotkeys-hook";
 import { useRouter } from "@bprogress/next/app";
+import { useHotkeys } from "react-hotkeys-hook";
 
 export function KeyboardShortcuts() {
   const router = useRouter();

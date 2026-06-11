@@ -1,19 +1,20 @@
 "use client";
 
-import {
-  PerspectiveTilt,
-  PerspectiveTiltContent,
-  PerspectiveTiltTrigger,
-} from "@/registry/components/perspective-tilt";
-import { Button } from "@/components/ui/button";
+import { PlusSignIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+
 import {
   Avatar,
   AvatarFallback,
   AvatarGroup,
   AvatarImage,
 } from "@/components/ui/avatar";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { PlusSignIcon } from "@hugeicons/core-free-icons";
+import { Button } from "@/components/ui/button";
+import {
+  PerspectiveTilt,
+  PerspectiveTiltContent,
+  PerspectiveTiltTrigger,
+} from "@/registry/components/perspective-tilt";
 
 export default function PerspectiveTiltDemo() {
   return (

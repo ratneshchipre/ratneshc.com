@@ -1,11 +1,10 @@
 import { promises as fs } from "fs";
-import { LRUCache } from "lru-cache";
 import path from "path";
+import { Index } from "@/__registry__";
+import { LRUCache } from "lru-cache";
 import type { registryItemFileSchema } from "shadcn/schema";
 import { registryItemSchema } from "shadcn/schema";
 import type { z } from "zod";
-
-import { Index } from "@/__registry__";
 
 // LRU cache for cross-request caching of registry items.
 // File reads are I/O-bound, so caching improves dev server performance.

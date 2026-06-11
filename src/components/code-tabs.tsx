@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import type { InstallationType } from "@/hooks/use-config";
 import { useConfig } from "@/hooks/use-config";
-import { cn } from "@/lib/utils";
 
 import { Tabs } from "./ui/tabs";
 

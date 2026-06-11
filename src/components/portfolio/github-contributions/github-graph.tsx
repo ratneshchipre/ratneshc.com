@@ -1,10 +1,16 @@
 "use client";
 
 import * as React from "react";
-import { format } from "date-fns";
-import { HugeiconsIcon } from "@hugeicons/react";
 import { Loading03Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { format } from "date-fns";
 
+import { GITHUB_USERNAME } from "@/config/site";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import {
   Activity,
   ContributionGraph,
@@ -14,12 +20,6 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "@/components/kibo-ui/contribution-graph";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { GITHUB_USERNAME } from "@/config/site";
 
 export default function GitHubGraph({
   contributions,

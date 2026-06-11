@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { MoonIcon, Sun01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { useTheme } from "next-themes";
 import { useHotkeys } from "react-hotkeys-hook";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { MoonIcon, Sun01Icon } from "@hugeicons/core-free-icons";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";

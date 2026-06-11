@@ -1,5 +1,5 @@
-import { PROJECTS } from "@/features/portfolio/data/projects";
 import { getGitHubStargazerCountByRepo } from "@/features/portfolio/data/github-stargazers";
+import { PROJECTS } from "@/features/portfolio/data/projects";
 
 import ProjectCard from "./project-card";
 

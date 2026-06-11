@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
-import { getDocsByCategory } from "@/features/doc/data/documents";
 import { generateWebsiteMetadata } from "@/config/metadata";
 import { cn } from "@/lib/utils";
+import { getDocsByCategory } from "@/features/doc/data/documents";
 
 export const metadata: Metadata = generateWebsiteMetadata({
   title: "Components",

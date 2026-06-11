@@ -1,12 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
-import { useCommandState } from "cmdk";
-import { useHotkeys } from "react-hotkeys-hook";
 import { useRouter } from "@bprogress/next/app";
-import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
 import {
   ArrowMoveDownLeftIcon,
   ArrowUpDownIcon,
@@ -29,10 +25,16 @@ import {
   Sun01Icon,
   TextAlignLeft01Icon,
 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
+import { useCommandState } from "cmdk";
+import { useTheme } from "next-themes";
+import { useHotkeys } from "react-hotkeys-hook";
 
 import { cn } from "@/lib/utils";
 import { Doc } from "@/features/doc/types/document";
 
+import { ComponentIcon, Icons } from "./icons";
+import { Button } from "./ui/button";
 import {
   Command,
   CommandDialog,
@@ -43,11 +45,9 @@ import {
   CommandList,
   CommandShortcut,
 } from "./ui/command";
-import { Button } from "./ui/button";
+import { InputGroupButton } from "./ui/input-group";
 import { Kbd, KbdGroup } from "./ui/kbd";
 import { Separator } from "./ui/separator";
-import { InputGroupButton } from "./ui/input-group";
-import { ComponentIcon, Icons } from "./icons";
 
 type CommandLinkItem = {
   title: string;

@@ -2,10 +2,10 @@
 
 import { AppProgressProvider } from "@bprogress/next";
 
-import ThemeProvider from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
+import ThemeProvider from "@/components/theme-provider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (

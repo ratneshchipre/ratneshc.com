@@ -1,11 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { useTheme } from "next-themes";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { RepeatIcon } from "@hugeicons/core-free-icons";
-
 import { Index } from "@/__registry__/index";
+import { RepeatIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { useTheme } from "next-themes";
+
 import { cn } from "@/lib/utils";
 import {
   Tooltip,

@@ -1,18 +1,18 @@
 "use client";
 
 import type { ComponentProps } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import type { HTMLMotionProps, Variants } from "motion/react";
-import { HugeiconsIcon } from "@hugeicons/react";
 import {
   CancelCircleIcon,
   Copy01Icon,
   Tick02Icon,
 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { AnimatePresence, motion } from "motion/react";
+import type { HTMLMotionProps, Variants } from "motion/react";
 
-import { Button } from "@/components/ui/button";
 import type { CopyState } from "@/hooks/use-copy-to-clipboard";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
+import { Button } from "@/components/ui/button";
 
 export const motionIconVariants: Variants = {
   initial: (direction: number) => ({

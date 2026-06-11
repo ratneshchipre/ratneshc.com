@@ -3,11 +3,11 @@
 import * as React from "react";
 import { TOCItemType } from "fumadocs-core/toc";
 import {
-  motion,
   AnimatePresence,
+  motion,
+  useMotionValueEvent,
   useScroll,
   useSpring,
-  useMotionValueEvent,
 } from "motion/react";
 import type { HTMLMotionProps, Variants } from "motion/react";
 

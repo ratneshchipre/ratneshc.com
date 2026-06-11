@@ -1,8 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-
 import { rimraf } from "rimraf";
-import { type Registry, registrySchema } from "shadcn/schema";
+import { registrySchema, type Registry } from "shadcn/schema";
 
 const REGISTRY_PATH = path.join(process.cwd(), "src/__registry__");
 const PUBLIC_REGISTRY_PATH = path.join(process.cwd(), "public/r");

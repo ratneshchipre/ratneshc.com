@@ -2,8 +2,8 @@
 
 import { usePathname } from "next/navigation";
 
-import { cn } from "@/lib/utils";
 import type { NavItem } from "@/types/nav";
+import { cn } from "@/lib/utils";
 
 function NavItem({ title, href, className }: NavItem & { className?: string }) {
   const pathname = usePathname();

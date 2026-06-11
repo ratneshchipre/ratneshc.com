@@ -1,4 +1,3 @@
-import { HugeiconsIcon, type HugeiconsIconProps } from "@hugeicons/react";
 import {
   BlurIcon,
   ComputerTerminal01Icon,
@@ -7,6 +6,7 @@ import {
   FileEmpty02Icon,
   PerspectiveIcon,
 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon, type HugeiconsIconProps } from "@hugeicons/react";
 
 type IconProps = React.HTMLAttributes<SVGElement>;
 

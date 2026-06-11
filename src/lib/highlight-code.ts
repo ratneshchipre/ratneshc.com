@@ -3,6 +3,8 @@ import { LRUCache } from "lru-cache";
 import type { ShikiTransformer } from "shiki";
 import { codeToHtml } from "shiki";
 
+import { getNpmCommands } from "./code-commands";
+
 const isDev = process.env.NODE_ENV === "development";
 
 // LRU cache for cross-request caching of highlighted code.
@@ -11,8 +13,6 @@ const highlightCache = new LRUCache<string, string>({
   max: 500,
   ttl: 1000 * 60 * 60, // 1 hour.
 });
-
-import { getNpmCommands } from "./code-commands";
 
 export const transformers = [
   {

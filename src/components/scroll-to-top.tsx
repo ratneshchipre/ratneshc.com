@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { useMotionValueEvent, useScroll } from "motion/react";
-import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowUp02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { useMotionValueEvent, useScroll } from "motion/react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";

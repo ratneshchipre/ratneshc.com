@@ -1,24 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { toast } from "sonner";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { copyText } from "@/utils/copy";
 import {
   Link04Icon,
   Linkedin01Icon,
   NewTwitterIcon,
   Share03Icon,
 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { toast } from "sonner";
 
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { buttonVariants } from "@/components/ui/button";
-import { copyText } from "@/utils/copy";
-import { cn } from "@/lib/utils";
 
 export default function PostShareMenu({ url }: { url: string }) {
   const getAbsoluteUrl = () => {

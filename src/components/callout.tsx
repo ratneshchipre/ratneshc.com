@@ -1,9 +1,9 @@
-import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  InformationCircleIcon,
   Alert02Icon,
   Idea01Icon,
+  InformationCircleIcon,
 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 import { cn } from "@/lib/utils";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";

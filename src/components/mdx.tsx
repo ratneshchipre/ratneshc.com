@@ -1,24 +1,31 @@
 import * as React from "react";
+import Link from "next/link";
 import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import Link from "next/link";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
+import { UTM_PARAMS } from "@/config/site";
+import { rehypeAddQueryParams } from "@/lib/rehype-add-query-params";
 import {
   rehypeCodeRawString,
   rehypeHighlightCode,
   rehypeHighlightCodeRawString,
 } from "@/lib/rehype-code-block";
-import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
 import { rehypeComponent } from "@/lib/rehype-component";
+import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
 import { remarkCodeImport } from "@/lib/remark-code-import";
 import { cn } from "@/lib/utils";
-import { rehypeAddQueryParams } from "@/lib/rehype-add-query-params";
-import { UTM_PARAMS } from "@/config/site";
 
-import { Code, Heading } from "./ui/typography";
+import Callout from "./callout";
+import CodeCollapsibleWrapper from "./code-collapsible-wrapper";
+import { CodeTabs } from "./code-tabs";
+import ComponentPreview from "./component-preview";
+import ComponentSource from "./component-source";
+import UnmountingDemo from "./docs/unmounting-demo";
+import { FramedImage } from "./embed";
+import { mdxCodeBlockComponents } from "./mdx-code-block";
 import {
   Table,
   TableBody,
@@ -29,19 +36,12 @@ import {
 } from "./ui/table";
 import {
   Tabs,
-  TabsList,
-  TabsTrigger,
   TabsContent,
   TabsIndicator,
+  TabsList,
+  TabsTrigger,
 } from "./ui/tabs";
-import { FramedImage } from "./embed";
-import { mdxCodeBlockComponents } from "./mdx-code-block";
-import UnmountingDemo from "./docs/unmounting-demo";
-import Callout from "./callout";
-import ComponentPreview from "./component-preview";
-import ComponentSource from "./component-source";
-import CodeCollapsibleWrapper from "./code-collapsible-wrapper";
-import { CodeTabs } from "./code-tabs";
+import { Code, Heading } from "./ui/typography";
 
 const components: MDXRemoteProps["components"] = {
   h1: (props: React.ComponentProps<"h1">) => (
