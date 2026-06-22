@@ -4,8 +4,7 @@ const baseUrl = process.env.NEXT_PUBLIC_APP_URL!;
 
 export const SITE_CONFIG = {
   name: "Ratnesh",
-  description:
-    "I'm Ratnesh, a Full-Stack Web Developer. I love to build products.",
+  description: "I'm Ratnesh, a Design Engineer. I love to build products.",
   url: baseUrl,
   ogImage: `${baseUrl}/images/opengraph-image.png`,
   links: {
@@ -20,8 +19,12 @@ export const SITE_CONFIG = {
     "ratnesh full stack developer",
     "ratnesh dev portfolio",
     "ratnesh portfolio",
+    "design engineer",
+    "design engineer portfolio",
+    "ratnesh design engineer",
     "ratnesh developer portfolio",
     "web developer",
+    "tailwindcss",
     "typescript",
     "react",
     "next.js",
