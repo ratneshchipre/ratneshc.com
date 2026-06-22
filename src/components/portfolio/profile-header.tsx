@@ -22,11 +22,7 @@ export default function ProfileHeader() {
             Ratnesh Chipre
           </h2>
           <BlurShimmerText
-            texts={[
-              "Full-Stack Developer",
-              "Design sense matters",
-              "Open Source with good taste",
-            ]}
+            texts={["Design Engineer", "Open Source", "Design sense matters"]}
             blur={4}
             interval={2}
             className="font-geist-pixel-square text-muted-foreground"

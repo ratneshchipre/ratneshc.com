@@ -7,7 +7,7 @@ export default function Overview() {
     <section className="font-geist-sans">
       <div>
         <p className="text-muted-foreground">
-          I&apos;m a 20yo Full-Stack Developer focused on building clean,
+          I&apos;m a 20yo Design Engineer focused on building clean,
           scalable web products. <br /> <br /> Currently, I&apos;m building{" "}
           <Link
             href="https://www.draftlogo.com/"

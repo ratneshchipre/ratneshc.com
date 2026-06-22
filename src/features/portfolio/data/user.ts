@@ -7,9 +7,9 @@ export const USER: User = {
   username: "ratneshchipre",
   address: "Maharashtra, India",
   website: "https://ratneshc.com",
-  jobTitle: "Full-Stack Web Developer",
+  jobTitle: "Design Engineer",
   about: `
-- I'm a 20yo Full-Stack Developer focused on building clean, scalable web products.
+- I'm a 20yo Design Engineer focused on building clean, scalable web products.
 - I love crafting elegant web experiences, shipping fast, and turning ideas into real products.
   `,
   avatar: "https://ratneshc.com/images/avatar.png",
@@ -21,9 +21,13 @@ export const USER: User = {
     "ratnesh chipre",
     "ratneshc portfolio",
     "ratnesh portfolio",
+    "design engineer",
+    "design engineer portfolio",
+    "ratnesh design engineer",
     "web developer",
     "frontend engineer",
     "ratneshchipre",
+    "tailwindcss",
     "typescript",
     "next.js",
   ],
