@@ -51,11 +51,7 @@ export default function ComponentsPage() {
               <ComponentItemTitle as="h3">
                 {doc.metadata.title}
               </ComponentItemTitle>
-              {(doc.metadata.new || doc.metadata.updated) && (
-                <ComponentItemDot
-                  aria-label={doc.metadata.new ? "New" : "Updated"}
-                />
-              )}
+              {doc.metadata.new && <ComponentItemDot aria-label="New" />}
             </ComponentItem>
           ))}
       </div>
