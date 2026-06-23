@@ -12,6 +12,7 @@ export const EXPERIENCES: Experience[] = [
         title: "Frontend Developer",
         employmentPeriod: {
           start: "Oct 2025",
+          end: "Jun 2026",
         },
         employmentType: "Internship",
         description: [
@@ -43,6 +44,5 @@ export const EXPERIENCES: Experience[] = [
         skills: ["JavaScript", "Node.js", "Express.js", "MongoDB", "Figma"],
       },
     ],
-    isCurrentEmployer: true,
   },
 ];
