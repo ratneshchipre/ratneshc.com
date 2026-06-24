@@ -20,6 +20,11 @@ import {
 import { Icons } from "@/components/icons";
 import type { Project } from "@/features/portfolio/types/projects";
 
+const starFormatter = new Intl.NumberFormat("en-US", {
+  notation: "compact",
+  compactDisplay: "short",
+});
+
 interface ProjectCardProps {
   project: Project;
   stargazersCount?: number;
@@ -30,8 +35,6 @@ export default function ProjectCard({
   stargazersCount,
 }: ProjectCardProps) {
   const [isOpen, setIsOpen] = React.useState(project.isExpanded ?? false);
-  const hasMultipleActions =
-    Boolean(project.githubRepo) && stargazersCount !== undefined;
 
   return (
     <article
@@ -65,7 +68,7 @@ export default function ProjectCard({
             <div
               className={cn(
                 "flex shrink-0 items-center",
-                hasMultipleActions && "gap-4"
+                project.githubRepo && stargazersCount !== undefined && "gap-4"
               )}
             >
               {project.githubRepo && stargazersCount !== undefined && (
@@ -85,12 +88,7 @@ export default function ProjectCard({
                       >
                         <Icons.github className="size-4" />
                         <span className="font-geist-sans text-[0.85rem] tabular-nums">
-                          {new Intl.NumberFormat("en-US", {
-                            notation: "compact",
-                            compactDisplay: "short",
-                          })
-                            .format(stargazersCount)
-                            .toLowerCase()}
+                          {starFormatter.format(stargazersCount).toLowerCase()}
                         </span>
                         <span className="sr-only">
                           {stargazersCount} stars on GitHub
@@ -145,42 +143,36 @@ export default function ProjectCard({
               </p>
             )}
             {project.features && project.features.length > 0 && (
-              <div>
-                <h4 className="sr-only">Features</h4>
-                <ul
-                  className="ml-4 list-disc space-y-2 text-sm leading-relaxed text-muted-foreground"
-                  aria-label="Features"
-                >
-                  {project.features.map((feature, index) => (
-                    <li key={index} itemProp="applicationCategory">
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul
+                className="ml-4 list-disc space-y-2 text-sm leading-relaxed text-muted-foreground"
+                aria-label="Features"
+              >
+                {project.features.map((feature, index) => (
+                  <li key={index} itemProp="applicationCategory">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             )}
             {project.skills && project.skills.length > 0 && (
-              <div>
-                <h4 className="sr-only">Technologies and Skills</h4>
-                <ul
-                  className="flex flex-wrap gap-2"
-                  aria-label="Technologies and skills used"
-                >
-                  {project.skills.map((skill) => (
-                    <li
-                      key={skill}
-                      className={cn(
-                        "inline-flex items-center rounded-lg px-2 py-0.5 font-geist-mono text-xs",
-                        "bg-muted text-muted-foreground ring-1 ring-border/80",
-                        "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
-                      )}
-                      itemProp="applicationCategory"
-                    >
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul
+                className="flex flex-wrap gap-2"
+                aria-label="Technologies and skills used"
+              >
+                {project.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className={cn(
+                      "inline-flex items-center rounded-lg px-2 py-0.5 font-geist-mono text-xs",
+                      "bg-muted text-muted-foreground ring-1 ring-border/80",
+                      "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
+                    )}
+                    itemProp="applicationCategory"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
         </CollapsibleContent>

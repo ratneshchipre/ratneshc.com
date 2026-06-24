@@ -21,11 +21,9 @@ export default function GitHubContributions() {
           GitHub Contributions
         </h2>
       </header>
-      <div>
-        <React.Suspense fallback={<GitHubGraphFallback />}>
-          <GitHubGraph contributions={contributions} />
-        </React.Suspense>
-      </div>
+      <React.Suspense fallback={<GitHubGraphFallback />}>
+        <GitHubGraph contributions={contributions} />
+      </React.Suspense>
     </section>
   );
 }

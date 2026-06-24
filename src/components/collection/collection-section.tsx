@@ -1,4 +1,4 @@
-import { CollectionItem } from "@/features/portfolio/types/collection";
+import type { CollectionItem } from "@/features/portfolio/types/collection";
 
 import CollectionCard from "./collection-card";
 
@@ -25,9 +25,9 @@ export default function CollectionSection({
       </div>
       <div className="flex flex-col gap-5">
         {isEmpty ? (
-          <div className="font-geist-mono text-sm text-muted-foreground/60">
-            <p>{emptyMsg || "Nothing here yet."}</p>
-          </div>
+          <p className="font-geist-mono text-sm text-muted-foreground/60">
+            {emptyMsg || "Nothing here yet."}
+          </p>
         ) : (
           items.map((item) => <CollectionCard key={item.id} item={item} />)
         )}

@@ -33,7 +33,7 @@ import {
   getDocsByCategory,
   getDocUrl,
 } from "@/features/doc/data/documents";
-import { Doc } from "@/features/doc/types/document";
+import type { Doc } from "@/features/doc/types/document";
 
 export async function generateMetadata({
   params,
@@ -94,11 +94,7 @@ export default async function ComponentSlugPage({
   const slug = (await params).slug;
   const doc = getDocBySlug(slug);
 
-  if (!doc) {
-    notFound();
-  }
-
-  if (doc.metadata.category !== "components") {
+  if (!doc || doc.metadata.category !== "components") {
     notFound();
   }
 
@@ -206,14 +202,12 @@ export default async function ComponentSlugPage({
           </div>
         </div>
         <Prose className="font-geist-sans">
-          <div>
-            <h1 className="mb-1 text-3xl font-semibold tracking-tight">
-              {doc.metadata.title.includes("|")
-                ? doc.metadata.title.split("|")[0].trim()
-                : doc.metadata.title}
-            </h1>
-            <p className="text-muted-foreground">{doc.metadata.description}</p>
-          </div>
+          <h1 className="mb-1 text-3xl font-semibold tracking-tight">
+            {doc.metadata.title.includes("|")
+              ? doc.metadata.title.split("|")[0].trim()
+              : doc.metadata.title}
+          </h1>
+          <p className="text-muted-foreground">{doc.metadata.description}</p>
           <div className="mt-10">
             <MDX code={doc.content} />
           </div>

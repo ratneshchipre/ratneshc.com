@@ -6,17 +6,15 @@ export default function ProfileHeader() {
   return (
     <div className="flex flex-col py-8">
       <div className="flex items-center gap-4">
-        <div className="select-none">
-          <Image
-            src="/images/avatar.png"
-            alt="Avatar"
-            width={55}
-            height={55}
-            quality={90}
-            priority
-            className="rounded-full object-cover ring-1 ring-accent dark:ring-0"
-          />
-        </div>
+        <Image
+          src="/images/avatar.png"
+          alt="Ratnesh Chipre"
+          width={55}
+          height={55}
+          quality={90}
+          priority
+          className="select-none rounded-full object-cover ring-1 ring-accent dark:ring-0"
+        />
         <div>
           <h2 className="font-geist-sans text-lg font-medium">
             Ratnesh Chipre

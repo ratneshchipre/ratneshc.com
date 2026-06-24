@@ -35,7 +35,13 @@ import {
   getDocsByCategory,
   getDocUrl,
 } from "@/features/doc/data/documents";
-import { Doc } from "@/features/doc/types/document";
+import type { Doc } from "@/features/doc/types/document";
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
 
 export async function generateStaticParams() {
   const docs = getAllDocs();
@@ -210,23 +216,15 @@ export default async function BlogPostPage({
           </h1>
           <div className="flex items-center gap-6 text-muted-foreground">
             <p>
-              {doc.metadata.createdAt
-                ? new Date(doc.metadata.createdAt)
-                    .toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })
-                    .toLowerCase()
-                : ""}
+              {dateFormatter
+                .format(new Date(doc.metadata.createdAt))
+                .toLowerCase()}
             </p>
             <span>|</span>
             <p>{doc.metadata.readingTime}</p>
           </div>
           <Separator className="mt-5" />
-          <div>
-            <MDX code={doc.content} />
-          </div>
+          <MDX code={doc.content} />
           <BottomNavToc items={toc} />
         </Prose>
       </div>

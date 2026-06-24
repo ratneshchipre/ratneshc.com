@@ -7,16 +7,12 @@ import CollectionFilter from "@/components/collection/collection-filter";
 import CollectionSection from "@/components/collection/collection-section";
 import { COLLECTION } from "@/features/portfolio/data/collection";
 
+const allGenres = Array.from(
+  new Set(COLLECTION.moviesAndShows.flatMap((item) => item.genre))
+).sort();
+
 export default function CollectionContainer() {
   const [selectedGenre, setSelectedGenre] = React.useState("all");
-
-  const allGenres = React.useMemo(() => {
-    const genres = new Set<string>();
-    COLLECTION.moviesAndShows.forEach((item) => {
-      item.genre.forEach((g) => genres.add(g));
-    });
-    return Array.from(genres).sort();
-  }, []);
 
   const filteredItems = React.useMemo(() => {
     let items = COLLECTION.moviesAndShows;
