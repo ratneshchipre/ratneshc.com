@@ -3,7 +3,12 @@ import Link from "next/link";
 
 import { generateWebsiteMetadata } from "@/config/metadata";
 import { getDocsByCategory } from "@/features/doc/data/documents";
-import { Doc } from "@/features/doc/types/document";
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
 
 export const metadata: Metadata = generateWebsiteMetadata({
   title: "Blog",
@@ -31,7 +36,7 @@ export default function BlogPage() {
         </p>
       </header>
       <div className="group divide-y divide-border font-geist-sans *:py-3 first:*:pt-0">
-        {docs.map((doc: Doc) => (
+        {docs.map((doc) => (
           <Link
             key={doc.slug}
             href={`/blog/${doc.slug}`}
@@ -43,15 +48,9 @@ export default function BlogPage() {
                 : doc.metadata.title}
             </h3>
             <span className="shrink-0 text-[0.9rem]">
-              {doc.metadata.createdAt
-                ? new Date(doc.metadata.createdAt)
-                    .toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })
-                    .toLowerCase()
-                : ""}
+              {dateFormatter
+                .format(new Date(doc.metadata.createdAt))
+                .toLowerCase()}
             </span>
           </Link>
         ))}

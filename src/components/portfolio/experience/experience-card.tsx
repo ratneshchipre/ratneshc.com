@@ -32,7 +32,6 @@ interface ExperienceCardProps {
 
 interface PositionContentProps {
   position: ExperiencePosition;
-  isCurrent: boolean;
 }
 
 function formatEmploymentPeriod(start: string, end?: string): string {
@@ -241,7 +240,6 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
         )}
         {positions.map((position, index) => {
           const isLast = index === positions.length - 1;
-          const isCurrent = !!(isCurrentEmployer && index === 0);
 
           return (
             <React.Fragment key={position.id}>
@@ -263,7 +261,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
                 )}
                 style={{ gridRow: index + 1 }}
               >
-                <PositionContent position={position} isCurrent={isCurrent} />
+                <PositionContent position={position} />
               </div>
             </React.Fragment>
           );

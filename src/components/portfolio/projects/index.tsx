@@ -9,25 +9,6 @@ export default async function Projects() {
   );
   const stargazerCounts = await getGitHubStargazerCountByRepo(repos);
 
-  if (!PROJECTS || PROJECTS.length === 0) {
-    return (
-      <section
-        className="mt-15 space-y-5 font-geist-sans"
-        aria-labelledby="projects-heading"
-      >
-        <header>
-          <h2
-            id="projects-heading"
-            className="font-geist-pixel-square text-muted-foreground"
-          >
-            Projects
-          </h2>
-        </header>
-        <p className="text-sm text-muted-foreground">No projects available.</p>
-      </section>
-    );
-  }
-
   return (
     <section
       id="projects"
