@@ -217,7 +217,7 @@ export function CommandMenu({ docs }: { docs: Doc[] }) {
       <Button
         variant="secondary"
         className={cn(
-          "ml-2 h-8 gap-1.5 rounded-full border border-input bg-background px-2.5 text-muted-foreground shadow-xs select-none hover:bg-background dark:bg-input/30 dark:hover:bg-input/30",
+          "mr-3 h-8 gap-1.5 rounded-full border border-input bg-background px-2.5 text-muted-foreground shadow-xs select-none hover:bg-background dark:bg-input/30 dark:hover:bg-input/30 hover:ring-2 hover:ring-ring/20",
           "relative before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]"
         )}
         onClick={() => {

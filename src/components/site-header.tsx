@@ -13,11 +13,11 @@ export default function SiteHeader() {
   const docs = getAllDocs();
 
   return (
-    <SiteHeaderWrapper className="sticky top-0 z-50 flex h-16 items-center overflow-hidden bg-background px-2 max-md:px-5 sm:py-10">
-      <div className="flex w-full items-center justify-end gap-3">
+    <SiteHeaderWrapper className="sticky top-0 z-50 flex h-16 items-center overflow-hidden bg-background px-5 max-md:px-5 sm:py-10">
+      <div className="flex w-full items-center justify-end sm:justify-between gap-3">
         <DesktopNav items={NAV_ITEMS} />
-        <CommandMenu docs={docs} />
         <div className="flex items-center">
+          <CommandMenu docs={docs} />
           <NavItemGitHub />
           <div className="flex flex-col items-center justify-center max-sm:hidden">
             <Separator orientation="vertical" className="mx-3 h-4" />
