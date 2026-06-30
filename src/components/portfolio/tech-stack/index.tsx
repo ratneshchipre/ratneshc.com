@@ -67,7 +67,7 @@ export default function TechStack() {
               href={tech.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg bg-muted px-2 py-1 font-geist-mono text-muted-foreground ring-1 ring-border/80 transition-colors duration-300 hover:bg-muted/80 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="flex items-center gap-2 rounded-lg bg-muted px-2 py-1 font-geist-mono text-muted-foreground ring-1 ring-border/80 shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.8)] dark:shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.2)] transition-colors duration-300 hover:bg-muted/80 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               <TechIcon id={tech.id} title={tech.title} theme={tech.theme} />
               <span className="text-sm">{tech.title}</span>
