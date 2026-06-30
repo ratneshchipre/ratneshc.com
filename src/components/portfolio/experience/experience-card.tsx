@@ -137,8 +137,8 @@ function PositionContent({ position }: PositionContentProps) {
                 <li key={skill}>
                   <span
                     className={cn(
-                      "inline-flex items-center rounded-lg px-2 py-0.5 font-geist-mono text-xs",
-                      "bg-muted text-muted-foreground ring-1 ring-border/80",
+                      "inline-flex items-center rounded-md px-2 py-0.5 font-geist-mono text-xs",
+                      "bg-muted text-muted-foreground ring-1 ring-border/80 shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.8)] dark:shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.2)]",
                       "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
                     )}
                     itemProp="skills"
