@@ -6,9 +6,9 @@ A clean and minimal portfolio featuring my work, writing, and shadcn registry.
 
 <a href="https://ratneshc.com">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./public/images/screenshot-dark.webp">
-    <source media="(prefers-color-scheme: light)" srcset="./public/images/screenshot-light.webp">
-    <img alt="ratneshc.com" src="./public/images/screenshot-light.webp">
+    <source media="(prefers-color-scheme: dark)" srcset="./.github/screenshot-dark.webp">
+    <source media="(prefers-color-scheme: light)" srcset="./.github/screenshot-light.webp">
+    <img alt="ratneshc.com" src="./.github/screenshot-light.webp">
   </picture>
 </a>
 

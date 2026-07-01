@@ -130,7 +130,7 @@ function PositionContent({ position }: PositionContentProps) {
           )}
           {hasSkills && (
             <ul
-              className="not-prose flex flex-wrap gap-2 pt-4"
+              className="not-prose flex flex-wrap gap-2 pt-4 px-1"
               aria-label="Skills and technologies used"
             >
               {position.skills!.map((skill) => (
