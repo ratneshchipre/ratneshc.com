@@ -156,7 +156,7 @@ export default function ProjectCard({
             )}
             {project.skills && project.skills.length > 0 && (
               <ul
-                className="flex flex-wrap gap-2"
+                className="flex flex-wrap gap-2 px-1"
                 aria-label="Technologies and skills used"
               >
                 {project.skills.map((skill) => (
