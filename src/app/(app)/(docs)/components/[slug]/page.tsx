@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { toIsoDate } from "@/utils/date";
 import {
   ArrowLeft02Icon,
   ArrowMoveUpLeftIcon,
@@ -34,6 +33,7 @@ import {
   getDocUrl,
 } from "@/features/doc/data/documents";
 import type { Doc } from "@/features/doc/types/document";
+import { toIsoDate } from "@/utils/date";
 
 export async function generateMetadata({
   params,

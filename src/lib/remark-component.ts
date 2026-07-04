@@ -1,9 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
-import { Index } from "@/__registry__/index";
 import { visit } from "unist-util-visit";
 
 import type { UnistNode, UnistTree } from "@/types/unist";
+import { Index } from "@/__registry__/index";
 
 import { fixImport } from "./registry";
 
@@ -21,8 +21,7 @@ export function remarkComponent() {
       if (node.name === "ComponentSource") {
         const name = getNodeAttributeByName(node, "name")?.value as string;
         const fileName = getNodeAttributeByName(node, "fileName")?.value as
-          | string
-          | undefined;
+          string | undefined;
 
         if (!name && !srcPath) {
           return null;

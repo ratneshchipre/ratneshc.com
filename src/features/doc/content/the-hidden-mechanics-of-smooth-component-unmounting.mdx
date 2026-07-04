@@ -61,11 +61,11 @@ The most basic fix is to decouple the "logical" close from the "physical" unmoun
 this involves introducing an intermediate state (e.g., `isExiting`) and using a `setTimeout` that matches your CSS duration.
 
 ```tsx
-const [status, setStatus] = useState('open'); // 'open', 'exiting', 'closed'
+const [status, setStatus] = useState("open"); // 'open', 'exiting', 'closed'
 
 const handleClose = () => {
-  setStatus('exiting');
-  setTimeout(() => setStatus('closed'), 300); // Wait for animation
+  setStatus("exiting");
+  setTimeout(() => setStatus("closed"), 300); // Wait for animation
 };
 ```
 

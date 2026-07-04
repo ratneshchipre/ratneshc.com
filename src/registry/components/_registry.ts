@@ -1,5 +1,6 @@
-import { getRegistryItemUrl } from "@/utils/registry";
 import type { Registry } from "shadcn/schema";
+
+import { getRegistryItemUrl } from "@/utils/registry";
 
 export const components: Registry["items"] = [
   {

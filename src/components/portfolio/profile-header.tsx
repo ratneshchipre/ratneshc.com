@@ -13,7 +13,7 @@ export default function ProfileHeader() {
           height={55}
           quality={90}
           priority
-          className="select-none rounded-full object-cover ring-1 ring-accent dark:ring-0"
+          className="rounded-full object-cover ring-1 ring-accent select-none dark:ring-0"
         />
         <div>
           <h2 className="font-geist-sans text-lg font-medium">

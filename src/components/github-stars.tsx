@@ -1,7 +1,5 @@
 "use client";
 
-import { addQueryParams } from "@/utils/url";
-
 import { UTM_PARAMS } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -10,6 +8,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { addQueryParams } from "@/utils/url";
 
 import { Icons } from "./icons";
 
