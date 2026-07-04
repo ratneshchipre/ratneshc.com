@@ -23,18 +23,17 @@ export default async function Projects() {
           Projects
         </h2>
       </header>
-      <div className="divide-y divide-border">
+      <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 sm:gap-5">
         {PROJECTS.map((project) => (
-          <div key={project.id} className="py-3.5 first:pt-0 last:pb-0">
-            <ProjectCard
-              project={project}
-              stargazersCount={
-                project.githubRepo
-                  ? stargazerCounts[project.githubRepo]
-                  : undefined
-              }
-            />
-          </div>
+          <ProjectCard
+            key={project.id}
+            project={project}
+            stargazersCount={
+              project.githubRepo
+                ? stargazerCounts[project.githubRepo]
+                : undefined
+            }
+          />
         ))}
       </div>
     </section>

@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { Index } from "@/__registry__/index";
 import { RepeatIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useTheme } from "next-themes";
@@ -12,6 +11,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Index } from "@/__registry__/index";
 
 import { Button } from "./ui/button";
 import { Code as CodeInline } from "./ui/typography";

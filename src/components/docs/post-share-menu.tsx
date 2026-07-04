@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { copyText } from "@/utils/copy";
 import {
   Link04Icon,
   Linkedin01Icon,
@@ -19,6 +18,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { copyText } from "@/utils/copy";
 
 export default function PostShareMenu({ url }: { url: string }) {
   const getAbsoluteUrl = () => {
