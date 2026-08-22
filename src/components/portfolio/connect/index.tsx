@@ -1,5 +1,6 @@
 import {
   GithubIcon,
+  GoogleDocIcon,
   Linkedin01Icon,
   Mail01Icon,
   NewTwitterIcon,
@@ -30,6 +31,12 @@ const CONNECT_LINKS = [
     icon: Linkedin01Icon,
     title: "LinkedIn",
     url: "https://www.linkedin.com/in/ratneshchipre/",
+  },
+  {
+    id: "resume",
+    icon: GoogleDocIcon,
+    title: "Resume",
+    url: "https://drive.google.com/file/d/1fX-ZfC-cAVXa8qFxN0iSUt51j5J2sFkC/view?usp=sharing",
   },
 ] as const;
 

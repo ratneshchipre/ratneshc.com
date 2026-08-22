@@ -1,5 +1,4 @@
 .next
-.history
 node_modules
 public
 src/__registry__/index.tsx
