@@ -9,7 +9,7 @@ export const USER: User = {
   website: "https://ratneshc.com",
   jobTitle: "Design Engineer",
   about: `
-- I'm a 20yo Design Engineer focused on building clean, scalable web products.
+- I'm a 21yo Design Engineer focused on building clean, scalable web products.
 - I love crafting elegant web experiences, shipping fast, and turning ideas into real products.
   `,
   avatar: "https://ratneshc.com/images/avatar.png",

@@ -9,7 +9,7 @@ export default function Overview() {
   return (
     <section className="font-geist-sans">
       <p className="text-muted-foreground">
-        I&apos;m a 20yo Design Engineer focused on building clean, scalable web
+        I&apos;m a 21yo Design Engineer focused on building clean, scalable web
         products. <br /> <br /> Currently, I&apos;m building{" "}
         <Link
           href="https://www.draftlogo.com/"
@@ -57,7 +57,7 @@ export default function Overview() {
           size="icon-sm"
           variant="ghost"
           text="ratneshchipre@gmail.com"
-          className="ml-1.5 size-5 translate-y-[2px] hover:bg-transparent!"
+          className="ml-1.5 size-5 translate-y-0.5 hover:bg-transparent!"
         />
       </p>
     </section>
